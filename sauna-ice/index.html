@@ -174,7 +174,7 @@ a{color:inherit}
 /* Annonslabbet-spårning (v2.6): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
 (function(){
   var T='https://video.adthekey.com/al/track.php', S='sauna-ice';
-  function send(ev,bild){try{var d=JSON.stringify({slug:S,event:ev,bild:bild||0,ref:document.referrer||'',scr:screen.width+'x'+screen.height});
+  function send(ev,bild){try{var d=JSON.stringify({slug:S,event:ev,bild:bild||0});
     if(navigator.sendBeacon){navigator.sendBeacon(T,new Blob([d],{type:'application/json'}));}
     else{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:true}).catch(function(){});}}catch(e){}}
   send('view');
