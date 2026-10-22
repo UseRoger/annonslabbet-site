@@ -1,9 +1,33 @@
 <!doctype html>
 <html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="apple-touch-icon" href="/favicon-180.png"><title>Tack, vi sätter igång</title><meta name="robots" content="noindex">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&display=swap" rel="stylesheet">
-<style>:root{--paper:#FBFAF7;--ink:#17181C;--ink-2:#4A4D57}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9}}:root[data-theme="dark"]{--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:18px;line-height:1.5}.wrap{max-width:620px;margin:0 auto;padding:60px 20px}h1{font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1;margin:0 0 18px}p{color:var(--ink-2);margin:0 0 14px}b{color:var(--ink)}</style></head>
-<body><div class="wrap"><h1>Tack, vi sätter igång.</h1>
-<p>Betalningen är inne och kvittot är på väg till er mail. <b>Inom 48 timmar</b> får ni ett mail från jon@annonslabbet.se med länken till era 20 annonser.</p>
-<p>Vill ni ändra något när ni sett dem svarar ni på det mailet, en omgång ändringar ingår.</p>
-<p>Frågor innan dess: jon@annonslabbet.se</p></div></body></html>
+<style>:root{--paper:#FBFAF7;--ink:#17181C;--ink-2:#4A4D57;--rule:#E4E1D9;--gold:#AA7E28}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9;--rule:#2A2C33;--gold:#D6A84A}}:root[data-theme="dark"]{--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9;--rule:#2A2C33;--gold:#D6A84A}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:18px;line-height:1.5}.wrap{max-width:620px;margin:0 auto;padding:28px 20px 60px}
+.brand{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:18px;text-decoration:none;color:inherit}.brand svg{width:26px;height:32px}
+h1{font-size:clamp(34px,6vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1;margin:48px 0 18px}p{color:var(--ink-2);margin:0 0 14px}b{color:var(--ink)}
+ol{list-style:none;padding:0;margin:30px 0;counter-reset:s}ol li{counter-increment:s;position:relative;padding:0 0 22px 56px;color:var(--ink-2)}ol li::before{content:counter(s);position:absolute;left:0;top:-4px;width:38px;height:38px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:17px}ol li b{display:block;color:var(--ink);font-size:19px;margin-bottom:2px}
+.foot{border-top:1px solid var(--rule);padding-top:18px;font-size:15px}a{color:inherit}</style></head>
+<body><div class="wrap">
+<a class="brand" href="/"><svg viewBox="100 60 320 390" aria-hidden="true"><path d="M206 80h100v110l94 190-10 50H122l-10-50 94-190z" fill="#AA7E28"/><path d="M218 96h76v100l84 174-6 44H140l-6-44 84-174z" fill="var(--paper)"/><path d="M150 414h212l10-44-42-80H182l-42 80z" fill="#D6A84A"/><path d="M150 414h212l10-44-22-40H162l-22 40z" fill="#AA7E28"/><circle cx="202" cy="312" r="12" fill="#F4CE6E"/><circle cx="244" cy="353" r="8" fill="#F4CE6E"/><g fill="#F4CE6E" stroke="#AA7E28" stroke-width="2"><circle cx="330" cy="120" r="16"/><circle cx="372" cy="170" r="11"/><circle cx="352" cy="220" r="8"/></g></svg>Annonslabbet</a>
+
+<h1>Tack, vi sätter igång.</h1>
+<p>Betalningen är klar och kvittot är på väg till er mail.</p>
+
+<ol>
+  <li><b>Vi börjar på era annonser</b>Vi utgår från produktsidan ni skickat. Har ni inte skickat någon än, mejla länken till jon@annonslabbet.se.</li>
+  <li><b id="when">Ni får dem inom 48 timmar (Starter) eller fem arbetsdagar (Pro)</b><span id="what">Ett mail från jon@annonslabbet.se med länken till era annonser, i 9:16 och 1:1.</span></li>
+  <li><b>Ni säger vad ni tycker</b>Vill ni ändra något svarar ni på mailet. En omgång ändringar ingår.</li>
+</ol>
+
+<p>Garantin gäller: kör annonserna i en vecka, och slår ingen av dem er nuvarande bästa annons får ni pengarna tillbaka. Stillbild jämförs med stillbild och video med video.</p>
+<p class="foot">Frågor innan dess? Mejla <a href="mailto:jon@annonslabbet.se">jon@annonslabbet.se</a>, jag svarar samma dag. Jon, Annonslabbet i Åre.</p>
+</div>
+<script>
+(function(){
+  var p='';try{p=(new URLSearchParams(location.search).get('paket')||'').toLowerCase()}catch(e){}
+  var w=document.getElementById('when'),t=document.getElementById('what');
+  if(p==='starter'){w.textContent='Ni får dem inom 48 timmar';t.textContent='Ett mail från jon@annonslabbet.se med länken till era 20 annonser, i 9:16 och 1:1.'}
+  else if(p==='pro'){w.textContent='Ni får allt inom fem arbetsdagar';t.textContent='Ett mail från jon@annonslabbet.se med länken till era 20 annonser i 9:16 och 1:1 och tre korta videos för Reels och TikTok.'}
+})();
+</script>
+</body></html>
