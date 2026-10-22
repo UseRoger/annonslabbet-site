@@ -142,6 +142,18 @@ footer a{color:var(--ink-2)}
 .bar{position:fixed;left:0;right:0;bottom:0;display:none;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--rule);z-index:20}
 .bar .cta{width:100%}
 
+
+/* consent */
+.consent{position:fixed;left:16px;bottom:16px;z-index:40;max-width:380px;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px;box-shadow:0 18px 40px -18px rgba(23,24,28,.45);font-size:15px;display:none}
+.consent.on{display:block}
+.consent p{margin:0 0 12px;color:var(--ink-2)}
+.consent p a{color:var(--ink-2)}
+.consent .row{display:flex;gap:10px}
+.consent button{flex:1;font:inherit;font-weight:800;font-size:15px;padding:11px 14px;border-radius:8px;cursor:pointer;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);min-height:44px}
+.consent button:focus-visible,.linkbtn:focus-visible{outline:3px solid var(--cta);outline-offset:2px}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--ink-2);text-decoration:underline;cursor:pointer}
+@media (max-width:600px){.consent{left:10px;right:10px;bottom:10px;max-width:none}}
+
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;gap:12px;padding:20px 0 56px}
   .hero h1{max-width:14ch}
@@ -331,10 +343,42 @@ footer a{color:var(--ink-2)}
 </section>
 
 <footer>
-  <div class="wrap">Annonslabbet drivs av Spijon AB, org.nr 559236-3179, Kurortsvägen 20, 837 51 Åre. <a href="/integritet/">Integritet</a></div>
+  <div class="wrap">Annonslabbet drivs av Spijon AB, org.nr 559236-3179, Kurortsvägen 20, 837 51 Åre. <a href="/integritet/">Integritet och cookies</a> · <button class="linkbtn" type="button" id="cookieAgain">Ändra cookieval</button></div>
 </footer>
 
 <div class="bar" id="bar"><a class="cta" href="mailto:jon@annonslabbet.se?subject=Tre%20annonser%20till%20oss&body=Hej%20Jon%2C%0A%0AButik%3A%20%0AProduktsida%3A%20%0A%0ATack%21">Få tre annonser gratis</a></div>
+<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookies">
+  <p>Får vi använda Metas cookies för att mäta hur våra annonser fungerar? Sidan fungerar likadant oavsett. <a href="/integritet/">Läs mer</a></p>
+  <div class="row"><button type="button" data-c="yes">Godkänn</button><button type="button" data-c="no">Neka</button></div>
+</div>
+
+<script>
+/* Meta Pixel för Annonslabbet (eget dataset under Spijon AB, INTE Rogers pixel).
+   Laddas bara efter "Godkänn". Byt PIXEL_ID när datasetet är skapat; så länge det står PIXEL_ID_SAKNAS laddas ingenting. */
+(function(){
+  var PIXEL_ID='PIXEL_ID_SAKNAS', KEY='al_consent_v1';
+  var box=document.getElementById('consent'), loaded=false;
+  function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+  function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+  function load(){
+    if(loaded||!/^\d{10,20}$/.test(PIXEL_ID))return; loaded=true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',PIXEL_ID); fbq('track','PageView');
+    var pris=document.getElementById('pris');
+    if(pris&&'IntersectionObserver' in window){var seen=false;new IntersectionObserver(function(e){if(!seen&&e[0].isIntersecting){seen=true;fbq('track','ViewContent',{content_name:'priser'})}},{threshold:.4}).observe(pris)}
+  }
+  window.alTrack=function(name,params){if(loaded&&window.fbq)fbq('track',name,params||{})};
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="mailto:"]'); if(!a)return;
+    var where=a.closest('.hero')?'hero':a.closest('.free')?'priser':a.closest('.closer')?'slut':a.closest('.bar')?'mobilknapp':'text';
+    alTrack('Lead',{content_name:'tre gratis',content_category:where});
+  });
+  function show(){box.classList.add('on')} function hide(){box.classList.remove('on')}
+  box.addEventListener('click',function(e){var c=e.target.getAttribute&&e.target.getAttribute('data-c');if(!c)return;set(c);hide();if(c==='yes')load();else if(loaded)location.reload()});
+  var again=document.getElementById('cookieAgain'); if(again)again.addEventListener('click',show);
+  var v=get(); if(v==='yes')load(); else if(v!=='no')show();
+})();
+</script>
 <script>
 (function(){
   var bar=document.getElementById('bar'),hero=document.getElementById('heroCta'),end=document.getElementById('endCta');
