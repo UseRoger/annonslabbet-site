@@ -76,7 +76,7 @@ a{color:inherit}
 .faq summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";color:var(--ink-2);font-weight:400}
-.faq details[open] summary::after{content:"−"}
+.faq details[open] summary::after{content:"\2212"}
 .faq p{margin:8px 0 0;color:var(--ink-2);font-size:15px;max-width:56ch}
 
 /* sender */
@@ -137,8 +137,8 @@ a{color:inherit}
         <li>En omgång ändringar ingår</li>
         <li>Betalning med kort, kvitto direkt</li>
       </ul>
-      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00">Beställ 20 annonser <small>1 990 kr</small></a>
-      <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01">Pro, 4 990 kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
+      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=chocolatte&prefilled_email=info%40chocolatte.se">Beställ 20 annonser <small>1 990 kr</small></a>
+      <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=chocolatte&prefilled_email=info%40chocolatte.se">Pro, 4 990 kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
     </div>
     <aside class="guarantee">
       <b>Garanti</b>
@@ -159,7 +159,7 @@ a{color:inherit}
 
 </div>
 
-<div class="bar" id="bar"><a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00">Beställ 20 till <small>1 990 kr</small></a></div>
+<div class="bar" id="bar"><a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=chocolatte&prefilled_email=info%40chocolatte.se">Beställ 20 till <small>1 990 kr</small></a></div>
 <script>
 (function(){
   var bar=document.getElementById('bar'),hero=document.querySelector('.hero .cta'),end=document.getElementById('bestall');
