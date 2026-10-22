@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tre annonser för Sauna Ice</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Tre färdiga annonser för Sauna Ice Presentask, gjorda för Sauna Ice. De är era.">
+<meta name="description" content="Tre färdiga annonser för Presentask, gjorda för Sauna Ice. De är era.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
@@ -111,7 +111,7 @@ a{color:inherit}
   <div class="from"><span>Till <b>Sauna Ice</b>, Kiruna</span><span>från Annonslabbet</span></div>
 
   <section class="hero">
-    <h1>Tre annonser för Sauna Ice Presentask. De är era.</h1>
+    <h1>Tre annonser för Presentask. De är era.</h1>
     <p>Gjorda på er egen produktsida, i er stil. Ladda ner och kör dem i Meta eller Instagram. Inga villkor, ingen faktura.</p>
     <a class="cta" href="#bestall">Beställ 20 till <small>1 990 kr</small></a>
     <span class="under">Klara inom 48 timmar. Pengarna tillbaka om ingen slår er bästa annons.</span>
@@ -120,9 +120,9 @@ a{color:inherit}
   <section class="table" aria-label="Era tre annonser">
     <div class="sticker">De är era, ladda ner</div>
     <div class="fan">
-      <figure class="print" style="margin:0"><img src="annons-1.jpg" alt="Annons 1 för Sauna Ice Presentask" loading="eager"><a class="dl" href="annons-1.jpg" download><span>Annons 1</span><span>Ladda ner</span></a></figure>
-      <figure class="print" style="margin:0"><img src="annons-2.jpg" alt="Annons 2 för Sauna Ice Presentask" loading="eager"><a class="dl" href="annons-2.jpg" download><span>Annons 2</span><span>Ladda ner</span></a></figure>
-      <figure class="print" style="margin:0"><img src="annons-3.jpg" alt="Annons 3 för Sauna Ice Presentask" loading="eager"><a class="dl" href="annons-3.jpg" download><span>Annons 3</span><span>Ladda ner</span></a></figure>
+      <figure class="print" style="margin:0"><img src="annons-1.jpg" alt="Annons 1 för Presentask" loading="eager"><a class="dl" href="annons-1.jpg" download><span>Annons 1</span><span>Ladda ner</span></a></figure>
+      <figure class="print" style="margin:0"><img src="annons-2.jpg" alt="Annons 2 för Presentask" loading="eager"><a class="dl" href="annons-2.jpg" download><span>Annons 2</span><span>Ladda ner</span></a></figure>
+      <figure class="print" style="margin:0"><img src="annons-3.jpg" alt="Annons 3 för Presentask" loading="eager"><a class="dl" href="annons-3.jpg" download><span>Annons 3</span><span>Ladda ner</span></a></figure>
     </div>
   </section>
 
@@ -132,7 +132,7 @@ a{color:inherit}
       <h2>Tjugo till, i samma stil, på två dagar.</h2>
       <div class="price"><span class="n">1 990 kr</span><span class="u">ex moms, engångs</span></div>
       <ul>
-        <li>20 annonser för Sauna Ice Presentask, 9:16 och 1:1</li>
+        <li>20 annonser för Presentask, 9:16 och 1:1</li>
         <li>Klara inom 48 timmar från betalning</li>
         <li>En omgång ändringar ingår</li>
         <li>Betalning med kort, kvitto direkt</li>
@@ -168,6 +168,24 @@ a{color:inherit}
   function upd(){bar.classList.toggle('on',heroOut&&!offerIn);}
   new IntersectionObserver(function(e){heroOut=!e[0].isIntersecting;upd();},{threshold:0}).observe(hero);
   new IntersectionObserver(function(e){offerIn=e[0].isIntersecting;upd();},{threshold:0.2}).observe(end);
+})();
+</script>
+<script>
+/* Annonslabbet-spårning (v2.6): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
+(function(){
+  var T='https://video.adthekey.com/al/track.php', S='sauna-ice';
+  function send(ev,bild){try{var d=JSON.stringify({slug:S,event:ev,bild:bild||0,ref:document.referrer||'',scr:screen.width+'x'+screen.height});
+    if(navigator.sendBeacon){navigator.sendBeacon(T,new Blob([d],{type:'application/json'}));}
+    else{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:true}).catch(function(){});}}catch(e){}}
+  send('view');
+  setTimeout(function(){send('t30');},30000);
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a'); if(!a)return;
+    if(a.classList.contains('dl')){var m=/annons-(\d)/.exec(a.getAttribute('href')||'');send('download',m?+m[1]:0);return;}
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('buy.stripe.com/3cI5kC0Za')>-1){send('buy');return;}
+    if(h.indexOf('buy.stripe.com/7sYeVc4bm')>-1){send('pro');return;}
+  },true);
 })();
 </script>
 </body>

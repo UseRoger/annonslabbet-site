@@ -170,5 +170,23 @@ a{color:inherit}
   new IntersectionObserver(function(e){offerIn=e[0].isIntersecting;upd();},{threshold:0.2}).observe(end);
 })();
 </script>
+<script>
+/* Annonslabbet-spårning (v2.6): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
+(function(){
+  var T='https://video.adthekey.com/al/track.php', S='chocolatte';
+  function send(ev,bild){try{var d=JSON.stringify({slug:S,event:ev,bild:bild||0,ref:document.referrer||'',scr:screen.width+'x'+screen.height});
+    if(navigator.sendBeacon){navigator.sendBeacon(T,new Blob([d],{type:'application/json'}));}
+    else{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:true}).catch(function(){});}}catch(e){}}
+  send('view');
+  setTimeout(function(){send('t30');},30000);
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a'); if(!a)return;
+    if(a.classList.contains('dl')){var m=/annons-(\d)/.exec(a.getAttribute('href')||'');send('download',m?+m[1]:0);return;}
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('buy.stripe.com/3cI5kC0Za')>-1){send('buy');return;}
+    if(h.indexOf('buy.stripe.com/7sYeVc4bm')>-1){send('pro');return;}
+  },true);
+})();
+</script>
 </body>
 </html>
