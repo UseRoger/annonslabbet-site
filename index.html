@@ -16,6 +16,7 @@
 <meta name="theme-color" content="#FBFAF7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -73,8 +74,12 @@ p{text-wrap:pretty}
 .gallery .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:22px}
 .gallery h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:0}
 .gallery .head p{margin:0;color:var(--ink-2);font-size:15px}
-.strip{--gut:max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)));display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gut);padding:4px var(--gut) 22px;scrollbar-width:thin}
-.strip img{flex:0 0 auto;width:clamp(170px,19vw,230px);height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:8px;scroll-snap-align:start;box-shadow:0 16px 32px -18px rgba(23,24,28,.5);background:var(--paper-2)}
+.strip{--gut:max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)));padding:4px var(--gut) 0}
+.strip .swiper-slide{width:clamp(170px,19vw,230px)}
+.strip img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:8px;box-shadow:0 16px 32px -18px rgba(23,24,28,.5);background:var(--paper-2)}
+.strip .swiper-scrollbar{position:static;margin:18px 0 4px;height:4px;background:rgba(23,24,28,.12);border-radius:4px}
+.strip .swiper-scrollbar-drag{background:var(--ink,#17181c);border-radius:4px;cursor:grab}
+.strip .swiper-scrollbar-drag:active{cursor:grabbing}
 
 /* sections */
 section.band{padding:72px 0;border-top:1px solid var(--rule)}
@@ -225,16 +230,19 @@ footer a{color:var(--ink-2)}
 
 <section class="gallery" aria-label="Fler annonser vi gjort">
   <div class="wrap head"><h2>Fler vi gjort den senaste veckan</h2><p>Svep för att se fler</p></div>
-  <div class="strip">
-    <img src="exempel/sauna-1.webp" alt="Annons för mentolkristaller till bastun" width="600" height="1067" loading="lazy">
-    <img src="exempel/enebobee-2.webp" alt="Annons för ett presentkit med honungstvål" width="600" height="1067" loading="lazy">
-    <img src="exempel/limhamn-1.webp" alt="Annons för en jullåda med godis i trälåda" width="600" height="1067" loading="lazy">
-    <img src="exempel/hundben-3.webp" alt="Annons med hjorthorn i tre storlekar" width="600" height="1067" loading="lazy">
-    <img src="exempel/moony-2.webp" alt="Annons för doftljus som julklapp" width="600" height="1067" loading="lazy">
-    <img src="exempel/sauna-3.webp" alt="Annons för en presentask till bastubadare" width="600" height="1067" loading="lazy">
-    <img src="exempel/enebobee-1.webp" alt="Annons för honungstvål och schampo" width="600" height="1067" loading="lazy">
-    <img src="exempel/limhamn-3.webp" alt="Annons för en julåda med punktlista" width="600" height="1067" loading="lazy">
-    <img src="exempel/chocolatte-1.webp" alt="Annons för en julkalender med praliner" width="600" height="1067" loading="lazy">
+  <div class="strip swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="exempel/sauna-1.webp" alt="Annons för mentolkristaller till bastun" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/enebobee-2.webp" alt="Annons för ett presentkit med honungstvål" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/limhamn-1.webp" alt="Annons för en jullåda med godis i trälåda" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/hundben-3.webp" alt="Annons med hjorthorn i tre storlekar" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/moony-2.webp" alt="Annons för doftljus som julklapp" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/sauna-3.webp" alt="Annons för en presentask till bastubadare" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/enebobee-1.webp" alt="Annons för honungstvål och schampo" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/limhamn-3.webp" alt="Annons för en julåda med punktlista" width="600" height="1067" loading="lazy"></div>
+      <div class="swiper-slide"><img src="exempel/chocolatte-1.webp" alt="Annons för en julkalender med praliner" width="600" height="1067" loading="lazy"></div>
+    </div>
+    <div class="swiper-scrollbar"></div>
   </div>
 </section>
 
@@ -388,6 +396,22 @@ footer a{color:var(--ink-2)}
   new IntersectionObserver(function(e){heroOut=!e[0].isIntersecting;upd();}).observe(hero);
   new IntersectionObserver(function(e){endIn=e[0].isIntersecting;upd();}).observe(end);
 })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js" defer></script>
+<script>
+/* Galleriet "Fler vi gjort": Swiper med dragbar scrollbar, inga pilar, ingen pagination. */
+window.addEventListener('DOMContentLoaded',function(){
+  if(!window.Swiper)return;
+  new Swiper('.gallery .strip',{
+    slidesPerView:'auto',
+    spaceBetween:16,
+    freeMode:{enabled:true,momentum:true},
+    grabCursor:true,
+    scrollbar:{el:'.gallery .swiper-scrollbar',draggable:true,hide:false,snapOnRelease:false},
+    navigation:false,
+    pagination:false
+  });
+});
 </script>
 </body>
 </html>
