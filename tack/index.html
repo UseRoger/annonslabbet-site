@@ -25,7 +25,7 @@ ol{list-style:none;padding:0;margin:30px 0;counter-reset:s}ol li{counter-increme
 
 <aside class="guarantee">
   <b class="gh"><svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4.6 5.4v6.1c0 4.5 3.1 8.5 7.4 9.9 4.3-1.4 7.4-5.4 7.4-9.9V5.4L12 2.6z" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12.1 2.3 2.3 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Garanti</b>
-  <p id="garanti">Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
+  <p id="garanti">Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra annonser er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
 </aside>
 <p class="foot">Frågor innan dess? Mejla <a href="mailto:jon@annonslabbet.se">jon@annonslabbet.se</a>, jag svarar samma dag. Jon, Annonslabbet i Åre.</p>
 </div>
@@ -33,7 +33,7 @@ ol{list-style:none;padding:0;margin:30px 0;counter-reset:s}ol li{counter-increme
 (function(){
   var p='';try{p=(new URLSearchParams(location.search).get('paket')||'').toLowerCase()}catch(e){}
   var w=document.getElementById('when'),t=document.getElementById('what');
-  if(p==='starter'){w.textContent='Ni får dem inom 48 timmar';t.textContent='Ett mail från jon@annonslabbet.se med länken till era 20 annonser, i 9:16 och 1:1.';var g=document.getElementById('garanti');if(g)g.textContent=g.textContent.replace('Slår ingen av våra er bästa','Slår ingen av våra 20 er bästa')}
+  if(p==='starter'){w.textContent='Ni får dem inom 48 timmar';t.textContent='Ett mail från jon@annonslabbet.se med länken till era 20 annonser, i 9:16 och 1:1.';var g=document.getElementById('garanti');if(g)g.textContent=g.textContent.replace('Slår ingen av våra annonser er bästa','Slår ingen av våra 20 er bästa')}
   else if(p==='pro'){w.textContent='Ni får allt inom fem arbetsdagar';t.textContent='Ett mail från jon@annonslabbet.se med länken till era 20 annonser i 9:16 och 1:1 och tre korta videos för Reels och TikTok.'}
 })();
 </script>
