@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="sv" data-round="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<title>23 annonser för Sauna Ice</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<!-- Leveransmall v2 (2026-10-25, rev D 2026-10-26: gratisproven + recensionen). Kontrakt: Projects/Annonslabbet/Leveranssidan 2.0 (2026-10-25)/Kontrakt. Fyll med fyll_leverans.py, se LÄS MIG - mall v2.md. -->
+<style>
+:root{
+  --paper:#FBFAF7;--ink:#17181C;--ink-2:#4A4D57;--rule:#E4E1D9;--cta:#1F4FE0;--mark:#F5E663;
+  --field:#FFFFFF;--warn:#B42318;--ok:#0F6B4F;
+  --max:1100px;--pad:20px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9;--rule:#2A2C33;--field:#1D1F25;--warn:#F97066;--ok:#3FB08A}}
+:root[data-theme="dark"]{--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9;--rule:#2A2C33;--field:#1D1F25;--warn:#F97066;--ok:#3FB08A}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;font-optical-sizing:auto;line-height:1.5;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+.from{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:22px 0 0;font-size:14px;color:var(--ink-2)}
+.from b{color:var(--ink);font-weight:600}
+
+/* omgång 2 av leveransen: rad överst + "ändrad" på raderna */
+.updated{display:none;margin:18px 0 0;padding:10px 14px;border-radius:8px;background:var(--mark);color:#17181C;font-size:15px;font-weight:600}
+[data-round="2"] .updated{display:block}
+.badge{display:none;font-style:normal;background:var(--mark);color:#17181C;font-size:12px;font-weight:800;letter-spacing:.02em;padding:3px 8px;border-radius:999px;margin-top:8px;width:max-content}
+[data-round="2"] .row[data-andrad="1"] .badge{display:inline-block}
+
+.hero{padding:28px 0 8px}
+.hero h1{font-size:clamp(34px,6.2vw,64px);font-weight:800;line-height:.98;letter-spacing:-.025em;margin:0 0 16px;max-width:18ch}
+.hero p{font-size:clamp(17px,2.1vw,21px);color:var(--ink-2);margin:0 0 6px;max-width:52ch}
+.hero h1{margin-bottom:10px}
+.hero p.sub{font-size:clamp(24px,3.6vw,36px);font-weight:400;line-height:1.1;letter-spacing:-.015em;color:var(--ink);margin:0 0 16px;max-width:none}
+
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--cta);color:#fff;text-decoration:none;font:inherit;font-weight:800;font-size:17px;padding:16px 24px;border-radius:10px;border:0;min-height:50px;cursor:pointer;box-shadow:0 8px 20px -8px color-mix(in srgb,var(--cta) 70%,transparent);transition:transform .12s ease,filter .12s ease}
+.cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.cta:active{transform:translateY(1px)}
+.cta:focus-visible,.ghost:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.cta small{font-weight:600;opacity:.85;font-size:14px}
+.cta.armed{background:var(--ink);color:var(--paper);box-shadow:0 0 0 3px var(--mark)}
+.cta[disabled]{opacity:.45;cursor:not-allowed;transform:none;filter:none;box-shadow:none}
+.ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--ink);font:inherit;font-weight:800;font-size:17px;padding:14px 22px;border-radius:10px;border:1.5px solid var(--ink);min-height:50px;cursor:pointer;text-decoration:none;transition:background .12s ease}
+.ghost:hover{background:color-mix(in srgb,var(--ink) 6%,transparent)}
+.ghost.small{font-size:15px;min-height:42px;padding:9px 16px}
+
+/* steg-kortet: 1 titta, 2 välj */
+.steps{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:0;margin:22px 0 6px;border:1.5px solid var(--ink);border-radius:12px;overflow:hidden}
+.step{padding:18px 20px}
+.step+.step{border-left:1.5px solid var(--rule)}
+.step .k{display:block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.step p{margin:0;font-size:15px;color:var(--ink-2)}
+.step h2{font-size:20px;font-weight:800;letter-spacing:-.01em;margin:0 0 4px;line-height:1.2}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 10px}
+.note{margin:0;font-size:14px;color:var(--ink-2);max-width:60ch}
+.note+.note{margin-top:6px}
+.note b{color:var(--ink);font-weight:600}
+.msg{margin:10px 0 0;font-size:15px;font-weight:600}
+.msg:empty{display:none}
+.msg.ok{color:var(--ok)}
+.msg.err{color:var(--warn)}
+.msg.info{color:var(--ink)}
+
+.counter{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:10px 0 0;font-size:15px;font-weight:600}
+.counter .pill{display:inline-block;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--ink) 8%,transparent)}
+.counter.over .pill{background:var(--mark);color:#17181C}
+.counter.blocked .pill{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--ink)}
+.counter .moms{font-size:12px;font-weight:600;color:var(--ink-2)}
+.counter .sub{flex-basis:100%;font-size:14px;font-weight:600;color:var(--ink-2)}
+
+
+.round{padding:30px 0 6px}
+.round h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.02em;margin:0 0 4px}
+.round p{margin:0;font-size:15px;color:var(--ink-2)}
+
+.row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:22px;align-items:start;padding:22px 0;border-top:1px solid var(--rule)}
+.round+.row{border-top:0}
+.num{font-weight:800;font-size:15px;line-height:1.3;display:flex;flex-direction:column}
+.num b{display:block;font-size:34px;letter-spacing:-.03em;line-height:1;margin-bottom:6px}
+.num span{display:block;color:var(--ink-2);font-weight:600}
+.pair{display:grid;grid-template-columns:minmax(0,9fr) minmax(0,16fr);gap:16px;align-items:start}
+.cell{min-width:0}
+.print{position:relative;margin:0;background:#fff;padding:8px;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(23,24,28,.45)}
+.print img{display:block;width:100%;height:auto;border-radius:3px;background:#eee}
+.print a.dl{position:absolute;left:8px;right:8px;bottom:8px;display:flex;justify-content:space-between;align-items:center;background:rgba(23,24,28,.82);color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:9px 12px;border-radius:0 0 3px 3px;backdrop-filter:blur(4px)}
+.print a.dl:focus-visible{outline:3px solid var(--mark)}
+.print.missing{display:grid;place-items:center;aspect-ratio:1/1;color:var(--ink-2);font-size:14px;background:transparent;border:1.5px dashed var(--rule);box-shadow:none}
+.round.prov{padding-top:30px}
+.provgrid+.round{border-top:1px solid var(--rule);margin-top:6px}
+.provgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-left:142px;padding:22px 0;align-items:start}
+.provgrid .cap{display:block;margin-top:8px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.cell textarea{display:block;width:100%;min-height:84px;margin-top:12px;padding:10px 12px;border-radius:8px;border:1.5px solid var(--rule);background:var(--field);color:var(--ink);font:inherit;font-size:15px;line-height:1.4;resize:vertical}
+.cell textarea:focus{outline:none;border-color:var(--cta);box-shadow:0 0 0 3px color-mix(in srgb,var(--cta) 25%,transparent)}
+.cell textarea.has{border-color:var(--ink)}
+.cell textarea[readonly]{opacity:.75;resize:none}
+.cell .lbl{display:block;margin-top:12px;font-size:13px;font-weight:600;color:var(--ink-2)}
+.cell .lbl+textarea{margin-top:4px}
+
+.send{margin:8px 0 10px;padding:22px 22px 20px;border:1.5px solid var(--ink);border-radius:12px}
+.send h2{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:0}
+.send .btns{margin-top:14px}
+.pay{margin-top:14px;padding:16px 18px;border-radius:10px;background:color-mix(in srgb,var(--mark) 55%,transparent);color:var(--ink)}
+.pay p{margin:0 0 4px;font-size:15px}
+.pay b.antal{font-size:19px}
+
+.after{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:34px 0 20px;border-top:1px solid var(--rule);margin-top:20px}
+.box{border:1.5px solid var(--ink);border-radius:10px;padding:18px 20px}
+.box b{display:block;font-weight:800;font-size:15px;margin-bottom:6px}
+.box b.gh{display:flex;align-items:center;gap:8px}
+.box b.gh .ico{flex:0 0 auto;width:28px;height:28px;color:var(--cta)}
+.box p{margin:0;font-size:15px;color:var(--ink-2)}
+.box a{color:var(--ink);font-weight:600}
+
+.sender{padding:8px 0 70px;font-size:15px;color:var(--ink-2);max-width:56ch}
+.sender b{color:var(--ink);font-weight:600}
+
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--rule);z-index:20;box-shadow:0 -10px 30px -18px rgba(0,0,0,.35)}
+.bar .in{display:flex;gap:10px;align-items:center}
+.bar .cta,.bar .ghost{flex:1 1 0;min-width:0;padding-left:12px;padding-right:12px;font-size:16px;white-space:nowrap}
+.bar .ghost{flex:0 0 auto}
+.bar .bc+.cta{flex:0 0 auto}
+.bar .bc{flex:1 1 auto;min-width:0;font-size:14px;font-weight:600;line-height:1.25}
+.bar .bc small{display:block;font-size:12px;color:var(--ink-2);font-weight:600}
+
+/* recensionen (Jon 2026-10-26 11:35): liten ruta efter att nedladdningen startat, blockerar aldrig, en gång per leverans */
+.rev{position:fixed;right:20px;bottom:20px;width:360px;max-width:calc(100vw - 24px);z-index:30;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px 14px;box-shadow:0 18px 40px -16px rgba(0,0,0,.45)}
+.rev h2{font-size:19px;font-weight:800;margin:0 30px 8px 0;letter-spacing:-.01em}
+.rev-x{position:absolute;top:6px;right:6px;width:40px;height:40px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:24px;line-height:1;cursor:pointer;border-radius:8px}
+.rev-x:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}
+.rev .stars{display:flex;gap:4px;margin:0 0 8px}
+.rev .star{width:44px;height:44px;border:0;background:transparent;padding:0;font-size:32px;line-height:1;cursor:pointer;color:color-mix(in srgb,var(--ink) 25%,transparent);border-radius:8px}
+.rev .star.on{color:#E2A400}
+.rev .star:focus-visible,.rev-x:focus-visible{outline:3px solid var(--cta);outline-offset:1px}
+.rev textarea{display:block;width:100%;min-height:64px;padding:8px 10px;border-radius:8px;border:1.5px solid var(--rule);background:var(--field);color:var(--ink);font:inherit;font-size:15px;line-height:1.4;resize:vertical}
+.rev textarea:focus{outline:none;border-color:var(--cta)}
+.rev-ok{display:flex;gap:8px;align-items:flex-start;margin:10px 0 12px;font-size:14px;line-height:1.35;color:var(--ink-2);cursor:pointer}
+.rev-ok small{display:block;font-size:12.5px;font-weight:600;margin-top:2px}
+.rev-ok input{width:18px;height:18px;margin:1px 0 0;flex:0 0 auto;accent-color:var(--cta)}
+.rev .cta{min-height:44px;padding:10px 18px;font-size:16px}
+.rev .msg{margin-top:8px}
+.devwarn{background:#B42318;color:#fff;padding:10px var(--pad);font:600 14px/1.4 ui-monospace,monospace}
+.demo{background:var(--mark);color:#17181C;padding:8px var(--pad);font-size:14px;font-weight:600;text-align:center}
+
+@media (max-width:760px){
+  .hero h1{max-width:14ch}
+  .steps{grid-template-columns:1fr}
+  .step+.step{border-left:0;border-top:1.5px solid var(--rule)}
+  .btns .cta,.btns .ghost{flex:1 1 100%}
+  .row{grid-template-columns:minmax(0,1fr);gap:12px;padding:18px 0}
+  .num{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .num b{font-size:26px;margin:0}
+  .badge{margin-top:0}
+  .pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:start}
+  .print a.dl{font-size:12px;padding:8px 8px}
+  .after{grid-template-columns:1fr}
+  .provgrid{margin-left:0;gap:10px;padding:16px 0}
+  .rev{left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));width:auto}
+  .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
+  .bar.on{transform:none}
+  .sender{padding-bottom:120px}
+  .send{padding:18px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .cta:hover,.cta:active{transform:none}
+}
+</style>
+</head>
+<body>
+<div id="topwarn"></div>
+<div class="wrap">
+
+  <div class="from"><span>Till <b>Sauna Ice</b></span><span><img src="/favicon-32.png" alt="" width="18" height="18" style="vertical-align:-4px;margin-right:5px">från Annonslabbet</span></div>
+
+  <p class="updated">Uppdaterad  med era ändringar. De ändrade annonserna är markerade.</p>
+
+  <section class="hero">
+    <h1>23 annonser för Sauna Ice-påsen.</h1>
+    <p class="sub">10 motiv, vart och ett i 9:16 och 1:1. Plus de 3 ni fick gratis på prov.</p>
+    <p class="ingress">Titta igenom dem här nere: era 3 prov först, sen de 10 nya motiven i båda formaten. Är ni nöjda: godkänn och ladda ner, så får ni alla filer direkt. Vill ni ändra något: skriv det under bilden.</p>
+  </section>
+
+  <section class="steps" id="val" aria-label="Godkänn eller ändra">
+    <div class="step">
+      <span class="k">Steg 1</span>
+      <h2>Titta igenom</h2>
+      <p>Alla 10 motiv ligger här nere i båda formaten. 9:16 för Stories och Reels, 1:1 för flödet. Det ni ser är förhandsvisningar, de rena filerna får ni i steg 2. Era 3 prov ligger först.</p>
+    </div>
+    <div class="step">
+      <span class="k">Steg 2</span>
+      <h2 id="val-h">Godkänn, eller ändra</h2>
+      <div class="btns">
+        <button type="button" class="cta" data-act="approve" id="btn-approve">Godkänn och ladda ner</button>
+        <a class="cta" id="btn-zip" href="#" download hidden>Ladda ner alla 23 <small>6,8 MB</small></a>
+        <button type="button" class="ghost" data-act="change" id="btn-change">Ändra något</button>
+        <button type="button" class="ghost" data-act="close" id="btn-close" hidden>Stäng fälten</button>
+      </div>
+      <p class="note" id="val-note"><b>Godkänn och ladda ner:</b> leveransen är klar, ni får zipfilen och varje fil för sig. Därefter går det inte att ändra.</p>
+      <p class="note" id="val-note2"><b>Ändra något:</b> skriv vad ni vill ändra under bilderna. 5 ändringar ingår, fler kostar 100 kr per bild.</p>
+      <div class="counter" id="counter-top" hidden></div>
+      <p class="msg" id="val-msg" role="status" aria-live="polite"></p>
+      <noscript><p class="note">Den här sidan behöver JavaScript för knapparna. Svara på mailet så skickar vi filerna direkt.</p></noscript>
+    </div>
+  </section>
+
+
+  <section class="round prov" id="prov">
+    <h2>De tre som fick er att säga ja.</h2>
+    <p>Era gratisprov, med i leveransen.</p>
+  </section>
+  <div class="provgrid">
+    <div class="cell"><figure class="print" data-prov="1" data-file="prov-1_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-1_9x16.jpg?v=1" alt="Prov 1 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 1</span></div>
+    <div class="cell"><figure class="print" data-prov="2" data-file="prov-2_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-2_9x16.jpg?v=1" alt="Prov 2 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 2</span></div>
+    <div class="cell"><figure class="print" data-prov="3" data-file="prov-3_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-3_9x16.jpg?v=1" alt="Prov 3 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 3</span></div>
+  </div>
+
+  <section class="round" id="omgang-1">
+    <h2>Motiv 1 till 10</h2>
+  </section>
+  <article class="row" id="annons-1" data-nn="01" data-andrad="0">
+    <div class="num"><b>1</b><span>Bastar varje vecka</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="01_bastar-varje-vecka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/01_bastar-varje-vecka_9x16.jpg?v=1" alt="Motiv 1 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="01_bastar-varje-vecka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/01_bastar-varje-vecka_1x1.jpg?v=1" alt="Motiv 1 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-2" data-nn="02" data-andrad="0">
+    <div class="num"><b>2</b><span>Tung luft</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="02_tung-luft_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/02_tung-luft_9x16.jpg?v=1" alt="Motiv 2 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="02_tung-luft_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/02_tung-luft_1x1.jpg?v=1" alt="Motiv 2 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-3" data-nn="03" data-andrad="0">
+    <div class="num"><b>3</b><span>Bastar isvak</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="03_bastar-isvak_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/03_bastar-isvak_9x16.jpg?v=1" alt="Motiv 3 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="03_bastar-isvak_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/03_bastar-isvak_1x1.jpg?v=1" alt="Motiv 3 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-4" data-nn="04" data-andrad="0">
+    <div class="num"><b>4</b><span>Karin varmt kallt</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="04_karin-varmt-kallt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/04_karin-varmt-kallt_9x16.jpg?v=1" alt="Motiv 4 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="04_karin-varmt-kallt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/04_karin-varmt-kallt_1x1.jpg?v=1" alt="Motiv 4 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-5" data-nn="05" data-andrad="0">
+    <div class="num"><b>5</b><span>Linus andas</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="05_linus-andas_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/05_linus-andas_9x16.jpg?v=1" alt="Motiv 5 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="05_linus-andas_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/05_linus-andas_1x1.jpg?v=1" alt="Motiv 5 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-6" data-nn="06" data-andrad="0">
+    <div class="num"><b>6</b><span>Mentol lurar hjärnan</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="06_mentol-lurar-hjarnan_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/06_mentol-lurar-hjarnan_9x16.jpg?v=1" alt="Motiv 6 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="06_mentol-lurar-hjarnan_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/06_mentol-lurar-hjarnan_1x1.jpg?v=1" alt="Motiv 6 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-7" data-nn="07" data-andrad="0">
+    <div class="num"><b>7</b><span>Pengarna tillbaka</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="07_pengarna-tillbaka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/07_pengarna-tillbaka_9x16.jpg?v=1" alt="Motiv 7 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="07_pengarna-tillbaka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/07_pengarna-tillbaka_1x1.jpg?v=1" alt="Motiv 7 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-8" data-nn="08" data-andrad="0">
+    <div class="num"><b>8</b><span>Julklapp</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="08_julklapp_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/08_julklapp_9x16.jpg?v=1" alt="Motiv 8 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="08_julklapp_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/08_julklapp_1x1.jpg?v=1" alt="Motiv 8 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-9" data-nn="09" data-andrad="0">
+    <div class="num"><b>9</b><span>Jan drygt</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="09_jan-drygt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/09_jan-drygt_9x16.jpg?v=1" alt="Motiv 9 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="09_jan-drygt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/09_jan-drygt_1x1.jpg?v=1" alt="Motiv 9 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+  <article class="row" id="annons-10" data-nn="10" data-andrad="0">
+    <div class="num"><b>10</b><span>Så enkelt</span><em class="badge">Ändrad</em></div>
+    <div class="pair">
+      <div class="cell"><figure class="print" data-format="9x16" data-file="10_sa-enkelt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/10_sa-enkelt_9x16.jpg?v=1" alt="Motiv 10 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="10_sa-enkelt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/10_sa-enkelt_1x1.jpg?v=1" alt="Motiv 10 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+    </div>
+  </article>
+
+
+  <section class="send" id="send" hidden aria-labelledby="send-h">
+    <h2 id="send-h">Skicka ändringarna</h2>
+    <div class="counter" id="counter-bottom"></div>
+    <div class="btns">
+      <button type="button" class="cta" data-act="send" id="btn-send" disabled>Skicka ändringar</button>
+    </div>
+    <p class="note" id="draft-note">Utkastet sparas automatiskt i den här webbläsaren, ni kan stänga sidan och fortsätta senare.</p>
+    <div class="pay" id="pay" hidden>
+      <p><b class="antal" id="pay-antal">Välj antal: 1</b></p>
+      <p id="pay-text"></p>
+      <div class="btns">
+        <button type="button" class="cta" data-act="pay-go" id="btn-pay-go">Till betalningen</button>
+        <button type="button" class="ghost small" data-act="pay-back">Tillbaka</button>
+      </div>
+    </div>
+    <p class="msg" id="send-msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="after">
+    <div class="box">
+      <b class="gh"><svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4.6 5.4v6.1c0 4.5 3.1 8.5 7.4 9.9 4.3-1.4 7.4-5.4 7.4-9.9V5.4L12 2.6z" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12.1 2.3 2.3 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantin</b>
+      <p>Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra 23 er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
+    </div>
+    <div class="box">
+      <b>Vill ni ändra något?</b>
+      <p>5 ändringar ingår. Fler kostar 100 kr per bild. Svara på mailet om ni hellre skriver där.</p>
+    </div>
+  </section>
+
+  <p class="sender"><b>Annonslabbet</b>. Den här sidan är bara er, den syns inte i sökmotorer. Bilderna är era att använda fritt. Sidan loggar besök utan cookies, <a href="https://annonslabbet.se/integritet/">så här</a>.</p>
+
+</div>
+
+<aside class="rev" id="rev" hidden aria-labelledby="rev-h">
+  <button type="button" class="rev-x" data-act="rev-close" aria-label="Stäng">&times;</button>
+  <h2 id="rev-h">Vad tyckte du?</h2>
+  <div id="rev-form">
+    <div class="stars" role="radiogroup" aria-label="Betyg, 1 till 5 stjärnor"><button type="button" class="star" data-act="rev-star" data-n="1" role="radio" aria-checked="false" aria-label="1 stjärna">&#9733;</button><button type="button" class="star" data-act="rev-star" data-n="2" role="radio" aria-checked="false" aria-label="2 stjärnor">&#9733;</button><button type="button" class="star" data-act="rev-star" data-n="3" role="radio" aria-checked="false" aria-label="3 stjärnor">&#9733;</button><button type="button" class="star" data-act="rev-star" data-n="4" role="radio" aria-checked="false" aria-label="4 stjärnor">&#9733;</button><button type="button" class="star" data-act="rev-star" data-n="5" role="radio" aria-checked="false" aria-label="5 stjärnor">&#9733;</button></div>
+    <textarea id="rev-text" maxlength="500" rows="2" placeholder="Skriv gärna en rad (valfritt)" aria-label="Vad tyckte du, valfritt"></textarea>
+    <label class="rev-ok"><input type="checkbox" id="rev-consent" checked> <span>Ni får visa det här med vårt butiksnamn<small>Bara butiksnamnet visas, aldrig ditt namn.</small></span></label>
+    <button type="button" class="cta" data-act="rev-send" id="rev-send" disabled>Skicka</button>
+  </div>
+  <p class="msg" id="rev-msg" role="status" aria-live="polite"></p>
+</aside>
+
+<div class="bar" id="bar" aria-label="Godkänn eller ändra"><div class="in" id="bar-in"></div></div>
+
+<script>
+/* Leveransmall v2. Allt nedan läser bara CFG, inget annat behöver fyllas i skriptet. */
+var CFG={
+  slug:"sauna-ice",
+  token:"l7wtdk5l5s",
+  dlBase:"https://annonslabbet.se/sauna-ice/leverans/dl-l7wtdk5l5s/",
+  zip:"https://annonslabbet.se/sauna-ice/leverans/dl-l7wtdk5l5s/sauna-ice-annonser-1-10.zip",
+  feedback:"https://video.adthekey.com/al/feedback.php",
+  stripe:"https://buy.stripe.com/6oU7sK9vGgt63NyaN9c3m02",
+  mail:"alexander@saunaice.com",
+  round:"1",
+  kvar:"5",
+  antal:"10",
+  recension:"0"
+};
+(function(){
+  "use strict";
+  var MAX_EXTRA=15, PRICE=100, MAXLEN=500;
+  var ROUND=parseInt(CFG.round,10)===2?2:1;
+  var K=parseInt(CFG.kvar,10); if(isNaN(K)||K<0||K>5)K=5;
+  var $=function(id){return document.getElementById(id);};
+
+  /* Live = bara på annonslabbet.se och inte inbäddad (Auroras förhandsvisning, lokala demon). Annars skickas inget. */
+  var LIVE=false;
+  try{LIVE=/(^|\.)annonslabbet\.se$/.test(location.hostname)&&window.top===window.self;}catch(e){LIVE=false;}
+  var unfilled=[];
+  for(var k in CFG){if(Object.prototype.hasOwnProperty.call(CFG,k)&&String(CFG[k]).indexOf("{{")>-1)unfilled.push(k);}
+  if(unfilled.length){
+    if(LIVE){if(window.console)console.error("Mall v2 ej ifylld:",unfilled.join(", "));}
+    else{$("topwarn").innerHTML='<div class="devwarn">Mallen är inte ifylld: '+unfilled.join(", ")+'</div>';}
+  }
+  if(!LIVE){$("topwarn").insertAdjacentHTML("beforeend",'<div class="demo">Förhandsvisning utanför annonslabbet.se. Knapparna fungerar, men inget skickas och ingen betalning sker.</div>');}
+
+  /* ---------- lagring (per slug, tål att localStorage saknas) ---------- */
+  var SKEY="al-lev:"+CFG.slug;
+  var st={approvedRound:0,draft:{},sentRound:0,sent:null,paid:null,pending:null,busyRound:0,revShown:false};
+  try{var raw=localStorage.getItem(SKEY);if(raw){var o=JSON.parse(raw);if(o&&typeof o==="object"){for(var p in st){if(o[p]!==undefined)st[p]=o[p];}}}}catch(e){}
+  if(!st.draft||typeof st.draft!=="object")st.draft={};
+  if(CFG.recension==="1")st.revShown=true;   /* kund.json har redan kundens recension (14:00): rutan visas aldrig igen */
+  function save(){try{localStorage.setItem(SKEY,JSON.stringify(st));}catch(e){}}
+
+  var editing=false, sending=false, payOpen=false;
+  var NOTE1=$("val-note").innerHTML, NOTE2=$("val-note2").innerHTML;
+  /* Godkänn bekräftas i knappen själv: första klick armerar (8 s), andra klick godkänner. Ingen dialogruta. */
+  var armed=false, armTimer=null, ARM_MS=8000;
+  var APPROVE_TXT="Godkänn och ladda ner", ARMED_TXT="Säker? Godkänn och ladda ner";
+  function disarm(){armed=false;if(armTimer){clearTimeout(armTimer);armTimer=null;}}
+  function arm(){disarm();armed=true;armTimer=setTimeout(function(){armed=false;armTimer=null;render();},ARM_MS);render();}
+
+  /* ---------- hjälpare ---------- */
+  function pad(n){return(n<10?"0":"")+n;}
+  function ts(){var d=new Date(),o=-d.getTimezoneOffset(),s=o>=0?"+":"-",a=Math.abs(o);
+    return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+"T"+pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds())+s+pad(Math.floor(a/60))+":"+pad(a%60);}
+  function kr(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")+" kr";}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function smooth(){try{return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){return true;}}
+  function v(){return "?v="+ROUND;}
+
+  /* ---------- beacons (view, approve): fetch, sendBeacon som reserv ---------- */
+  function beacon(kind){
+    if(!LIVE)return;
+    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:kind,ts:ts(),ua:navigator.userAgent});
+    function fb(){try{if(navigator.sendBeacon)navigator.sendBeacon(CFG.feedback,new Blob([body],{type:"text/plain;charset=UTF-8"}));}catch(e){}}
+    if(!window.fetch){fb();return;}
+    try{fetch(CFG.feedback,{method:"POST",headers:{"Content-Type":"application/json"},body:body,keepalive:true,mode:"cors"})
+      .then(function(r){if(!r.ok)fb();}).catch(fb);}catch(e){fb();}
+  }
+
+  /* ---------- rader och fält ---------- */
+  var cells=[];
+  Array.prototype.forEach.call(document.querySelectorAll(".row"),function(row){
+    var nn=row.getAttribute("data-nn"), n=row.querySelector(".num b");
+    Array.prototype.forEach.call(row.querySelectorAll("figure.print[data-format]"),function(fig){
+      var fmt=fig.getAttribute("data-format"), key=nn+"-"+fmt, file=fig.getAttribute("data-file");
+      var cell=fig.parentNode;
+      var a=document.createElement("a");
+      a.className="dl"; a.hidden=true; a.setAttribute("download",file);
+      a.href=CFG.dlBase+file+v();
+      a.innerHTML="<span>"+(fmt==="9x16"?"9:16":"1:1")+"</span><span>Ladda ner</span>";
+      fig.appendChild(a);
+      var ta=document.createElement("textarea");
+      ta.maxLength=MAXLEN; ta.hidden=true; ta.rows=3;
+      ta.placeholder="Vad vill ni ändra på den här?";
+      ta.setAttribute("data-key",key);
+      ta.setAttribute("aria-label","Ändring för motiv "+(n?n.textContent:nn)+", "+(fmt==="9x16"?"9:16":"1:1"));
+      if(st.sentRound===ROUND&&st.sent&&st.sent[key])ta.value=st.sent[key];
+      else if(st.draft[key])ta.value=String(st.draft[key]).slice(0,MAXLEN);
+      ta.addEventListener("input",function(){
+        var t=ta.value; if(t.trim())st.draft[key]=t; else delete st.draft[key];
+        save(); payOpen=false; render();
+      });
+      cell.appendChild(ta);
+      cells.push({key:key,a:a,ta:ta});
+    });
+  });
+
+  /* gratisproven (rev D): bara nedladdningslänk, inget fält, räknas inte mot de 5 */
+  var provLinks=[];
+  Array.prototype.forEach.call(document.querySelectorAll("figure.print[data-prov]"),function(fig){
+    var file=fig.getAttribute("data-file"), a=document.createElement("a");
+    a.className="dl"; a.hidden=true; a.setAttribute("download",file);
+    a.href=CFG.dlBase+file+v();
+    a.innerHTML="<span>Prov "+esc(fig.getAttribute("data-prov"))+"</span><span>Ladda ner</span>";
+    fig.appendChild(a); provLinks.push(a);
+  });
+
+  function collect(){var c={};cells.forEach(function(x){var t=x.ta.value.trim();if(t)c[x.key]=t.slice(0,MAXLEN);});return c;}
+  function count(){return Object.keys(collect()).length;}
+  function hasDraft(){for(var k in st.draft){if(String(st.draft[k]).trim())return true;}return false;}
+  function isSent(){return st.sentRound===ROUND;}
+  function isApproved(){return st.approvedRound===ROUND;}
+  /* feedback.php svarade 409 andringar_pagar på approve: ändringar skickade (t.ex. från en annan enhet), låst tills omgång 2. */
+  function isBusy(){return st.busyRound===ROUND;}
+  var BUSY_TXT="Era ändringar håller på att göras, ni får ett mail när de är klara";
+  function isPaid(){return !!(st.paid&&st.paid.round===ROUND&&st.paid.session);}
+
+  function calc(){
+    var n=count(), e=Math.max(0,n-K), r={n:n,extra:e,blocked:e>MAX_EXTRA,sumKr:e*PRICE};
+    var word=function(x){return x===1?"1 ändring":x+" ändringar";};
+    if(e===0){r.main="Ändringar: "+n+" av "+K+" ingår";}
+    else if(K===0){r.main=word(n)+" = "+kr(r.sumKr)+", de 5 som ingår är använda";}
+    else{r.main=word(n)+", "+e+" utöver de "+K+" som ingår = "+kr(r.sumKr);}
+    if(r.blocked){r.main=word(n)+", "+e+" utöver de "+K+" som ingår";r.sub="Hör av er på mailet så tar vi det där";}
+    return r;
+  }
+  function counterHTML(c){
+    var h='<span class="pill">'+esc(c.main)+'</span>';
+    if(c.extra>0&&!c.blocked)h+='<span class="moms">+ moms</span>';
+    if(c.sub)h+='<span class="sub">'+esc(c.sub)+'</span>';
+    if(isPaid()&&c.extra>0&&!c.blocked)h+='<span class="sub">Betalningen är gjord, skicka ändringarna.</span>';
+    return h;
+  }
+  function sendLabel(c){
+    if(c.extra>0&&!c.blocked&&!isPaid())return "Betala "+kr(c.sumKr)+" och skicka ändringar";
+    return "Skicka ändringar";
+  }
+
+  /* ---------- rendering, ett ställe ---------- */
+  var barState="";
+  function render(){
+    var appr=isApproved(), sent=isSent(), busy=isBusy()&&!appr&&!sent, c=calc();
+    if(busy)editing=false;
+    if(appr)editing=false;
+    var edit=editing&&!sent&&!appr;
+    if(appr||sent||edit||busy)disarm();
+    var ab=$("btn-approve"); ab.hidden=appr||edit; ab.disabled=sent||busy||approving;
+    ab.textContent=approving?"Ett ögonblick...":armed?ARMED_TXT:APPROVE_TXT; ab.classList.toggle("armed",armed);
+    var z=$("btn-zip"); z.hidden=!appr; if(appr){z.href=CFG.zip+v();z.setAttribute("download",CFG.zip.split("/").pop());}
+    $("btn-change").hidden=appr||sent||edit||busy;
+    $("btn-close").hidden=!edit;
+    var note=$("val-note"), note2=$("val-note2"); note2.hidden=true;
+    if(busy){$("val-h").textContent="Era ändringar görs just nu";note.textContent="Godkänn och ladda ner öppnas igen när de är klara. Glömde ni något? Svara på mailet, så lägger vi till det.";}
+    else if(sent){$("val-h").textContent="Ändringarna är skickade";note.textContent="Godkänn och ladda ner öppnas igen när era ändringar är klara. Glömde ni något? Svara på mailet, så lägger vi till det.";}
+    else if(appr){$("val-h").textContent="Tack, filerna är era";note.textContent="Leveransen är godkänd. Ladda ner zipfilen eller varje fil för sig.";}
+    else if(edit){$("val-h").textContent="Godkänn, eller ändra";note.textContent="Skriv under de bilder ni vill ändra. "+(K===0?"De 5 som ingår är använda, varje ändring kostar 100 kr per bild.":(K===1?"1 ändring ingår":K+" ändringar ingår")+", fler kostar 100 kr per bild.");}
+    else{$("val-h").textContent="Godkänn, eller ändra";note.innerHTML=NOTE1;note2.innerHTML=NOTE2;note2.hidden=false;}
+    if(sent){setMsg("val-msg","Tack, vi hör av oss när ändringarna är klara (inom 48 timmar).","ok");}
+    else if(busy){setMsg("val-msg",BUSY_TXT,"info");}
+    else if($("val-msg").className.indexOf("ok")>-1){setMsg("val-msg","","");}
+    cells.forEach(function(x){
+      x.a.hidden=!appr;
+      x.ta.hidden=!(edit||(sent&&x.ta.value.trim()));
+      x.ta.readOnly=sent||sending;
+      x.ta.classList.toggle("has",!!x.ta.value.trim());
+    });
+    provLinks.forEach(function(a){a.hidden=!appr;});
+    var ct=$("counter-top"), cb=$("counter-bottom");
+    ct.hidden=!edit; if(edit){ct.innerHTML=counterHTML(c);ct.className="counter"+(c.blocked?" blocked":c.extra>0?" over":"");}
+    $("send").hidden=!(edit||sent);
+    cb.innerHTML=sent?"":counterHTML(c); cb.className="counter"+(c.blocked?" blocked":c.extra>0?" over":"");
+    var sb=$("btn-send"); sb.hidden=sent; sb.textContent=sending?"Skickar...":sendLabel(c);
+    sb.disabled=sending||c.n===0||c.blocked;
+    $("draft-note").hidden=sent;
+    $("send-h").textContent=sent?"Tack!":"Skicka ändringarna";
+    if(sent){setMsg("send-msg","Tack, vi hör av oss när ändringarna är klara (inom 48 timmar).","ok");}
+    var pay=$("pay"); pay.hidden=!(payOpen&&edit&&c.extra>0&&!c.blocked&&!isPaid());
+    if(!pay.hidden){
+      $("pay-antal").textContent="Välj antal: "+c.extra;
+      $("pay-text").textContent="På betalsidan väljer ni antal "+c.extra+" ("+c.extra+" "+(c.extra===1?"bild":"bilder")+" à 100 kr + moms). När betalningen är klar kommer ni tillbaka hit och ändringarna skickas direkt. Utkastet ligger kvar här under tiden.";
+      $("btn-pay-go").textContent="Till betalningen, "+kr(c.sumKr)+" + moms";
+    }
+    renderBar(appr,sent,edit,c,busy);
+  }
+  function renderBar(appr,sent,edit,c,busy){
+    var h;
+    if(edit){var short=c.extra===0?c.main:(c.n===1?"1 ändring":c.n+" ändringar")+", "+c.extra+" extra";
+      var sm=c.blocked?c.sub:(c.extra>0?"= "+kr(c.sumKr)+" + moms":"");
+      h='<div class="bc">'+esc(short)+(sm?'<small>'+esc(sm)+'</small>':'')+'</div>'+
+      '<button type="button" class="cta" data-act="send"'+(sending||c.n===0||c.blocked?" disabled":"")+'>'+(sending?"Skickar...":(c.extra>0&&!c.blocked&&!isPaid()?"Betala "+kr(c.sumKr):"Skicka"))+'</button>';}
+    else if(appr){h='<a class="cta" href="'+esc(CFG.zip+v())+'" download>Ladda ner alla</a>';}
+    else if(sent){h='<div class="bc">Ändringarna är skickade<small>Nedladdningen öppnas när de är klara</small></div>';}
+    else if(busy){h='<div class="bc">Era ändringar görs just nu<small>Ni får ett mail när de är klara</small></div>';}
+    else{h='<button type="button" class="cta'+(armed?' armed':'')+'" data-act="approve">'+(armed?ARMED_TXT:APPROVE_TXT)+'</button><button type="button" class="ghost" data-act="change">Ändra</button>';}
+    if(h!==barState){$("bar-in").innerHTML=h;barState=h;}
+  }
+  function setMsg(id,t,cls){var m=$(id);m.textContent=t;m.className="msg"+(cls?" "+cls:"");}
+
+  /* ---------- handlingar ---------- */
+  /* approve väntar kort (max 4 s) på feedback.php. 409 andringar_pagar = låst. Alla andra fel: kunden får filerna ändå, sendBeacon som reserv. */
+  var approving=false;
+  function approve(){
+    if(isSent()||isApproved()||isBusy()||approving)return;
+    editing=false; payOpen=false;
+    if(!LIVE){openDownload();return;}
+    approving=true; render();
+    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"approve",ts:ts(),ua:navigator.userAgent});
+    var done=false, tm=null;
+    function fb(){try{if(navigator.sendBeacon)navigator.sendBeacon(CFG.feedback,new Blob([body],{type:"text/plain;charset=UTF-8"}));}catch(e){}}
+    function finish(busy){
+      if(done)return; done=true; approving=false; if(tm)clearTimeout(tm);
+      if(busy){st.busyRound=ROUND;save();render();try{$("val").scrollIntoView({behavior:smooth()?"smooth":"auto",block:"start"});}catch(e){}}
+      else{openDownload();}
+    }
+    tm=setTimeout(function(){finish(false);},4000);
+    if(!window.fetch){fb();finish(false);return;}
+    try{
+      fetch(CFG.feedback,{method:"POST",headers:{"Content-Type":"application/json"},body:body,keepalive:true,mode:"cors"})
+        .then(function(r){
+          if(r.status===409){return r.json().then(function(j){finish(!!(j&&j.error==="andringar_pagar"));},function(){finish(false);});}
+          if(!r.ok)fb();
+          else{try{r.clone().json().then(function(j){if(j&&j.recension===true){st.revShown=true;save();}},function(){});}catch(e){}}
+          finish(false);
+        },function(){fb();finish(false);});
+    }catch(e){fb();finish(false);}
+  }
+  function openDownload(){
+    st.approvedRound=ROUND; save(); render();
+    if(window.innerWidth<=760){$("val").scrollIntoView({behavior:smooth()?"smooth":"auto",block:"start"});}
+    try{$("btn-zip").focus({preventScroll:true});}catch(e){}
+  }
+  function openEdit(scroll){
+    if(isApproved()||isSent()||isBusy())return;
+    editing=true; render();
+    if(scroll){var first=document.querySelector(".row");if(first)first.scrollIntoView({behavior:smooth()?"smooth":"auto",block:"start"});}
+    var t=cells.length?cells[0].ta:null; if(t&&scroll){try{t.focus({preventScroll:true});}catch(e){}}
+  }
+  function post(comments,extra,session){
+    sending=true; setMsg("send-msg","",""); render();
+    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"changes",comments:comments,extra:extra,stripe_session:session||null,ts:ts()});
+    var done=function(ok){
+      sending=false;
+      if(ok){st.sentRound=ROUND;st.sent=comments;st.draft={};st.pending=null;save();editing=false;}
+      else{setMsg("send-msg","Det gick inte att skicka, försök igen eller svara på mailet","err");}
+      render();
+      if(ok){$("send").scrollIntoView({behavior:smooth()?"smooth":"auto",block:"center"});}
+    };
+    if(!LIVE){setTimeout(function(){done(true);},500);return;}
+    var ctl=null,tm=null;
+    try{ctl=new AbortController();tm=setTimeout(function(){ctl.abort();},15000);}catch(e){}
+    try{
+      fetch(CFG.feedback,{method:"POST",headers:{"Content-Type":"application/json"},body:body,mode:"cors",signal:ctl?ctl.signal:undefined})
+        .then(function(r){return r.json().then(function(j){return r.ok&&j&&j.ok===true;},function(){return false;});})
+        .then(function(ok){if(tm)clearTimeout(tm);done(ok);},function(){if(tm)clearTimeout(tm);done(false);});
+    }catch(e){done(false);}
+  }
+  function stripeUrl(){
+    var base=CFG.stripe, sep=base.indexOf("?")>-1?"&":"?";
+    return base+sep+"client_reference_id="+encodeURIComponent(CFG.slug+"-omtag")+"&prefilled_email="+encodeURIComponent(CFG.mail);
+  }
+  function send(){
+    if(sending||isSent()||isApproved()||isBusy())return;
+    var c=calc(); if(c.n===0||c.blocked)return;
+    if(c.extra>0&&!isPaid()){payOpen=true;render();var p=$("pay");if(p)p.scrollIntoView({behavior:smooth()?"smooth":"auto",block:"center"});return;}
+    post(collect(),c.extra,isPaid()?st.paid.session:null);
+  }
+  function payGo(){
+    var c=calc(); if(c.extra<=0||c.blocked)return;
+    st.pending={extra:c.extra,round:ROUND,at:ts()}; save();
+    var url=LIVE?stripeUrl():location.pathname+"?betalt=cs_demo_"+Date.now();
+    window.__alLastRedirect=url;
+    location.assign(url);
+  }
+
+  document.addEventListener("click",function(e){
+    var b=e.target.closest?e.target.closest("[data-act]"):null; if(!b||b.disabled)return;
+    var act=b.getAttribute("data-act");
+    if(act!=="approve")disarm();
+    if(act==="approve"){if(isSent()||isApproved()||isBusy()||approving)return;if(armed){disarm();approve();}else{arm();}}
+    else if(act==="change"){openEdit(true);}
+    else if(act==="close"){editing=false;payOpen=false;render();}
+    else if(act==="send"){if(isApproved())return;if(!editing){openEdit(false);}send();}
+    else if(act==="pay-go"){payGo();}
+    else if(act==="pay-back"){payOpen=false;render();}
+    else if(act==="rev-star"){revStars=+b.getAttribute("data-n")||0;revRender();}
+    else if(act==="rev-send"){revSend();}
+    else if(act==="rev-close"){revClose();}
+  });
+
+  /* ---------- recensionen (Jon 2026-10-26 11:35) ----------
+     Efter godkännandet, när nedladdningen startat (klick på zip eller en fil): liten ruta, blockerar aldrig, kan stängas,
+     visas en gång per leverans (localStorage revShown + serverns svar: recension:true på approve, 409 recension_finns). */
+  var revStars=0, revSending=false, revTimer=null;
+  function revRender(){
+    Array.prototype.forEach.call(document.querySelectorAll("#rev .star"),function(b){var n=+b.getAttribute("data-n");b.classList.toggle("on",n<=revStars);b.setAttribute("aria-checked",n===revStars?"true":"false");});
+    var sb=$("rev-send"); sb.disabled=revSending||revStars<1; sb.textContent=revSending?"Skickar...":"Skicka";
+  }
+  function revOpen(){
+    if(st.revShown||!isApproved())return;
+    st.revShown=true; save();
+    $("rev").hidden=false; revRender();
+  }
+  function revLater(){ if(st.revShown||revTimer)return; revTimer=setTimeout(function(){revTimer=null;revOpen();},1200); }
+  function revClose(){ $("rev").hidden=true; }
+  function revDone(text){ $("rev-form").hidden=true; setMsg("rev-msg",text,"ok"); setTimeout(revClose,3500); }
+  function revSend(){
+    if(revSending||revStars<1)return;
+    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"review",stars:revStars,text:$("rev-text").value.trim().slice(0,MAXLEN),consent:!!$("rev-consent").checked,ts:ts()});
+    revSending=true; setMsg("rev-msg","",""); revRender();
+    var end=function(res){revSending=false;revRender();
+      if(res==="ok")revDone("Tack! Det betyder mycket för oss.");
+      else if(res==="finns")revDone("Tack, vi har redan fått ert omdöme.");
+      else setMsg("rev-msg","Det gick inte att skicka, försök igen om en stund.","err");};
+    if(!LIVE){setTimeout(function(){end("ok");},300);return;}
+    try{
+      fetch(CFG.feedback,{method:"POST",headers:{"Content-Type":"application/json"},body:body,mode:"cors"})
+        .then(function(r){return r.json().then(function(j){if(r.ok&&j&&j.ok===true)return "ok";if(r.status===409&&j&&j.error==="recension_finns")return "finns";return "fel";},function(){return "fel";});})
+        .then(end,function(){end("fel");});
+    }catch(e){end("fel");}
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest?e.target.closest("a.dl,#btn-zip,#bar a.cta"):null;
+    if(a&&isApproved())revLater();
+  },true);
+  document.addEventListener("keydown",function(e){if((e.key==="Escape"||e.key==="Esc")&&!$("rev").hidden)revClose();});
+
+  /* ---------- mobil: fäst rad i botten när steg-kortet och skicka-rutan inte syns ---------- */
+  (function(){
+    var bar=$("bar"), vis={val:true,send:false};
+    function upd(){bar.classList.toggle("on",!vis.val&&!vis.send);}
+    if(!("IntersectionObserver" in window)){bar.classList.add("on");return;}
+    new IntersectionObserver(function(es){vis.val=es[0].isIntersecting;upd();},{threshold:0}).observe($("val"));
+    new IntersectionObserver(function(es){vis.send=es[0].isIntersecting&&!$("send").hidden;upd();},{threshold:0.3}).observe($("send"));
+    upd();
+  })();
+
+  /* ---------- start ---------- */
+  beacon("view");
+  var qs=null; try{qs=new URLSearchParams(location.search).get("betalt");}catch(e){}
+  if(qs!==null){
+    try{history.replaceState(null,"",location.pathname+location.hash);}catch(e){}
+    if(/^[A-Za-z0-9_]{1,200}$/.test(qs)&&hasDraft()&&!isSent()&&!isApproved()&&!isBusy()){
+      st.paid={session:qs,round:ROUND}; save(); editing=true; render();
+      var c0=calc();
+      if(c0.n>0&&!c0.blocked){post(collect(),c0.extra,qs);}
+    }
+  }
+  if(!editing&&hasDraft()&&!isSent()&&!isApproved()&&!isBusy()){editing=true;}
+  render();
+  window.__alState=function(){return JSON.parse(JSON.stringify(st));};
+})();
+</script>
+</body>
+</html>
