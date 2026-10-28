@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="sv" data-round="1">
+<html lang="sv" data-round="2" data-kundandring="1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/favicon-180.png">
-<title>23 annonser för Sauna Ice</title>
+<title>25 annonser för Sauna Ice</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
-<!-- Leveransmall v2 (2026-10-25, rev D 2026-10-26: gratisproven + recensionen). Kontrakt: Projects/Annonslabbet/Leveranssidan 2.0 (2026-10-25)/Kontrakt. Fyll med fyll_leverans.py, se LÄS MIG - mall v2.md. -->
+<!-- Leveransmall v2 (2026-10-25, rev D 2026-10-26: gratisproven + recensionen, rev H 2026-10-27: Vårt fel + omgång 1-20, tidigare versioner, extrabilder). Kontrakt: Projects/Annonslabbet/Leveranssidan 2.0 (2026-10-25)/Kontrakt. Fyll med fyll_leverans.py, se LÄS MIG - mall v2.md. -->
 <style>
 :root{
   --paper:#FBFAF7;--ink:#17181C;--ink-2:#4A4D57;--rule:#E4E1D9;--cta:#1F4FE0;--mark:#F5E663;
@@ -30,11 +30,17 @@ a{color:inherit}
 .from{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:22px 0 0;font-size:14px;color:var(--ink-2)}
 .from b{color:var(--ink);font-weight:600}
 
-/* omgång 2 av leveransen: rad överst + "ändrad" på raderna */
+/* omgång 2 av leveransen: rad överst + "ändrad" på raderna. Rev F (2026-10-26): BARA när kunden bett om ändringar
+   (data-kundandring="1", fyll_leverans.py sätter den ur kundens Ändra-lista). Ett Aurora-varv ger aldrig lappar. */
 .updated{display:none;margin:18px 0 0;padding:10px 14px;border-radius:8px;background:var(--mark);color:#17181C;font-size:15px;font-weight:600}
-[data-round="2"] .updated{display:block}
+html[data-kundandring="1"]:not([data-round="1"]) .updated{display:block}
+/* Rev H (2026-10-27): omgång 2-20 (var bara 2). "Vårt fel": egen rad i stället för "med era ändringar" när omgången rättar
+   något som blev fel hos oss (data-varfel="1", fyll_leverans.py sätter den ur kund.json var_fel). Räknas inte mot de 5. */
+.updated-vf{display:none;margin:18px 0 0;padding:10px 14px;border-radius:8px;background:var(--mark);color:#17181C;font-size:15px;font-weight:600}
+html[data-kundandring="1"]:not([data-round="1"]) .updated-vf[data-varfel="1"]{display:block}
+html[data-kundandring="1"]:not([data-round="1"]) .updated-vf[data-varfel="1"]~.updated{display:none}
 .badge{display:none;font-style:normal;background:var(--mark);color:#17181C;font-size:12px;font-weight:800;letter-spacing:.02em;padding:3px 8px;border-radius:999px;margin-top:8px;width:max-content}
-[data-round="2"] .row[data-andrad="1"] .badge{display:inline-block}
+html[data-kundandring="1"]:not([data-round="1"]) .row[data-andrad="1"] .badge{display:inline-block}
 
 .hero{padding:28px 0 8px}
 .hero h1{font-size:clamp(34px,6.2vw,64px);font-weight:800;line-height:.98;letter-spacing:-.025em;margin:0 0 16px;max-width:18ch}
@@ -98,6 +104,15 @@ a{color:inherit}
 .provgrid+.round{border-top:1px solid var(--rule);margin-top:6px}
 .provgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-left:142px;padding:22px 0;align-items:start}
 .provgrid .cap{display:block;margin-top:8px;font-size:14px;font-weight:600;color:var(--ink-2)}
+/* Rev H2 (2026-10-27): tidigare version under ändrade rader, "Ny" på den nya. Rev H3: sektionen Extra (extrabilder). */
+.tidigare{grid-column:2;margin-top:-4px}
+.tidigare .vlbl{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--ink-2)}
+.print.forr img{opacity:.85}
+html[data-kundandring="1"]:not([data-round="1"]) .print.ny::before,.print.forr::before{position:absolute;top:14px;left:14px;z-index:2;font-size:12px;font-weight:800;letter-spacing:.02em;padding:3px 8px;border-radius:999px}
+html[data-kundandring="1"]:not([data-round="1"]) .print.ny::before{content:"Ny";background:var(--mark);color:#17181C}
+.print.forr::before{content:"Tidigare";background:var(--paper);color:var(--ink);border:1px solid var(--rule)}
+html:not([data-kundandring="1"]) .tidigare,html[data-round="1"] .tidigare{display:none}
+.round.extra p:empty{display:none}
 .cell textarea{display:block;width:100%;min-height:84px;margin-top:12px;padding:10px 12px;border-radius:8px;border:1.5px solid var(--rule);background:var(--field);color:var(--ink);font:inherit;font-size:15px;line-height:1.4;resize:vertical}
 .cell textarea:focus{outline:none;border-color:var(--cta);box-shadow:0 0 0 3px color-mix(in srgb,var(--cta) 25%,transparent)}
 .cell textarea.has{border-color:var(--ink)}
@@ -163,6 +178,7 @@ a{color:inherit}
   .print a.dl{font-size:12px;padding:8px 8px}
   .after{grid-template-columns:1fr}
   .provgrid{margin-left:0;gap:10px;padding:16px 0}
+  .tidigare{grid-column:1}
   .rev{left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));width:auto}
   .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
   .bar.on{transform:none}
@@ -181,11 +197,12 @@ a{color:inherit}
 
   <div class="from"><span>Till <b>Sauna Ice</b></span><span><img src="/favicon-32.png" alt="" width="18" height="18" style="vertical-align:-4px;margin-right:5px">från Annonslabbet</span></div>
 
-  <p class="updated">Uppdaterad  med era ändringar. De ändrade annonserna är markerade.</p>
+  <p class="updated-vf" data-varfel="1">Uppdaterad 28 oktober. Vi har rättat det som blev fel hos oss. Det räknas inte mot era ändringar. De ändrade annonserna är markerade.</p>
+  <p class="updated">Uppdaterad 28 oktober med era ändringar. De ändrade annonserna är markerade.</p>
 
   <section class="hero">
-    <h1>23 annonser för Sauna Ice-påsen.</h1>
-    <p class="sub">10 motiv, vart och ett i 9:16 och 1:1. Plus de 3 ni fick gratis på prov.</p>
+    <h1>25 annonser för Sauna Ice-påsen.</h1>
+    <p class="sub">10 motiv, vart och ett i 9:16 och 1:1. Plus de 3 ni fick gratis på prov. Och 2 extra.</p>
     <p class="ingress">Titta igenom dem här nere: era 3 prov först, sen de 10 nya motiven i båda formaten. Är ni nöjda: godkänn och ladda ner, så får ni alla filer direkt. Vill ni ändra något: skriv det under bilden.</p>
   </section>
 
@@ -200,7 +217,7 @@ a{color:inherit}
       <h2 id="val-h">Godkänn, eller ändra</h2>
       <div class="btns">
         <button type="button" class="cta" data-act="approve" id="btn-approve">Godkänn och ladda ner</button>
-        <a class="cta" id="btn-zip" href="#" download hidden>Ladda ner alla 23 <small>6,8 MB</small></a>
+        <a class="cta" id="btn-zip" href="#" download hidden>Ladda ner alla 25 <small>8,7 MB</small></a>
         <button type="button" class="ghost" data-act="change" id="btn-change">Ändra något</button>
         <button type="button" class="ghost" data-act="close" id="btn-close" hidden>Stäng fälten</button>
       </div>
@@ -218,86 +235,97 @@ a{color:inherit}
     <p>Era gratisprov, med i leveransen.</p>
   </section>
   <div class="provgrid">
-    <div class="cell"><figure class="print" data-prov="1" data-file="prov-1_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-1_9x16.jpg?v=1" alt="Prov 1 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 1</span></div>
-    <div class="cell"><figure class="print" data-prov="2" data-file="prov-2_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-2_9x16.jpg?v=1" alt="Prov 2 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 2</span></div>
-    <div class="cell"><figure class="print" data-prov="3" data-file="prov-3_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-3_9x16.jpg?v=1" alt="Prov 3 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 3</span></div>
+    <div class="cell"><figure class="print" data-prov="1" data-file="prov-1_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-1_9x16.jpg?v=2" alt="Prov 1 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 1</span></div>
+    <div class="cell"><figure class="print" data-prov="2" data-file="prov-2_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-2_9x16.jpg?v=2" alt="Prov 2 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 2</span></div>
+    <div class="cell"><figure class="print" data-prov="3" data-file="prov-3_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/prov-3_9x16.jpg?v=2" alt="Prov 3 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Prov 3</span></div>
   </div>
 
   <section class="round" id="omgang-1">
     <h2>Motiv 1 till 10</h2>
   </section>
-  <article class="row" id="annons-1" data-nn="01" data-andrad="0">
+  <article class="row" id="annons-1" data-nn="01" data-andrad="1">
     <div class="num"><b>1</b><span>Bastar varje vecka</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="01_bastar-varje-vecka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/01_bastar-varje-vecka_9x16.jpg?v=1" alt="Motiv 1 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="01_bastar-varje-vecka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/01_bastar-varje-vecka_1x1.jpg?v=1" alt="Motiv 1 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print ny" data-format="9x16" data-file="01_bastar-varje-vecka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/01_bastar-varje-vecka_9x16.jpg?v=2" alt="Motiv 1 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print ny" data-format="1x1" data-file="01_bastar-varje-vecka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/01_bastar-varje-vecka_1x1.jpg?v=2" alt="Motiv 1 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
+    <div class="tidigare"><p class="vlbl">Tidigare (omgång 1)</p><div class="pair"><div class="cell"><figure class="print forr" data-dl="Tidigare 9:16" data-file="omgang-1/01_bastar-varje-vecka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/omgang-1/01_bastar-varje-vecka_9x16.jpg?v=2" alt="Motiv 1, tidigare version, 9:16" loading="lazy" width="506" height="900"></figure></div><div class="cell"><figure class="print forr" data-dl="Tidigare 1:1" data-file="omgang-1/01_bastar-varje-vecka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/omgang-1/01_bastar-varje-vecka_1x1.jpg?v=2" alt="Motiv 1, tidigare version, 1:1" loading="lazy" width="900" height="900"></figure></div></div></div>
   </article>
   <article class="row" id="annons-2" data-nn="02" data-andrad="0">
     <div class="num"><b>2</b><span>Tung luft</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="02_tung-luft_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/02_tung-luft_9x16.jpg?v=1" alt="Motiv 2 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="02_tung-luft_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/02_tung-luft_1x1.jpg?v=1" alt="Motiv 2 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="02_tung-luft_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/02_tung-luft_9x16.jpg?v=2" alt="Motiv 2 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="02_tung-luft_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/02_tung-luft_1x1.jpg?v=2" alt="Motiv 2 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
-  <article class="row" id="annons-3" data-nn="03" data-andrad="0">
+  <article class="row" id="annons-3" data-nn="03" data-andrad="1">
     <div class="num"><b>3</b><span>Bastar isvak</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="03_bastar-isvak_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/03_bastar-isvak_9x16.jpg?v=1" alt="Motiv 3 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="03_bastar-isvak_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/03_bastar-isvak_1x1.jpg?v=1" alt="Motiv 3 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="03_bastar-isvak_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/03_bastar-isvak_9x16.jpg?v=2" alt="Motiv 3 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print ny" data-format="1x1" data-file="03_bastar-isvak_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/03_bastar-isvak_1x1.jpg?v=2" alt="Motiv 3 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
+    <div class="tidigare"><p class="vlbl">Tidigare (omgång 1)</p><div class="pair"><div class="cell"></div><div class="cell"><figure class="print forr" data-dl="Tidigare 1:1" data-file="omgang-1/03_bastar-isvak_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/omgang-1/03_bastar-isvak_1x1.jpg?v=2" alt="Motiv 3, tidigare version, 1:1" loading="lazy" width="900" height="900"></figure></div></div></div>
   </article>
   <article class="row" id="annons-4" data-nn="04" data-andrad="0">
     <div class="num"><b>4</b><span>Karin varmt kallt</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="04_karin-varmt-kallt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/04_karin-varmt-kallt_9x16.jpg?v=1" alt="Motiv 4 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="04_karin-varmt-kallt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/04_karin-varmt-kallt_1x1.jpg?v=1" alt="Motiv 4 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="04_karin-varmt-kallt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/04_karin-varmt-kallt_9x16.jpg?v=2" alt="Motiv 4 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="04_karin-varmt-kallt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/04_karin-varmt-kallt_1x1.jpg?v=2" alt="Motiv 4 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
   <article class="row" id="annons-5" data-nn="05" data-andrad="0">
     <div class="num"><b>5</b><span>Linus andas</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="05_linus-andas_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/05_linus-andas_9x16.jpg?v=1" alt="Motiv 5 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="05_linus-andas_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/05_linus-andas_1x1.jpg?v=1" alt="Motiv 5 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="05_linus-andas_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/05_linus-andas_9x16.jpg?v=2" alt="Motiv 5 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="05_linus-andas_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/05_linus-andas_1x1.jpg?v=2" alt="Motiv 5 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
   <article class="row" id="annons-6" data-nn="06" data-andrad="0">
     <div class="num"><b>6</b><span>Mentol lurar hjärnan</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="06_mentol-lurar-hjarnan_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/06_mentol-lurar-hjarnan_9x16.jpg?v=1" alt="Motiv 6 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="06_mentol-lurar-hjarnan_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/06_mentol-lurar-hjarnan_1x1.jpg?v=1" alt="Motiv 6 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="06_mentol-lurar-hjarnan_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/06_mentol-lurar-hjarnan_9x16.jpg?v=2" alt="Motiv 6 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="06_mentol-lurar-hjarnan_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/06_mentol-lurar-hjarnan_1x1.jpg?v=2" alt="Motiv 6 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
   <article class="row" id="annons-7" data-nn="07" data-andrad="0">
     <div class="num"><b>7</b><span>Pengarna tillbaka</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="07_pengarna-tillbaka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/07_pengarna-tillbaka_9x16.jpg?v=1" alt="Motiv 7 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="07_pengarna-tillbaka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/07_pengarna-tillbaka_1x1.jpg?v=1" alt="Motiv 7 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="07_pengarna-tillbaka_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/07_pengarna-tillbaka_9x16.jpg?v=2" alt="Motiv 7 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="07_pengarna-tillbaka_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/07_pengarna-tillbaka_1x1.jpg?v=2" alt="Motiv 7 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
-  <article class="row" id="annons-8" data-nn="08" data-andrad="0">
+  <article class="row" id="annons-8" data-nn="08" data-andrad="1">
     <div class="num"><b>8</b><span>Julklapp</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="08_julklapp_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/08_julklapp_9x16.jpg?v=1" alt="Motiv 8 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="08_julklapp_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/08_julklapp_1x1.jpg?v=1" alt="Motiv 8 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print ny" data-format="9x16" data-file="08_julklapp_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/08_julklapp_9x16.jpg?v=2" alt="Motiv 8 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print ny" data-format="1x1" data-file="08_julklapp_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/08_julklapp_1x1.jpg?v=2" alt="Motiv 8 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
+    <div class="tidigare"><p class="vlbl">Tidigare (omgång 1)</p><div class="pair"><div class="cell"><figure class="print forr" data-dl="Tidigare 9:16" data-file="omgang-1/08_julklapp_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/omgang-1/08_julklapp_9x16.jpg?v=2" alt="Motiv 8, tidigare version, 9:16" loading="lazy" width="506" height="900"></figure></div><div class="cell"><figure class="print forr" data-dl="Tidigare 1:1" data-file="omgang-1/08_julklapp_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/omgang-1/08_julklapp_1x1.jpg?v=2" alt="Motiv 8, tidigare version, 1:1" loading="lazy" width="900" height="900"></figure></div></div></div>
   </article>
   <article class="row" id="annons-9" data-nn="09" data-andrad="0">
     <div class="num"><b>9</b><span>Jan drygt</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="09_jan-drygt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/09_jan-drygt_9x16.jpg?v=1" alt="Motiv 9 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="09_jan-drygt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/09_jan-drygt_1x1.jpg?v=1" alt="Motiv 9 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="09_jan-drygt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/09_jan-drygt_9x16.jpg?v=2" alt="Motiv 9 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="09_jan-drygt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/09_jan-drygt_1x1.jpg?v=2" alt="Motiv 9 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
   <article class="row" id="annons-10" data-nn="10" data-andrad="0">
     <div class="num"><b>10</b><span>Så enkelt</span><em class="badge">Ändrad</em></div>
     <div class="pair">
-      <div class="cell"><figure class="print" data-format="9x16" data-file="10_sa-enkelt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/10_sa-enkelt_9x16.jpg?v=1" alt="Motiv 10 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
-      <div class="cell"><figure class="print" data-format="1x1" data-file="10_sa-enkelt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/10_sa-enkelt_1x1.jpg?v=1" alt="Motiv 10 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="9x16" data-file="10_sa-enkelt_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/10_sa-enkelt_9x16.jpg?v=2" alt="Motiv 10 för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure></div>
+      <div class="cell"><figure class="print" data-format="1x1" data-file="10_sa-enkelt_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/10_sa-enkelt_1x1.jpg?v=2" alt="Motiv 10 för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure></div>
     </div>
   </article>
 
 
+  <section class="round extra" id="extra">
+    <h2>Extra</h2>
+    <p>Så stor är påsen, tänkt som bild 2 i annonsen</p>
+  </section>
+  <div class="provgrid extragrid">
+    <div class="cell"><figure class="print" data-dl="Extra 9:16" data-file="extra/sa-stor-ar-pasen_9x16.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/extra/sa-stor-ar-pasen_9x16.jpg?v=2" alt="Extra för Sauna Ice, 9:16" loading="lazy" width="506" height="900"></figure><span class="cap">Extra, 9:16</span></div>
+    <div class="cell"><figure class="print" data-dl="Extra 1:1" data-file="extra/sa-stor-ar-pasen_1x1.jpg"><img src="https://annonslabbet.se/sauna-ice/leverans/preview/extra/sa-stor-ar-pasen_1x1.jpg?v=2" alt="Extra för Sauna Ice, 1:1" loading="lazy" width="900" height="900"></figure><span class="cap">Extra, 1:1</span></div>
+  </div>
   <section class="send" id="send" hidden aria-labelledby="send-h">
     <h2 id="send-h">Skicka ändringarna</h2>
     <div class="counter" id="counter-bottom"></div>
@@ -319,7 +347,7 @@ a{color:inherit}
   <section class="after">
     <div class="box">
       <b class="gh"><svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4.6 5.4v6.1c0 4.5 3.1 8.5 7.4 9.9 4.3-1.4 7.4-5.4 7.4-9.9V5.4L12 2.6z" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12.1 2.3 2.3 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantin</b>
-      <p>Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra 23 er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
+      <p>Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra 25 er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
     </div>
     <div class="box">
       <b>Vill ni ändra något?</b>
@@ -355,7 +383,7 @@ var CFG={
   feedback:"https://video.adthekey.com/al/feedback.php",
   stripe:"https://buy.stripe.com/6oU7sK9vGgt63NyaN9c3m02",
   mail:"alexander@saunaice.com",
-  round:"1",
+  round:"2",
   kvar:"5",
   antal:"10",
   recension:"0"
@@ -363,7 +391,11 @@ var CFG={
 (function(){
   "use strict";
   var MAX_EXTRA=15, PRICE=100, MAXLEN=500;
-  var ROUND=parseInt(CFG.round,10)===2?2:1;
+  var ROUND=parseInt(CFG.round,10); if(isNaN(ROUND)||ROUND<1||ROUND>20)ROUND=1;   /* rev H: omgång 1-20 (var 1|2) */
+  /* Rev F: lappar + "Uppdaterad"-raden bara i omgång 2+ OCH när minst en rad är kundens ändring (rev H: eller vårt fel). Annars bort, även om sidan fyllts slarvigt. */
+  (function(){var de=document.documentElement,rows=document.querySelectorAll('.row[data-andrad="1"]');
+    if(ROUND<2||!rows.length||de.getAttribute("data-kundandring")!=="1"){de.setAttribute("data-kundandring","0");
+      for(var i=0;i<rows.length;i++)rows[i].setAttribute("data-andrad","0");}})();
   var K=parseInt(CFG.kvar,10); if(isNaN(K)||K<0||K>5)K=5;
   var $=function(id){return document.getElementById(id);};
 
@@ -441,13 +473,13 @@ var CFG={
     });
   });
 
-  /* gratisproven (rev D): bara nedladdningslänk, inget fält, räknas inte mot de 5 */
+  /* gratisproven (rev D): bara nedladdningslänk, inget fält, räknas inte mot de 5. Rev H: samma för extrabilder och tidigare versioner (data-dl = etiketten) */
   var provLinks=[];
-  Array.prototype.forEach.call(document.querySelectorAll("figure.print[data-prov]"),function(fig){
+  Array.prototype.forEach.call(document.querySelectorAll("figure.print[data-prov], figure.print[data-dl]"),function(fig){
     var file=fig.getAttribute("data-file"), a=document.createElement("a");
-    a.className="dl"; a.hidden=true; a.setAttribute("download",file);
+    a.className="dl"; a.hidden=true; a.setAttribute("download",file.split("/").pop());
     a.href=CFG.dlBase+file+v();
-    a.innerHTML="<span>Prov "+esc(fig.getAttribute("data-prov"))+"</span><span>Ladda ner</span>";
+    a.innerHTML="<span>"+(fig.hasAttribute("data-dl")?esc(fig.getAttribute("data-dl")):"Prov "+esc(fig.getAttribute("data-prov")))+"</span><span>Ladda ner</span>";
     fig.appendChild(a); provLinks.push(a);
   });
 
