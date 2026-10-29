@@ -374,7 +374,7 @@ html:not([data-kundandring="1"]) .tidigare,html[data-round="1"] .tidigare{displa
 <div class="bar" id="bar" aria-label="Godkänn eller ändra"><div class="in" id="bar-in"></div></div>
 
 <script>
-/* Leveransmall v2. Allt nedan läser bara CFG, inget annat behöver fyllas i skriptet. */
+/* Leveransmall v2 (rev v2.11 2026-10-29: minns godkänt via feedback.php?status). Allt nedan läser bara CFG, inget annat behöver fyllas i skriptet. */
 var CFG={
   slug:"sauna-ice",
   token:"l7wtdk5l5s",
@@ -582,7 +582,7 @@ var CFG={
     editing=false; payOpen=false;
     if(!LIVE){openDownload();return;}
     approving=true; render();
-    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"approve",ts:ts(),ua:navigator.userAgent});
+    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"approve",round:ROUND,ts:ts(),ua:navigator.userAgent});   /* v2.11: round */
     var done=false, tm=null;
     function fb(){try{if(navigator.sendBeacon)navigator.sendBeacon(CFG.feedback,new Blob([body],{type:"text/plain;charset=UTF-8"}));}catch(e){}}
     function finish(busy){
@@ -615,9 +615,10 @@ var CFG={
   }
   function post(comments,extra,session){
     sending=true; setMsg("send-msg","",""); render();
-    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"changes",comments:comments,extra:extra,stripe_session:session||null,ts:ts()});
+    var body=JSON.stringify({slug:CFG.slug,token:CFG.token,kind:"changes",round:ROUND,comments:comments,extra:extra,stripe_session:session||null,ts:ts()});   /* v2.11: round */
     var done=function(ok){
       sending=false;
+      if(ok==="godkand"){render();return;}   /* v2.11 */
       if(ok){st.sentRound=ROUND;st.sent=comments;st.draft={};st.pending=null;save();editing=false;}
       else{setMsg("send-msg","Det gick inte att skicka, försök igen eller svara på mailet","err");}
       render();
@@ -628,7 +629,10 @@ var CFG={
     try{ctl=new AbortController();tm=setTimeout(function(){ctl.abort();},15000);}catch(e){}
     try{
       fetch(CFG.feedback,{method:"POST",headers:{"Content-Type":"application/json"},body:body,mode:"cors",signal:ctl?ctl.signal:undefined})
-        .then(function(r){return r.json().then(function(j){return r.ok&&j&&j.ok===true;},function(){return false;});})
+        .then(function(r){return r.json().then(function(j){
+          /* v2.11: redan godkänd (från en annan enhet) = visa godkänt läge, inget fel */
+          if(r.status===409&&j&&j.error==="redan_godkand"){st.approvedRound=ROUND;st.draft={};save();editing=false;return "godkand";}
+          return r.ok&&j&&j.ok===true;},function(){return false;});})
         .then(function(ok){if(tm)clearTimeout(tm);done(ok);},function(){if(tm)clearTimeout(tm);done(false);});
     }catch(e){done(false);}
   }
@@ -725,6 +729,16 @@ var CFG={
   }
   if(!editing&&hasDraft()&&!isSent()&&!isApproved()&&!isBusy()){editing=true;}
   render();
+  /* v2.11 (P 2026-10-29, Ö4): fråga servern om omgången redan är godkänd (en annan enhet, en kollega). Svarar den ja visas
+     godkänt läge med nedladdningen, och Ändra försvinner. Svarar den inte händer ingenting, sidan är som förut. */
+  if(LIVE&&!isApproved()&&typeof fetch==="function"){
+    try{
+      fetch(CFG.feedback+"?status="+encodeURIComponent(CFG.slug)+"&token="+encodeURIComponent(CFG.token)+"&round="+ROUND+"&t="+Date.now(),{cache:"no-store",mode:"cors"})
+        .then(function(r){return r.json();}).then(function(j){
+          if(j&&j.ok===true&&j.approved===true&&!isApproved()){st.approvedRound=ROUND;st.draft={};save();editing=false;render();}
+        },function(){});
+    }catch(e){}
+  }
   window.__alState=function(){return JSON.parse(JSON.stringify(st));};
 })();
 </script>
