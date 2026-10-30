@@ -38,7 +38,7 @@ a{color:inherit}
 .cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
 .cta:active{transform:translateY(1px)}
 .cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.cta small{font-weight:600;opacity:.85;font-size:14px}
+.cta small{font-weight:600;opacity:.85;font-size:14px;white-space:nowrap}
 .under{display:block;margin-top:12px;font-size:14px;color:var(--ink-2)}
 
 /* the table: three prints fanned out */
@@ -103,6 +103,7 @@ a{color:inherit}
   .guarantee{order:2}
   .offer>div{display:contents}
   .offer h2{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.pro{order:3}
+  .offer .cta{flex-direction:column;align-items:flex-start;gap:2px}
   .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
   .bar.on{transform:none}
   .sender{padding-bottom:120px}
@@ -118,7 +119,7 @@ a{color:inherit}
   <section class="hero">
     <h1>Tre annonser för Trikåmössa Kurre Ekorre. De är era.</h1>
     <p>Gjorda på er egen produktsida, i er stil. Ladda ner och kör dem i Meta eller Instagram. Inga villkor, ingen faktura.</p>
-    <a class="cta" href="#bestall">Beställ 10 motiv till <small>1 990 kr</small></a>
+    <a class="cta" href="#bestall">Beställ 10 motiv till <small>1&nbsp;990&nbsp;kr</small></a>
     <span class="under">Klara inom 48 timmar. Pengarna tillbaka om ingen slår er bästa annons, säg till inom 30 dagar från leveransdatumet.</span>
   </section>
 
@@ -137,13 +138,13 @@ a{color:inherit}
       <h2>10 motiv till, 20 färdiga annonser</h2>
       <div class="price"><span class="n">1 990 kr</span><span class="u">ex moms, engångs</span></div>
       <ul>
-        <li>20 bilder: 10 motiv i 2 format, 9:16 samt 4:5</li>
-        <li>Klara inom 48 timmar från betalning</li>
-        <li>5 ändringar ingår, fler kostar 100 kr per bild</li>
-        <li>Betalning med kort eller Klarna, kvitto direkt</li>
+        <li>20 bilder: 10 motiv i 2 format, 9:16&nbsp;samt&nbsp;4:5</li>
+        <li>Klara inom 48 timmar från&nbsp;betalning</li>
+        <li>5 ändringar ingår, fler kostar 100&nbsp;kr per&nbsp;bild</li>
+        <li>Betalning med kort eller Klarna, kvitto&nbsp;direkt</li>
       </ul>
-      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Beställ 20 annonser (10 motiv) <small>1 990 kr</small></a>
-      <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Pro, 4 990 kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
+      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=bylelou&prefilled_email=info@bylelou.se"><span class="l">Beställ 20 annonser (10&nbsp;motiv)</span> <small>1&nbsp;990&nbsp;kr</small></a>
+      <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Pro, 4&nbsp;990&nbsp;kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
     </div>
     <aside class="guarantee">
       <b class="gh"><svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4.6 5.4v6.1c0 4.5 3.1 8.5 7.4 9.9 4.3-1.4 7.4-5.4 7.4-9.9V5.4L12 2.6z" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12.1 2.3 2.3 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Garanti</b>
@@ -164,7 +165,7 @@ a{color:inherit}
 
 </div>
 
-<div class="bar" id="bar"><a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Beställ 10 motiv till <small>1 990 kr</small></a></div>
+<div class="bar" id="bar"><a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Beställ 10 motiv till <small>1&nbsp;990&nbsp;kr</small></a></div>
 <script>
 (function(){
   var bar=document.getElementById('bar'),hero=document.querySelector('.hero .cta'),end=document.getElementById('bestall');
