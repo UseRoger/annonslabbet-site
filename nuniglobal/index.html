@@ -39,6 +39,9 @@ a{color:inherit}
 .cta:active{transform:translateY(1px)}
 .cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .cta small{font-weight:600;opacity:.85;font-size:14px;white-space:nowrap}
+.offer .cta{flex-direction:column;align-items:stretch;gap:2px}
+.offer .cta .l{white-space:nowrap}
+.offer .cta .r2{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .under{display:block;margin-top:12px;font-size:14px;color:var(--ink-2)}
 
 /* the table: three prints fanned out */
@@ -103,7 +106,6 @@ a{color:inherit}
   .guarantee{order:2}
   .offer>div{display:contents}
   .offer h2{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.pro{order:3}
-  .offer .cta{flex-direction:column;align-items:flex-start;gap:2px}
   .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
   .bar.on{transform:none}
   .sender{padding-bottom:120px}
@@ -143,7 +145,7 @@ a{color:inherit}
         <li>5 ändringar ingår, fler kostar 100&nbsp;kr per&nbsp;bild</li>
         <li>Betalning med kort eller Klarna, kvitto&nbsp;direkt</li>
       </ul>
-      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=nuniglobal&prefilled_email=info@nuniglobal.se"><span class="l">Beställ 20 annonser (10&nbsp;motiv)</span> <small>1&nbsp;990&nbsp;kr</small></a>
+      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=nuniglobal&prefilled_email=info@nuniglobal.se"><span class="l">Beställ 20 annonser</span> <span class="r2"><span>(10&nbsp;motiv)</span> <small>1&nbsp;990&nbsp;kr</small></span></a>
       <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=nuniglobal&prefilled_email=info@nuniglobal.se">Pro, 4&nbsp;990&nbsp;kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
     </div>
     <aside class="guarantee">
