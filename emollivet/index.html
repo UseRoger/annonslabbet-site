@@ -108,9 +108,6 @@ a{color:inherit}
   .sender{padding-bottom:120px}
 }
 @media (prefers-reduced-motion:reduce){.cta,.print{transition:none}.print:hover{transform:none}}
-.mjuk{display:inline-block;margin:12px 0 0 16px;font-weight:600;font-size:15px;color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.mjuk-pris{margin:12px 0 4px 0;display:block}
-@media (max-width:640px){.mjuk{display:block;margin:12px 0 0}}
 </style>
 </head>
 <body>
@@ -122,7 +119,6 @@ a{color:inherit}
     <h1>Tre annonser för PAW+ tasspray 50 ml. De är era.</h1>
     <p>Gjorda på er egen produktsida, i er stil. Ladda ner och kör dem i Meta eller Instagram. Inga villkor, ingen faktura.</p>
     <a class="cta" href="#bestall">Beställ 10 motiv till <small>1 990 kr</small></a>
-    <a class="mjuk" href="mailto:jon@annonslabbet.se?subject=Fr%C3%A5ga%20om%20annonserna%20f%C3%B6r%20Emollivet&amp;body=Hej%20Jon!%0A%0A">Har ni en fråga först? Skriv till Jon →</a>
     <span class="under">Klara inom 48 timmar. Pengarna tillbaka om ingen slår er bästa annons, säg till inom 30 dagar från leveransdatumet.</span>
   </section>
 
@@ -147,7 +143,6 @@ a{color:inherit}
         <li>Betalning med kort eller Klarna, kvitto direkt</li>
       </ul>
       <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=emollivet&prefilled_email=info@emollivet.se">Beställ 20 annonser (10 motiv) <small>1 990 kr</small></a>
-      <a class="mjuk mjuk-pris" href="mailto:jon@annonslabbet.se?subject=Fr%C3%A5ga%20om%20annonserna%20f%C3%B6r%20Emollivet&amp;body=Hej%20Jon!%0A%0A">Har ni en fråga först? Skriv till Jon →</a>
       <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=emollivet&prefilled_email=info@emollivet.se">Pro, 4 990 kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
     </div>
     <aside class="guarantee">
@@ -195,7 +190,6 @@ a{color:inherit}
     var h=a.getAttribute('href')||'';
     if(h.indexOf('buy.stripe.com/3cI5kC0Za')>-1){send('buy');return;}
     if(h.indexOf('buy.stripe.com/7sYeVc4bm')>-1){send('pro');return;}
-    if(h.indexOf('mailto:')===0){send('fraga');return;}
   },true);
 })();
 </script>
