@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/favicon-180.png">
@@ -14,12 +15,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FBFAF7;--ink:#17181C;--ink-2:#4A4D57;--rule:#E4E1D9;
-  --green:#0F6B4F;--green-ink:#0B5340;--mark:#F5E663;--cta:#1F4FE0;
+  color-scheme:light;
+  --paper:#F5F5F7;--ink:#1D1D1F;--ink-2:#5E5E63;--rule:#D2D2D7;
+  --green:#0F6B4F;--green-ink:#0B5340;--mark:#F5E663;--cta:#6219FF;
   --max:960px;--pad:20px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9;--rule:#2A2C33;--green:#3FB08A;--green-ink:#2E9474}}
-:root[data-theme="dark"]{--paper:#15161A;--ink:#F3F1EA;--ink-2:#B4B2A9;--rule:#2A2C33;--green:#3FB08A;--green-ink:#2E9474}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;font-optical-sizing:auto;line-height:1.5;font-size:17px}
@@ -45,7 +45,7 @@ a{color:inherit}
 .table{position:relative;margin:34px 0 10px;padding:26px 0 18px}
 .fan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:end}
 .print{position:relative;background:#fff;padding:8px;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.06),0 18px 40px -18px rgba(23,24,28,.45);transition:transform .2s ease}
-.print img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:3px;background:#eee}
+.print img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:3px;background:#eee;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
 .print:nth-child(1){transform:rotate(-3deg) translateY(10px)}
 .print:nth-child(2){transform:rotate(.6deg) translateY(-6px);z-index:1}
 .print:nth-child(3){transform:rotate(2.6deg) translateY(12px)}
@@ -57,7 +57,7 @@ a{color:inherit}
 /* how */
 
 /* offer */
-.offer{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:start;padding:10px 0 20px}
+.offer{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:start;padding:24px;margin:10px 0 20px;background:#FFFFFF;border:1px solid var(--rule);border-radius:14px}
 .offer h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0 0 14px;max-width:16ch}
 .price{display:flex;align-items:baseline;gap:10px;margin:0 0 14px}
 .price .n{font-size:clamp(40px,6vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1}
@@ -65,7 +65,7 @@ a{color:inherit}
 .offer ul{list-style:none;padding:0;margin:0 0 22px}
 .offer li{padding:9px 0;border-top:1px solid var(--rule);font-size:16px}
 .offer li:first-child{border-top:0}
-.guarantee{background:transparent;border:1.5px solid var(--ink);color:var(--ink);border-radius:10px;padding:18px 20px;margin-top:8px}
+.guarantee{background:#FFFFFF;border:1px solid var(--rule);color:var(--ink);border-radius:10px;padding:18px 20px;margin-top:8px}
 .guarantee b{display:block;color:var(--ink);font-weight:800;font-size:15px;margin-bottom:6px}
 .guarantee b.gh{display:flex;align-items:center;gap:8px}
 .guarantee b.gh .ico{flex:0 0 auto;width:28px;height:28px;color:var(--cta)}
@@ -74,7 +74,7 @@ a{color:inherit}
 .pro a{color:var(--ink);font-weight:600}
 
 /* faq */
-.faq{padding:10px 0 30px;max-width:620px}
+.faq{padding:18px 20px 22px;margin:10px 0 30px;max-width:620px;background:#FFFFFF;border:1px solid var(--rule);border-radius:14px}
 .faq h3{font-size:14px;font-weight:600;color:var(--ink-2);margin:0 0 6px}
 .faq details{border-top:1px solid var(--rule);padding:12px 0}
 .faq details:last-of-type{border-bottom:1px solid var(--rule)}
@@ -99,7 +99,7 @@ a{color:inherit}
   .fan::-webkit-scrollbar{display:none}
   .print{flex:0 0 72%;scroll-snap-align:center;transform:none!important}
   .print:nth-child(2){transform:rotate(-1.2deg)!important}
-  .offer{grid-template-columns:1fr;gap:16px}
+  .offer{grid-template-columns:1fr;gap:16px;padding:20px 18px}
   .guarantee{order:2}
   .offer>div{display:contents}
   .offer h2{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.pro{order:3}
