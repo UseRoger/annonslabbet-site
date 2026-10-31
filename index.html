@@ -101,6 +101,25 @@ section.band{padding:72px 0;border-top:1px solid var(--rule)}
 .why span{color:var(--ink-2);font-size:16px}
 
 /* pricing */
+.vinkel-tip{max-width:620px;margin-top:-18px}
+#vinkel .intro+.intro{margin-top:-22px}
+/* pro tip (erbjudandet 3.0) */
+.protip{margin:18px 0 0;border:1.5px solid var(--cta);border-radius:12px;background:color-mix(in srgb,var(--cta) 6%,transparent);overflow:hidden}
+.protip summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:15px;color:var(--ink)}
+.protip summary::-webkit-details-marker{display:none}
+.pt-pill{display:inline-flex;align-items:center;gap:6px;background:var(--cta);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px;border-radius:999px;white-space:nowrap;animation:pt-pulse 1.6s ease-out 1.2s 2}
+.pt-star{font-size:12px}
+.pt-hint{flex:1;font-weight:600;color:var(--ink-2)}
+.pt-chev{width:9px;height:9px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);transition:transform .2s ease;margin:0 4px 4px 0}
+.protip[open] .pt-chev{transform:rotate(-135deg);margin:4px 4px 0 0}
+.protip summary:hover{background:color-mix(in srgb,var(--cta) 10%,transparent)}
+.protip summary:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
+.pt-body{padding:2px 16px 14px;font-size:15px;color:var(--ink-2);animation:pt-in .25s ease-out}
+.pt-body p{margin:8px 0 0;max-width:58ch}
+.pt-body p+p{color:var(--ink);font-weight:600}
+@keyframes pt-pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--cta) 55%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
+@keyframes pt-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pt-pill{animation:none}.pt-body{animation:none}.pt-chev{transition:none}}
 .plans{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:0 0 26px}
 .plan{border:1.5px solid var(--rule);border-radius:14px;padding:28px 28px 26px;background:var(--paper)}
 .plan.main{border:2px solid var(--ink)}
@@ -255,7 +274,7 @@ footer a{color:var(--ink-2)}
     <ol class="steps">
       <li><h3>Ni skickar en produktsida</h3><p>Länken till en produkt ni vill sälja mer av. Det är allt vi behöver.</p></li>
       <li><h3>Ni får tre annonser</h3><p>Inom två dagar, i er stil och med era produkter, i 9:16 och 4:5.</p></li>
-      <li><h3>Ni bestämmer</h3><p>Gillar ni dem beställer ni 10 motiv till, 20 färdiga annonser. Annars behåller ni de tre och vi hörs inte mer.</p></li>
+      <li><h3>Ni bestämmer</h3><p>Gillar ni dem beställer ni 10 motiv till i beprövade vinklar, 20 färdiga annonser. Annars behåller ni de tre och vi hörs inte mer.</p></li>
     </ol>
   </div>
 </section>
@@ -267,9 +286,26 @@ footer a{color:var(--ink-2)}
     <ul class="why">
       <li><b>Er stil, inte en mall</b><span>Färger, ton och produkter tas från er egen sida, så annonserna känns som ni.</span></li>
       <li><b>Klara att ladda upp</b><span>Rätt format för Meta och Instagram, flöde och stories. Inget att justera.</span></li>
-      <li><b>Många att testa</b><span>Med 20 annonser hittar ni snabbare den som säljer, i stället för att gissa på en.</span></li>
+      <li><b>Vinklar ni inte hunnit testa</b><span>Vi gör 10 motiv med vinklar som redan säljer för andra butiker, i Norden och resten av världen, så ni ser vilken som säljer bäst för er.</span></li>
       <li><b>Ni äger allt</b><span>Inga abonnemang, inga licenser. Annonserna är era att använda hur ni vill.</span></li>
     </ul>
+  </div>
+</section>
+
+<section class="band" id="vinkel">
+  <div class="wrap">
+    <h2>Samma erbjudande, ny vinkel.</h2>
+    <p class="intro">En ny vinkel på samma erbjudande kan vara allt som skiljer en annons som rullar från en som säljer. Bilden, texten, budskapet, hur erbjudandet läggs fram, allt spelar in, och ingen hinner testa varje kombination själv.</p>
+    <p class="intro">Det är där labbet kommer in. Vi gör 10 motiv för er produkt och bygger dem på vinklar som redan säljer för andra butiker, i Norden och resten av världen. Vinklar ni kanske inte hunnit prova. Fler chanser att sälja mer, utan att lägga veckorna på att testa själva.</p>
+    <div class="vinkel-tip">
+      <details class="protip" id="protip">
+        <summary><span class="pt-pill"><span class="pt-star" aria-hidden="true">&#10022;</span>Pro tip</span><span class="pt-hint">Så får ni ut mest av de 13</span><span class="pt-chev" aria-hidden="true"></span></summary>
+        <div class="pt-body">
+          <p>Kör de 10 motiven tillsammans med era tre gratisannonser som en egen kampanj: 13 varianter på samma erbjudande. Ge den minst sju dagar och minst 300&nbsp;kr om dagen, under det hinner Meta inte fördela mellan så många. Systemet lär sig snabbt vilken vinkel som ska visas för vem, och efter en vecka ser ni svart på vitt vilken ni ska satsa på.</p>
+          <p>Ger man Meta tillräckligt brett material att jobba med hittar algoritmen vinnaren åt er. Tretton varianter är tillräckligt brett. Det är så vi hittar vinnare själva.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
@@ -280,12 +316,12 @@ footer a{color:var(--ink-2)}
     <div class="plans">
       <div class="plan main">
         <h3>Starter</h3>
-        <p class="who">För butiken som vill ha fler annonser att testa</p>
+        <p class="who">För butiken som vill ha fler vinklar att sälja från</p>
         <div class="n">1 990 kr<small>ex moms</small></div>
         <ul>
           <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>20 bilder: 10 motiv i 2 format, 9:16 samt 4:5</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klara inom 48 timmar</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5 ändringar ingår, fler kostar 100 kr per bild</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5 ändringar ingår, vill ni ändra mer kostar det 100 kr per bild</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Pengarna tillbaka-garanti</li>
         </ul>
       </div>
@@ -298,7 +334,7 @@ footer a{color:var(--ink-2)}
           <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Allt i Starter</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tre korta videos för Reels och TikTok</li>
           <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Klart inom fem arbetsdagar</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5 ändringar ingår, fler kostar 100 kr per bild</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5 ändringar ingår, vill ni ändra mer kostar det 100 kr per bild</li>
         </ul>
       </div>
     </div>
@@ -321,7 +357,7 @@ footer a{color:var(--ink-2)}
       </svg>
       <div>
         <b class="gh"><svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4.6 5.4v6.1c0 4.5 3.1 8.5 7.4 9.9 4.3-1.4 7.4-5.4 7.4-9.9V5.4L12 2.6z" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12.1 2.3 2.3 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Garanti</b>
-        <h2>Slår ingen er bästa annons får ni pengarna tillbaka.</h2>
+        <h2>Säljer ingen bättre än er bästa annons får ni pengarna tillbaka.</h2>
         <p>Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra annonser er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
       </div>
     </div>

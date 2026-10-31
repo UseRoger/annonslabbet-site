@@ -76,6 +76,25 @@ a{color:inherit}
 .pro{margin-top:22px;padding-top:16px;border-top:1px solid var(--rule);font-size:15px;color:var(--ink-2)}
 .pro a{color:var(--ink);font-weight:600}
 
+.offer .lead{margin:0 0 14px;font-size:16px;color:var(--ink-2);max-width:58ch}
+.offer .lead+.lead{margin-bottom:20px}
+/* pro tip (erbjudandet 3.0) */
+.protip{margin:18px 0 0;border:1.5px solid var(--cta);border-radius:12px;background:color-mix(in srgb,var(--cta) 6%,transparent);overflow:hidden}
+.protip summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:15px;color:var(--ink)}
+.protip summary::-webkit-details-marker{display:none}
+.pt-pill{display:inline-flex;align-items:center;gap:6px;background:var(--cta);color:#fff;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px;border-radius:999px;white-space:nowrap;animation:pt-pulse 1.6s ease-out 1.2s 2}
+.pt-star{font-size:12px}
+.pt-hint{flex:1;font-weight:600;color:var(--ink-2)}
+.pt-chev{width:9px;height:9px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);transition:transform .2s ease;margin:0 4px 4px 0}
+.protip[open] .pt-chev{transform:rotate(-135deg);margin:4px 4px 0 0}
+.protip summary:hover{background:color-mix(in srgb,var(--cta) 10%,transparent)}
+.protip summary:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
+.pt-body{padding:2px 16px 14px;font-size:15px;color:var(--ink-2);animation:pt-in .25s ease-out}
+.pt-body p{margin:8px 0 0;max-width:58ch}
+.pt-body p+p{color:var(--ink);font-weight:600}
+@keyframes pt-pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--cta) 55%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
+@keyframes pt-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.pt-pill{animation:none}.pt-body{animation:none}.pt-chev{transition:none}}
 /* faq */
 .faq{padding:18px 20px 22px;margin:10px 0 30px;max-width:620px;background:#FFFFFF;border:1px solid var(--rule);border-radius:14px}
 .faq h3{font-size:14px;font-weight:600;color:var(--ink-2);margin:0 0 6px}
@@ -105,7 +124,7 @@ a{color:inherit}
   .offer{grid-template-columns:1fr;gap:16px;padding:20px 18px}
   .guarantee{order:2}
   .offer>div{display:contents}
-  .offer h2{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.pro{order:3}
+  .offer h2{order:0}.offer .lead{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.protip{order:2}.pro{order:3}
   .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
   .bar.on{transform:none}
   .sender{padding-bottom:120px}
@@ -122,7 +141,7 @@ a{color:inherit}
     <h1>Tre annonser för PresentKit Terra. De är era.</h1>
     <p>Gjorda på er egen produktsida, i er stil. Ladda ner och kör dem i Meta eller Instagram. Inga villkor, ingen faktura.</p>
     <a class="cta" href="#bestall">Beställ 10 motiv till <small>1&nbsp;990&nbsp;kr</small></a>
-    <span class="under">Klara inom 48 timmar. Pengarna tillbaka om ingen slår er bästa annons, säg till inom 30 dagar från leveransdatumet.</span>
+    <span class="under">Klara inom 48 timmar. Pengarna tillbaka om ingen säljer bättre än er bästa annons i dag.</span>
   </section>
 
   <section class="table" aria-label="Era tre annonser">
@@ -133,19 +152,28 @@ a{color:inherit}
       <figure class="print" style="margin:0"><img src="annons-3.jpg" alt="Annons 3 för PresentKit Terra" loading="eager"><a class="dl" href="annons-3.jpg" download><span>Annons 3</span><span>Ladda ner</span></a></figure>
     </div>
   </section>
-  <p class="under">Det här är riktmärken som visar stilen. När ni beställer går vi djupare med er produkt, era egna bilder och era omdömen.</p>
+  <p class="under">De tre visar stilen. De tio nästa är nya vinklar, med er produkt, era egna bilder och era omdömen.</p>
 
   <section class="offer" id="bestall">
     <div>
-      <h2>10 motiv till, 20 färdiga annonser</h2>
+      <h2>Samma erbjudande, ny vinkel.</h2>
+      <p class="lead">En ny vinkel på samma erbjudande kan vara allt som skiljer en annons som rullar från en som säljer. Bilden, texten, budskapet, hur erbjudandet läggs fram, allt spelar in, och ingen hinner testa varje kombination själv.</p>
+      <p class="lead">Det är där vi kommer in. Vi gör 10 motiv för er produkt och bygger dem på vinklar som redan säljer för andra butiker, i Norden och resten av världen. Vinklar ni kanske inte hunnit prova. Fler chanser att sälja mer, utan att lägga veckorna på att testa själva.</p>
       <div class="price"><span class="n">1 990 kr</span><span class="u">ex moms, engångs</span></div>
       <ul>
         <li>20 bilder: 10 motiv i 2 format, 9:16&nbsp;samt&nbsp;4:5</li>
         <li>Klara inom 48 timmar från&nbsp;betalning</li>
-        <li>5 ändringar ingår, fler kostar 100&nbsp;kr per&nbsp;bild</li>
+        <li>5 ändringar ingår, vill ni ändra mer kostar det 100&nbsp;kr per&nbsp;bild</li>
         <li>Betalning med kort eller Klarna, kvitto&nbsp;direkt</li>
       </ul>
       <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=enebobee&prefilled_email=enebobee%40enebopark.se"><span class="l">Beställ 20 annonser</span> <span class="r2"><span>(10&nbsp;motiv)</span> <small>1&nbsp;990&nbsp;kr</small></span></a>
+      <details class="protip" id="protip">
+        <summary><span class="pt-pill"><span class="pt-star" aria-hidden="true">&#10022;</span>Pro tip</span><span class="pt-hint">Så får ni ut mest av de 13</span><span class="pt-chev" aria-hidden="true"></span></summary>
+        <div class="pt-body">
+          <p>Kör de 10 motiven tillsammans med era tre gratisannonser som en egen kampanj: 13 varianter på samma erbjudande. Ge den minst sju dagar och minst 300&nbsp;kr om dagen, under det hinner Meta inte fördela mellan så många. Systemet lär sig snabbt vilken vinkel som ska visas för vem, och efter en vecka ser ni svart på vitt vilken ni ska satsa på.</p>
+          <p>Ger man Meta tillräckligt brett material att jobba med hittar algoritmen vinnaren åt er. Tretton varianter är tillräckligt brett. Det är så vi hittar vinnare själva.</p>
+        </div>
+      </details>
       <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=enebobee&prefilled_email=enebobee%40enebopark.se">Pro, 4&nbsp;990&nbsp;kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
     </div>
     <aside class="guarantee">
@@ -179,13 +207,14 @@ a{color:inherit}
 })();
 </script>
 <script>
-/* Annonslabbet-spårning (v2.6): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
+/* Annonslabbet-spårning (v3.0, + protip): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
 (function(){
   var T='https://video.adthekey.com/al/track.php', S='enebobee';
   function send(ev,bild){try{var d=JSON.stringify({slug:S,event:ev,bild:bild||0});
     if(navigator.sendBeacon){navigator.sendBeacon(T,new Blob([d],{type:'application/json'}));}
     else{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:true}).catch(function(){});}}catch(e){}}
   send('view');
+  var pt=document.getElementById('protip');if(pt){var ptd=false;pt.addEventListener('toggle',function(){if(pt.open&&!ptd){ptd=true;send('protip');}});}
   setTimeout(function(){send('t30');},30000);
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a'); if(!a)return;
