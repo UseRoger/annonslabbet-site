@@ -133,7 +133,11 @@ section.band{padding:72px 0;border-top:1px solid var(--rule)}
 .protip.open .pt-logos,.pt-head:hover .pt-logos{opacity:1}
 @keyframes pt-ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
 @media (prefers-reduced-motion:reduce){.pt-dot{animation:none}.pt-body,.pt-l,.pt-plus,.protip::after{transition:none}}
-.plans{display:grid;grid-template-columns:1fr;max-width:520px;gap:22px;margin:0 0 26px}
+.plans{display:grid;grid-template-columns:1fr;gap:22px;margin:0}
+.pris-rad{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch;margin:0 0 26px}
+.pris-rad .free{flex-direction:column;align-items:flex-start;justify-content:center}
+.pris-rad .free p{max-width:none}
+@media (max-width:760px){.pris-rad{grid-template-columns:1fr}}
 .plan{border:1.5px solid var(--rule);border-radius:14px;padding:28px 28px 26px;background:var(--paper)}
 .plan.main{border:2px solid var(--ink)}
 .plan h3{margin:0 0 2px;font-size:20px;font-weight:800}
@@ -338,9 +342,9 @@ footer a{color:var(--ink-2)}
   <div class="wrap">
     <h2>Ett paket. Inga abonnemang.</h2>
     <p class="intro">Ni betalar en gång och får annonserna. De är era.</p>
-    <div class="plans">
+    <div class="pris-rad"><div class="plans">
       <div class="plan main">
-        <h3>Starter</h3>
+        <h3>10 motiv till</h3>
         <p class="who">För butiken som vill ha fler vinklar att sälja från</p>
         <div class="n">1 990 kr<small>ex moms</small></div>
         <ul>
@@ -354,6 +358,7 @@ footer a{color:var(--ink-2)}
     <div class="free">
       <p><b>Börja med tre gratis.</b> Se hur era annonser blir innan ni bestämmer er för ett paket.</p>
       <a class="cta" href="mailto:jon@annonslabbet.se?subject=Tre%20annonser%20till%20oss&body=Hej%20Jon%2C%0A%0AButik%3A%20%0AProduktsida%3A%20%0A%0ATack%21">Få tre annonser gratis</a>
+    </div>
     </div>
   </div>
 </section>
@@ -406,7 +411,7 @@ footer a{color:var(--ink-2)}
 </section>
 
 <footer>
-  <div class="wrap"><a href="/integritet/">Integritet och cookies</a> · <button class="linkbtn" type="button" id="cookieAgain">Ändra cookieval</button></div>
+  <div class="wrap">Annonslabbet drivs av Spijon AB, org.nr 559236-3179 · <a href="mailto:jon@annonslabbet.se">jon@annonslabbet.se</a> · <a href="/integritet/">Integritet och cookies</a> · <button class="linkbtn" type="button" id="cookieAgain">Ändra cookieval</button></div>
 </footer>
 
 <div class="bar" id="bar"><a class="cta" href="mailto:jon@annonslabbet.se?subject=Tre%20annonser%20till%20oss&body=Hej%20Jon%2C%0A%0AButik%3A%20%0AProduktsida%3A%20%0A%0ATack%21">Få tre annonser gratis</a></div>
