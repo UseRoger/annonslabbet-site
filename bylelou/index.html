@@ -39,7 +39,7 @@ a{color:inherit}
 .cta:active{transform:translateY(1px)}
 .cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .cta small{font-weight:600;opacity:.85;font-size:14px;white-space:nowrap}
-.offer .cta{flex-direction:column;align-items:stretch;gap:2px}
+.offer .cta{width:100%;justify-content:center;font-size:19px;padding:18px 24px}
 .offer .cta .l{white-space:nowrap}
 .offer .cta .r2{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .under{display:block;margin-top:12px;font-size:14px;color:var(--ink-2)}
@@ -78,23 +78,33 @@ a{color:inherit}
 
 .offer .lead{margin:0 0 14px;font-size:16px;color:var(--ink-2);max-width:58ch}
 .offer .lead+.lead{margin-bottom:20px}
-/* pro tip (erbjudandet 3.0) */
-.protip{margin:18px 0 0;border:1.5px solid #E8945A;border-radius:12px;background:color-mix(in srgb,#E8945A 9%,transparent);overflow:hidden}
-.protip summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:15px;color:var(--ink)}
-.protip summary::-webkit-details-marker{display:none}
-.pt-pill{display:inline-flex;align-items:center;gap:6px;background:#F2A564;color:#17181C;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px;border-radius:999px;white-space:nowrap;animation:pt-pulse 1.6s ease-out 1.2s 2}
-.pt-star{font-size:12px}
-.pt-hint{flex:1;font-weight:600;color:var(--ink-2)}
-.pt-chev{width:9px;height:9px;border-right:2px solid #E8945A;border-bottom:2px solid #E8945A;transform:rotate(45deg);transition:transform .2s ease;margin:0 4px 4px 0}
-.protip[open] .pt-chev{transform:rotate(-135deg);margin:4px 4px 0 0}
-.protip summary:hover{background:color-mix(in srgb,#E8945A 16%,transparent)}
-.protip summary:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
-.pt-body{padding:2px 16px 14px;font-size:15px;color:var(--ink-2);animation:pt-in .25s ease-out}
-.pt-body p{margin:8px 0 0;max-width:58ch}
-.pt-body p+p{color:var(--ink);font-weight:600}
-@keyframes pt-pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
-@keyframes pt-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.pt-pill{animation:none}.pt-body{animation:none}.pt-chev{transition:none}}
+/* pro tip (erbjudandet 3.0 rev c): mörkt kort, orange hårlinje, rullar ut */
+.protip{position:relative;margin:0;background:var(--ink);color:var(--paper);border:1px solid color-mix(in srgb,#E8945A 45%,transparent);border-radius:14px;overflow:hidden;isolation:isolate}
+.protip::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 100% 0%,color-mix(in srgb,#E8945A 22%,transparent),transparent 60%);pointer-events:none;z-index:-1}
+.protip::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:#E8945A;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.protip.open::after{width:100%}
+.pt-head{all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px 14px;width:100%;padding:18px 18px 16px;cursor:pointer;color:inherit}
+.pt-head:focus-visible{outline:2px solid #E8945A;outline-offset:-2px;border-radius:14px}
+.pt-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#E8945A}
+.pt-dot{width:7px;height:7px;border-radius:50%;background:#E8945A;box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent);animation:pt-ping 2.4s ease-out infinite}
+.pt-title{grid-column:1/3;font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.15}
+.pt-plus{grid-column:3;grid-row:1/3;position:relative;width:30px;height:30px;border:1px solid color-mix(in srgb,var(--paper) 30%,transparent);border-radius:50%;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .2s}
+.pt-plus::before,.pt-plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--paper);transform:translate(-50%,-50%)}
+.pt-plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.protip.open .pt-plus{transform:rotate(135deg);border-color:#E8945A}
+.pt-head:hover .pt-plus{border-color:#E8945A}
+.pt-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.8,.2,1)}
+.protip.open .pt-body{grid-template-rows:1fr}
+.pt-inner{overflow:hidden;min-height:0}
+.pt-l{margin:0;padding:0 18px;font-size:15.5px;line-height:1.55;color:color-mix(in srgb,var(--paper) 82%,transparent);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.pt-l+.pt-l{margin-top:12px}
+.pt-last{color:#E8945A;font-weight:800;font-size:17px;padding-bottom:20px;margin-top:16px}
+.protip.open .pt-l{opacity:1;transform:none}
+.protip.open .pt-l:nth-child(1){transition-delay:.18s}
+.protip.open .pt-l:nth-child(2){transition-delay:.36s}
+.protip.open .pt-l:nth-child(3){transition-delay:.58s}
+@keyframes pt-ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-reduced-motion:reduce){.pt-dot{animation:none}.pt-body,.pt-l,.pt-plus,.protip::after{transition:none}}
 /* faq */
 .faq{padding:18px 20px 22px;margin:10px 0 30px;max-width:620px;background:#FFFFFF;border:1px solid var(--rule);border-radius:14px}
 .faq h3{font-size:14px;font-weight:600;color:var(--ink-2);margin:0 0 6px}
@@ -124,7 +134,7 @@ a{color:inherit}
   .offer{grid-template-columns:1fr;gap:16px;padding:20px 18px}
   .guarantee{order:2}
   .offer>div{display:contents}
-  .offer h2{order:0}.offer .lead{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.protip{order:2}.pro{order:3}
+  .offer h2{order:0}.offer .lead{order:0}.price{order:0}.offer ul{order:0}.offer .cta{order:1}.protip{order:2;margin-top:4px}.pro{order:3}
   .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
   .bar.on{transform:none}
   .sender{padding-bottom:120px}
@@ -166,26 +176,35 @@ a{color:inherit}
         <li>5 ändringar ingår, vill ni ändra mer kostar det 100&nbsp;kr per&nbsp;bild</li>
         <li>Betalning med kort eller Klarna, kvitto&nbsp;direkt</li>
       </ul>
-      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=bylelou&prefilled_email=info@bylelou.se"><span class="l">Beställ 20 annonser</span> <span class="r2"><span>(10&nbsp;motiv)</span> <small>1&nbsp;990&nbsp;kr</small></span></a>
-      <details class="protip" id="protip">
-        <summary><span class="pt-pill"><span class="pt-star" aria-hidden="true">&#10022;</span>Pro tip</span><span class="pt-hint">Så får ni ut mest av annonserna</span><span class="pt-chev" aria-hidden="true"></span></summary>
-        <div class="pt-body">
-          <p>Kör de 10 motiven tillsammans med era tre gratisannonser som en egen kampanj: 13 varianter på samma erbjudande. Ge den minst sju dagar och minst 300&nbsp;kr om dagen, med mindre hinner Meta inte fördela mellan så många. Systemet lär sig vilken vinkel som ska visas för vem, och efter en vecka ser ni svart på vitt vilken ni ska satsa på.</p>
-          <p>Ger man Meta tillräckligt brett material att jobba med hittar algoritmen vinnaren åt er. Tretton varianter är tillräckligt brett. Det är så vi hittar vinnare själva.</p>
-        </div>
-      </details>
+      <a class="cta" href="https://buy.stripe.com/3cI5kC0Zafp25VGdZlc3m00?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Köp nu</a>
       <p class="pro">Vill ni ha rörligt också? <a href="https://buy.stripe.com/7sYeVc4bm2Cg83Og7tc3m01?client_reference_id=bylelou&prefilled_email=info@bylelou.se">Pro, 4&nbsp;990&nbsp;kr</a>: de 20 annonserna plus tre korta videos för Reels och TikTok, klart inom fem arbetsdagar.</p>
     </div>
-    <aside class="guarantee">
-      <b class="gh"><svg class="ico" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6 4.6 5.4v6.1c0 4.5 3.1 8.5 7.4 9.9 4.3-1.4 7.4-5.4 7.4-9.9V5.4L12 2.6z" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.7 12.1 2.3 2.3 4.4-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Garanti</b>
-      <p>Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Slår ingen av våra 20 er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p>
-    </aside>
+    <aside class="protip" id="protip">
+        <button class="pt-head" type="button" aria-expanded="false" aria-controls="pt-body">
+          <span class="pt-label"><span class="pt-dot" aria-hidden="true"></span>Pro tip</span>
+          <span class="pt-title">Så hittar Meta er vinnare</span>
+          <span class="pt-plus" aria-hidden="true"></span>
+        </button>
+        <div class="pt-body" id="pt-body">
+          <div class="pt-inner">
+            <p class="pt-l">Instagrams och Facebooks algoritmer behöver tillräckligt med material att jobba med för att hitta hur de säljer er produkt bäst.</p>
+            <p class="pt-l">Med en kampanj på 13 vinklar, de 10 motiven plus era tre gratisannonser, och en budget på minst 300&nbsp;kr om dagen i sju dagar har Meta tillräckligt att jobba med för att hitta er vinnare.</p>
+            <p class="pt-l pt-last">Det är det ni köper.</p>
+          </div>
+        </div>
+      </aside>
+      <script>
+      (function(){var a=document.getElementById('protip');if(!a)return;var b=a.querySelector('.pt-head'),sent=false;
+      b.addEventListener('click',function(){var o=!a.classList.contains('open');a.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');
+      if(o&&!sent){sent=true;try{document.dispatchEvent(new CustomEvent('protip-open'));}catch(e){}}});})();
+      </script>
   </section>
 
   <section class="faq">
     <h3>Vanliga frågor</h3>
     <details><summary>Vilka format får vi?</summary><p>PNG i 9:16 (stories, Reels) och 4:5 (flöde), redo att ladda upp i Meta Ads Manager. Andra format på begäran.</p></details>
     <details><summary>Vad händer efter betalning?</summary><p>Ni får ett kvitto direkt och de 10 motiven i båda formaten, 20 annonser, inom 48 timmar. Vill ni ändra något svarar ni på mailet, 5 ändringar ingår, fler kostar 100 kr per bild.</p></details>
+    <details><summary>Vad är garantin?</summary><p>Ge annonserna samma chans som er bästa annons har fått: samma annonskostnad, samma målgrupp, minst sju dagar. Bild jämförs med er bästa bildannons, video med er bästa video. Säljer ingen av de 10 motiven bättre än er bästa på kostnad per köp eller lead får ni pengarna tillbaka. Säg till inom 30 dagar från leveransdatumet och visa siffrorna, så är det klart.</p></details>
     <details><summary>Varför gratis?</summary><p>Tre annonser kostar oss lite och visar mer än en pitch. Gillar ni dem köper ni fler, annars behåller ni dem och vi hörs inte mer.</p></details>
   </section>
 
@@ -207,14 +226,14 @@ a{color:inherit}
 })();
 </script>
 <script>
-/* Annonslabbet-spårning (v3.0, + protip): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
+/* Annonslabbet-spårning (v3.0c, + protip): beacons till vår egen logg, ingen tredjepart, ingen cookie. */
 (function(){
   var T='https://video.adthekey.com/al/track.php', S='bylelou';
   function send(ev,bild){try{var d=JSON.stringify({slug:S,event:ev,bild:bild||0});
     if(navigator.sendBeacon){navigator.sendBeacon(T,new Blob([d],{type:'application/json'}));}
     else{fetch(T,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:true}).catch(function(){});}}catch(e){}}
   send('view');
-  var pt=document.getElementById('protip');if(pt){var ptd=false;pt.addEventListener('toggle',function(){if(pt.open&&!ptd){ptd=true;send('protip');}});}
+  document.addEventListener('protip-open',function(){send('protip');},{once:true});
   setTimeout(function(){send('t30');},30000);
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a'); if(!a)return;

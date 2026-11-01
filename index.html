@@ -101,25 +101,35 @@ section.band{padding:72px 0;border-top:1px solid var(--rule)}
 .why span{color:var(--ink-2);font-size:16px}
 
 /* pricing */
-.vinkel-tip{max-width:620px;margin-top:-18px}
+.vinkel-tip{max-width:560px;margin-top:-14px}
 #vinkel .intro+.intro{margin-top:-22px}
-/* pro tip (erbjudandet 3.0) */
-.protip{margin:18px 0 0;border:1.5px solid #E8945A;border-radius:12px;background:color-mix(in srgb,#E8945A 9%,transparent);overflow:hidden}
-.protip summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:15px;color:var(--ink)}
-.protip summary::-webkit-details-marker{display:none}
-.pt-pill{display:inline-flex;align-items:center;gap:6px;background:#F2A564;color:#17181C;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 11px;border-radius:999px;white-space:nowrap;animation:pt-pulse 1.6s ease-out 1.2s 2}
-.pt-star{font-size:12px}
-.pt-hint{flex:1;font-weight:600;color:var(--ink-2)}
-.pt-chev{width:9px;height:9px;border-right:2px solid #E8945A;border-bottom:2px solid #E8945A;transform:rotate(45deg);transition:transform .2s ease;margin:0 4px 4px 0}
-.protip[open] .pt-chev{transform:rotate(-135deg);margin:4px 4px 0 0}
-.protip summary:hover{background:color-mix(in srgb,#E8945A 16%,transparent)}
-.protip summary:focus-visible{outline:3px solid var(--ink);outline-offset:-3px}
-.pt-body{padding:2px 16px 14px;font-size:15px;color:var(--ink-2);animation:pt-in .25s ease-out}
-.pt-body p{margin:8px 0 0;max-width:58ch}
-.pt-body p+p{color:var(--ink);font-weight:600}
-@keyframes pt-pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent)}100%{box-shadow:0 0 0 12px transparent}}
-@keyframes pt-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.pt-pill{animation:none}.pt-body{animation:none}.pt-chev{transition:none}}
+/* pro tip (erbjudandet 3.0 rev c): mörkt kort, orange hårlinje, rullar ut */
+.protip{position:relative;margin:0;background:var(--ink);color:var(--paper);border:1px solid color-mix(in srgb,#E8945A 45%,transparent);border-radius:14px;overflow:hidden;isolation:isolate}
+.protip::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 100% 0%,color-mix(in srgb,#E8945A 22%,transparent),transparent 60%);pointer-events:none;z-index:-1}
+.protip::after{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:#E8945A;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.protip.open::after{width:100%}
+.pt-head{all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px 14px;width:100%;padding:18px 18px 16px;cursor:pointer;color:inherit}
+.pt-head:focus-visible{outline:2px solid #E8945A;outline-offset:-2px;border-radius:14px}
+.pt-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#E8945A}
+.pt-dot{width:7px;height:7px;border-radius:50%;background:#E8945A;box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent);animation:pt-ping 2.4s ease-out infinite}
+.pt-title{grid-column:1/3;font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.15}
+.pt-plus{grid-column:3;grid-row:1/3;position:relative;width:30px;height:30px;border:1px solid color-mix(in srgb,var(--paper) 30%,transparent);border-radius:50%;transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .2s}
+.pt-plus::before,.pt-plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--paper);transform:translate(-50%,-50%)}
+.pt-plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.protip.open .pt-plus{transform:rotate(135deg);border-color:#E8945A}
+.pt-head:hover .pt-plus{border-color:#E8945A}
+.pt-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.8,.2,1)}
+.protip.open .pt-body{grid-template-rows:1fr}
+.pt-inner{overflow:hidden;min-height:0}
+.pt-l{margin:0;padding:0 18px;font-size:15.5px;line-height:1.55;color:color-mix(in srgb,var(--paper) 82%,transparent);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.pt-l+.pt-l{margin-top:12px}
+.pt-last{color:#E8945A;font-weight:800;font-size:17px;padding-bottom:20px;margin-top:16px}
+.protip.open .pt-l{opacity:1;transform:none}
+.protip.open .pt-l:nth-child(1){transition-delay:.18s}
+.protip.open .pt-l:nth-child(2){transition-delay:.36s}
+.protip.open .pt-l:nth-child(3){transition-delay:.58s}
+@keyframes pt-ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,#E8945A 60%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-reduced-motion:reduce){.pt-dot{animation:none}.pt-body,.pt-l,.pt-plus,.protip::after{transition:none}}
 .plans{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:0 0 26px}
 .plan{border:1.5px solid var(--rule);border-radius:14px;padding:28px 28px 26px;background:var(--paper)}
 .plan.main{border:2px solid var(--ink)}
@@ -298,13 +308,25 @@ footer a{color:var(--ink-2)}
     <p class="intro">En ny vinkel på samma erbjudande kan vara allt som skiljer en annons som rullar från en som säljer. Bilden, texten, budskapet, hur erbjudandet läggs fram, allt spelar in, och ingen hinner testa varje kombination själv.</p>
     <p class="intro">Det är där labbet kommer in. Vi gör 10 motiv för er produkt och bygger dem på vinklar som redan säljer för andra butiker, i Norden och resten av världen. Vinklar ni kanske inte hunnit prova. Fler chanser att sälja mer, utan att lägga veckorna på att testa själva.</p>
     <div class="vinkel-tip">
-      <details class="protip" id="protip">
-        <summary><span class="pt-pill"><span class="pt-star" aria-hidden="true">&#10022;</span>Pro tip</span><span class="pt-hint">Så får ni ut mest av annonserna</span><span class="pt-chev" aria-hidden="true"></span></summary>
-        <div class="pt-body">
-          <p>Kör de 10 motiven tillsammans med era tre gratisannonser som en egen kampanj: 13 varianter på samma erbjudande. Ge den minst sju dagar och minst 300&nbsp;kr om dagen, med mindre hinner Meta inte fördela mellan så många. Systemet lär sig vilken vinkel som ska visas för vem, och efter en vecka ser ni svart på vitt vilken ni ska satsa på.</p>
-          <p>Ger man Meta tillräckligt brett material att jobba med hittar algoritmen vinnaren åt er. Tretton varianter är tillräckligt brett. Det är så vi hittar vinnare själva.</p>
+      <aside class="protip" id="protip">
+        <button class="pt-head" type="button" aria-expanded="false" aria-controls="pt-body">
+          <span class="pt-label"><span class="pt-dot" aria-hidden="true"></span>Pro tip</span>
+          <span class="pt-title">Så hittar Meta er vinnare</span>
+          <span class="pt-plus" aria-hidden="true"></span>
+        </button>
+        <div class="pt-body" id="pt-body">
+          <div class="pt-inner">
+            <p class="pt-l">Instagrams och Facebooks algoritmer behöver tillräckligt med material att jobba med för att hitta hur de säljer er produkt bäst.</p>
+            <p class="pt-l">Med en kampanj på 13 vinklar, de 10 motiven plus era tre gratisannonser, och en budget på minst 300&nbsp;kr om dagen i sju dagar har Meta tillräckligt att jobba med för att hitta er vinnare.</p>
+            <p class="pt-l pt-last">Det är det ni köper.</p>
+          </div>
         </div>
-      </details>
+      </aside>
+      <script>
+      (function(){var a=document.getElementById('protip');if(!a)return;var b=a.querySelector('.pt-head'),sent=false;
+      b.addEventListener('click',function(){var o=!a.classList.contains('open');a.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');
+      if(o&&!sent){sent=true;try{document.dispatchEvent(new CustomEvent('protip-open'));}catch(e){}}});})();
+      </script>
     </div>
   </div>
 </section>
