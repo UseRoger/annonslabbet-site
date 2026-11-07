@@ -1,0 +1,34 @@
+{
+  "workflow": "prov",
+  "bild": "scen-03.png",
+  "format": "9x16",
+  "uppdrag": {
+    "fakta": [
+      "Badrock med namnbrodyr",
+      "449 kr"
+    ],
+    "kopskal": "Första julen med eget namn",
+    "vinkel": "Present, inte en produkt på vitt",
+    "vinnare": "Presentvinkel som redan säljer hos andra butiker, bara som referens",
+    "fotoide": "Barn i badrock på trägolv, lugn yta för rubriken"
+  },
+  "forhand": {
+    "kalla": "BG",
+    "produkt_stammer": true,
+    "pris_stammer": true,
+    "pastaenden_stammer": true,
+    "anatomi_ok": true,
+    "montering_ok": true,
+    "ai_person_vid_omdome": false
+  },
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Eget namn",
+      "x": 200,
+      "y": 1600,
+      "px": 72,
+      "farg": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "verktyg": "prov-helscen",
+  "policy": "prov-helscen-2026-11-07",
+  "workflow": "prov",
+  "detta_ar_inte_en_leveransrendering": true,
+  "andrar_inte": [
+    "render_format.py",
+    "mat_annons.py",
+    "spec_v1.json"
+  ],
+  "resultat_raw": "nej",
+  "resultat_leverans": "nej",
+  "resultat_prov": "nej",
+  "resultat": "nej",
+  "raw_ar_inte_omskriven": true,
+  "stopp": 1,
+  "anmarkningar": 2,
+  "brott": [
+    "UI: Synligt bläck (9048 pixlar över alfa 16) ligger i Reels-, profil- eller kantzon."
+  ],
+  "anmarkningsrader": [
+    "Z1: rubrik em-ruta x 200–573 y 1600–1688 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1685.",
+    "T1: Rubriken är 72 px, mallfönstret är 88–120. Läsbarhet under golvet mäts som T2."
+  ],
+  "traffar": [
+    {
+      "id": "Z1",
+      "text": "rubrik em-ruta x 200–573 y 1600–1688 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1685.",
+      "niva_raw": "stopp",
+      "niva_leverans": "stopp",
+      "niva_prov": "anmarkning"
+    },
+    {
+      "id": "T1",
+      "text": "Rubriken är 72 px, mallfönstret är 88–120. Läsbarhet under golvet mäts som T2.",
+      "niva_raw": "stopp",
+      "niva_leverans": "stopp",
+      "niva_prov": "anmarkning"
+    },
+    {
+      "id": "UI",
+      "text": "Synligt bläck (9048 pixlar över alfa 16) ligger i Reels-, profil- eller kantzon.",
+      "niva_raw": "stopp",
+      "niva_leverans": "stopp",
+      "niva_prov": "stopp"
+    }
+  ],
+  "hur_allvar_harleds": [
+    "Z1: rå nivå stopp står kvar. I prov blir den anmärkning. Rå Z1 är mallens säkra yta (DOM- eller em-ruta). I prov är den en anmärkning. Synligt bläck mot Reels- eller profil-UI är regeln UI och förblir stopp.",
+    "T1: rå nivå stopp står kvar. I prov blir den anmärkning. Mallens rubrikfönster (till exempel 88–120 px) är en anmärkning i prov. Text under läsgolvet är T2 och förblir stopp.",
+    "UI: stopp i både rå mätning och prov. Den nedklassas inte.",
+    "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
+    "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja."
+  ],
+  "matt": {
+    "block": [
+      {
+        "roll": "rubrik",
+        "text": "Eget namn",
+        "px": 72.0,
+        "familj": "Inter",
+        "font_fil": "/usr/share/fonts/truetype/macos/Inter-Bold.ttf",
+        "farg": [
+          255,
+          255,
+          255
+        ],
+        "bricka_farg": null,
+        "linebox": [
+          200.0,
+          1600.0,
+          572.7,
+          1688.0
+        ],
+        "synligt_black": [
+          204,
+          1617,
+          569,
+          1685
+        ],
+        "linebox_botten": 1688.0,
+        "black_botten": 1685,
+        "kontrast": 14.25
+      }
+    ],
+    "ui": {
+      "black_pixlar": 9048,
+      "linebox_korsar": true
+    },
+    "zon": {
+      "namn": "9x16",
+      "t2_min_px": 36.0,
+      "t1_mall_px": [
+        88.0,
+        120.0
+      ],
+      "brickzon": [
+        108.0,
+        1150.0,
+        972.0,
+        1248.0
+      ]
+    },
+    "black_troskel": 16,
+    "kontrast_min": 4.5,
+    "bild_px": [
+      1080,
+      1920
+    ],
+    "produkt_urklipp": "inget",
+    "beskuren": false,
+    "info": [
+      "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
+      "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja."
+    ]
+  },
+  "bg": {
+    "roll": "faktakoll",
+    "kundgodkannande": false,
+    "kalla": "BG"
+  }
+}

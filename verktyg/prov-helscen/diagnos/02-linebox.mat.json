@@ -1,0 +1,114 @@
+{
+  "verktyg": "prov-helscen",
+  "policy": "prov-helscen-2026-11-07",
+  "workflow": "prov",
+  "detta_ar_inte_en_leveransrendering": true,
+  "andrar_inte": [
+    "render_format.py",
+    "mat_annons.py",
+    "spec_v1.json"
+  ],
+  "resultat_raw": "nej",
+  "resultat_leverans": "nej",
+  "resultat_prov": "ja",
+  "resultat": "ja",
+  "raw_ar_inte_omskriven": true,
+  "stopp": 0,
+  "anmarkningar": 2,
+  "brott": [],
+  "anmarkningsrader": [
+    "Z1: rubrik em-ruta x 200–469 y 1160–1258 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1239.",
+    "T1: Rubriken är 80 px, mallfönstret är 88–120. Läsbarhet under golvet mäts som T2."
+  ],
+  "traffar": [
+    {
+      "id": "Z1",
+      "text": "rubrik em-ruta x 200–469 y 1160–1258 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1239.",
+      "niva_raw": "stopp",
+      "niva_leverans": "stopp",
+      "niva_prov": "anmarkning"
+    },
+    {
+      "id": "T1",
+      "text": "Rubriken är 80 px, mallfönstret är 88–120. Läsbarhet under golvet mäts som T2.",
+      "niva_raw": "stopp",
+      "niva_leverans": "stopp",
+      "niva_prov": "anmarkning"
+    }
+  ],
+  "hur_allvar_harleds": [
+    "Z1: rå nivå stopp står kvar. I prov blir den anmärkning. Rå Z1 är mallens säkra yta (DOM- eller em-ruta). I prov är den en anmärkning. Synligt bläck mot Reels- eller profil-UI är regeln UI och förblir stopp.",
+    "T1: rå nivå stopp står kvar. I prov blir den anmärkning. Mallens rubrikfönster (till exempel 88–120 px) är en anmärkning i prov. Text under läsgolvet är T2 och förblir stopp.",
+    "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
+    "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja.",
+    "Em-rutan korsar en UI-gräns men synligt bläck gör det inte. UI-stopp sätts bara av bläcket. Rå Z1 står kvar om em-rutan lämnar säkra ytan."
+  ],
+  "matt": {
+    "block": [
+      {
+        "roll": "rubrik",
+        "text": "HALLO",
+        "px": 80.0,
+        "familj": "Inter",
+        "font_fil": "/usr/share/fonts/truetype/macos/Inter-Bold.ttf",
+        "farg": [
+          255,
+          255,
+          255
+        ],
+        "bricka_farg": null,
+        "linebox": [
+          200.0,
+          1159.5,
+          469.34,
+          1257.5
+        ],
+        "synligt_black": [
+          205,
+          1179,
+          466,
+          1239
+        ],
+        "linebox_botten": 1257.5,
+        "black_botten": 1239,
+        "kontrast": 16.24
+      }
+    ],
+    "ui": {
+      "black_pixlar": 0,
+      "linebox_korsar": true
+    },
+    "zon": {
+      "namn": "9x16",
+      "t2_min_px": 36.0,
+      "t1_mall_px": [
+        88.0,
+        120.0
+      ],
+      "brickzon": [
+        108.0,
+        1150.0,
+        972.0,
+        1248.0
+      ]
+    },
+    "black_troskel": 16,
+    "kontrast_min": 4.5,
+    "bild_px": [
+      1080,
+      1920
+    ],
+    "produkt_urklipp": "inget",
+    "beskuren": false,
+    "info": [
+      "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
+      "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja.",
+      "Em-rutan korsar en UI-gräns men synligt bläck gör det inte. UI-stopp sätts bara av bläcket. Rå Z1 står kvar om em-rutan lämnar säkra ytan."
+    ]
+  },
+  "bg": {
+    "roll": "faktakoll",
+    "kundgodkannande": false,
+    "kalla": "BG"
+  }
+}
