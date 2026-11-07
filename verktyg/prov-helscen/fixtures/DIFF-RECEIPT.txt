@@ -1,7 +1,8 @@
 mail_v32_md5 fcea4c8a3c862013ae2eb964411edc19
-mail_v33_md5 dd40e3a3ddb7dccd35eeaaa899ab27e0
+mail_v33_md5 9f6ddca59f11d7f27149f3649ed71d28
 mail_v32_bytes 15677
-mail_v33_bytes 17376
+mail_v33_bytes 17418
 drive_file_id 1BfY-hGreedlYYSpKV4iYvrfG_jyx4aru
 drive_folder outbox
+timing nästa vardagsmorgon, första timmen efter 07:00, minst en natt efter mail 1. Inte minst en natt efter Varm-raden. Inte aldrig samma dygn.
 test test_mail_v33.py: alla ##-avsnitt i v3.2 finns oförändrade i v3.3. Enda nya avsnittet är Mail 2 Varm. Ingen Alternativ adress, inget v4/v5-godkännande, handboken är inte aktiverad.

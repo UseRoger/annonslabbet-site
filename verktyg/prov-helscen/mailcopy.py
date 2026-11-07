@@ -8,7 +8,7 @@ V33_PARA = (
     "*v3.3 2026-11-07 (INNEHÅLL GODKÄNT, Jon t446u): ett nytt mail, **Mail 2 Varm**, "
     "till butiker Aurora flaggat som varma (stannat 30 s, laddat ner, klickat köp eller "
     "\"Skriv till Jon\"). Det ersätter ordinarie mail 2 för den butiken, aldrig båda, "
-    "och går nästa vardagsmorgon efter minst en natt. Jon 7/11: dagen-efter-mailet ska "
+    "och går nästa vardagsmorgon, första timmen efter 07:00, minst en natt efter mail 1. Jon 7/11: dagen-efter-mailet ska "
     "ge ett skäl att beställa och visa att de tio motiven byggs runt deras kampanj, "
     "inte bara fråga om de tittat. Grok 7/11: \"exempel\", inte \"antydan\", så demon "
     "inte låter halvfärdig. Allt annat ordagrant v3.2 (mail 1, ordinarie mail 2 dag 3, "
@@ -26,7 +26,7 @@ jons_ord: innehåll godkänt t446u (2026-11-07). Handboksaktivering på servern 
 ---
 """
 
-WARM = """## Mail 2 Varm (nästa vardagsmorgon efter Varm-raden, tidigast efter minst en natt, samma tråd, bara om inget svar, ersätter ordinarie mail 2 för den butiken)
+WARM = """## Mail 2 Varm (nästa vardagsmorgon, första timmen efter 07:00, minst en natt efter mail 1, samma tråd, bara om inget svar, ersätter ordinarie mail 2 för den butiken)
 
 Hann ni titta? De tre är ett exempel på vad vi kan göra för {{PRODUKT}}.
 
@@ -34,7 +34,7 @@ Beställer ni de tio motiven vill jag veta vad ni planerar i jul (kampanj, rea, 
 
 Jon
 
-*Regel: `{{PRODUKT}}` som i mail 1. "i jul" byts av Brevbäraren mot aktuell säsong efter 10 januari ("i vår", "inför sommaren"), ett ord, aldrig något annat i texten. Nämn aldrig besöket. Skickas tidigast nästa vardagsmorgon, minst en natt efter Varm-raden, och aldrig samma dygn. Ersätter ordinarie mail 2, aldrig båda. Samma spärr som mail 2: svar, köp, studs eller nej.*
+*Regel: `{{PRODUKT}}` som i mail 1. "i jul" byts av Brevbäraren mot aktuell säsong efter 10 januari ("i vår", "inför sommaren"), ett ord, aldrig något annat i texten. Nämn aldrig besöket. Skickas nästa vardagsmorgon, första timmen efter 07:00, minst en natt efter mail 1. Ersätter ordinarie mail 2. Ett mail 2 per butik, aldrig båda. Samma spärrar som ordinarie mail 2.*
 """
 
 H1_GAMMAL = "# Mail-copy v3.2 (Gmail från jon@annonslabbet.se)\n"
