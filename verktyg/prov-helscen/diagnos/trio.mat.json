@@ -1,0 +1,42 @@
+{
+  "verktyg": "prov-helscen",
+  "policy": "prov-helscen-2026-11-07",
+  "trio": [
+    "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/01-fri-bricka.png",
+    "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/02-linebox.png",
+    "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/03-ui-krock.png"
+  ],
+  "par": [
+    {
+      "a": "01-fri-bricka.png",
+      "b": "02-linebox.png",
+      "slag": "olika"
+    },
+    {
+      "a": "01-fri-bricka.png",
+      "b": "03-ui-krock.png",
+      "slag": "olika"
+    },
+    {
+      "a": "02-linebox.png",
+      "b": "03-ui-krock.png",
+      "slag": "olika"
+    }
+  ],
+  "tre_nya_foton": true,
+  "resultat_raw": "ja",
+  "resultat": "ja",
+  "raw_ar_inte_omskriven": true,
+  "brott": [],
+  "anmarkningsrader": [
+    "LIKHET: Subjektiv likhet lämnas till Jon och Martin."
+  ],
+  "hur_allvar_harleds": [
+    "Inga råa stopp att omklassificera.",
+    "Identisk kopia eller exakt crop stoppar påståendet tre nya foton. Övrig likhet är en anmärkning, inte ett stopp."
+  ],
+  "bg": {
+    "roll": "faktakoll",
+    "kundgodkannande": false
+  }
+}
