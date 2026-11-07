@@ -17,6 +17,7 @@ def _scen(path, farg, ellips):
 
 def _grund(bild):
     return {
+        "vag": "prov-helscen",
         "workflow": "prov",
         "bild": bild,
         "format": "9x16",
@@ -46,13 +47,13 @@ def skriv(ut: Path):
     _scen(ut / "scen-03.png", (62, 36, 28, 255), (400, 900, 720, 1400))
 
     matt = rita_block({"text": "HALLO", "px": 80, "roll": "rubrik"}, {}, str(ut))
-    grans = 1248
+    grans = 1580
     y = grans - (matt["black_lokal"][3] + matt["linebox_lokal"][3]) / 2
 
     jobb = [
-        ("01-fri-bricka", "scen-01.png", [
+        ("01-meter-ren-ej-faktagranskad", "scen-01.png", [
             {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72, "farg": "#ffffff"},
-            {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 42, "farg": "#ffffff", "bricka_farg": "#1d3a2a"},
+            {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 64, "farg": "#ffffff", "bricka_farg": "#1d3a2a"},
         ]),
         ("02-linebox", "scen-02.png", [
             {"roll": "rubrik", "text": "HALLO", "x": 200, "y": y, "px": 80, "farg": "#ffffff"},
@@ -71,7 +72,7 @@ def skriv(ut: Path):
             json.dumps(rapport, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
     trio = mat_helscen.mat_trio([
-        ut / "01-fri-bricka.png",
+        ut / "01-meter-ren-ej-faktagranskad.png",
         ut / "02-linebox.png",
         ut / "03-ui-krock.png",
     ])

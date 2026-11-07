@@ -1,6 +1,31 @@
 # Prov i hel scen
 
-Det här är en egen väg för **prov**. Den ligger i git-repot `annonslabbet-site` för att den ska kunna testas och granskas. De verktyg samordnaren redan kör ligger inte här.
+Fristående verktyg. Kör den här mappen. Klona inte repot för att producera proven.
+
+`render_format.py` i Drive `outbox/text-i-kod` är inte ändrad och inte fixad. Den här koden anropar den inte. Leverans (10 motiv, 9:16 och 4:5) körs som förut med den filen.
+
+## Så väljs vägen
+
+Briefen ska ha `"vag": "prov-helscen"`. Då är det här kommandot rätt, inte `render_format.py`.
+
+Scenen ska redan vara 1080×1920. Verktyget skalar inte om och lägger inte till staplar. `export_9x16` i `.mat.json` är true bara då.
+
+```bash
+python3 render_helscen.py --data brief.json --ut labb/bild1.png
+python3 mat_helscen.py --data brief.json --bild labb/bild1.png --json labb/bild1.mat.json
+python3 jobbmanifest.py --json jobb.json
+```
+
+`brief.json` behöver `vag`, `bild`, `format` `9x16`, `uppdrag` (fakta, köpskäl, vinkel, vinnare, fotoide) och `texter` med `x`, `y`, `px`. Prisbrickan ligger där bilden har plats.
+
+`.mat.json` har rå nivå och provets allvar. Z1–Z5, fast brickzon, T1-fönstret och T2 på 36 px stoppar inte. Synlig texthöjd under 38 px (Bildgranskaren v6 och Samordnaren v8, vid 1080 px bredd), kontrast under 4,5:1, och synligt bläck i Reels från y 1580 eller profilraden y 0–269 stoppar. Em-rutan ensam stoppar inte.
+
+Saknad faktagranskning är `bg.status` `ej_gjord` och resultat nej. Det är inte Bildgranskarens ok och inte Jon eller Martins ok. Fälten fylls inte i som ja för att de saknas.
+
+`jobb.json` ska ha `job_id`. `kostnad` är talet från jobbets svar tillsammans med `kostnad_kalla`, eller exakt `ej tillgänglig`. Utan källa blir talet inte godkänt. Saldoskillnad används inte.
+
+Till Bildgranskaren: PNG, `.mat.json`, fotoide, vinkel och källor, ett meddelande per butik. Avsnittet `till_bildgranskaren` i rapporten säger vad som är nej och vad som är anmärkning.
+
 
 Betald leverans är orörd. `render_format.py`, `mat_annons.py`, `spec_v1.json` och `format/F1.html`–`F12.html` finns i Google Drive, mappen `outbox/text-i-kod` (id `1d3pBsrC1-O0pY_vUHk81hZK6u7bej7TE`). De filerna är inte ersatta och inte kopierade in hit. Leveransen är fortfarande 10 motiv i 9:16 och 4:5, med de regler de verktygen redan har.
 
@@ -11,12 +36,12 @@ Higgsfield-taket på 100 krediter per dag ligger inte i det här repot och höjs
 ## Kör
 
 ```bash
-cd verktyg/prov-helscen
 python3 -m pip install -r requirements.txt
 python3 -m unittest test_prov_helscen.py test_mail_v33.py -v
-python3 render_helscen.py --data diagnos/01-fri-bricka.json --ut /tmp/prov.png
-python3 mat_helscen.py --data diagnos/01-fri-bricka.json --bild /tmp/prov.png --json /tmp/prov.mat.json
+python3 render_helscen.py --data diagnos/01-meter-ren-ej-faktagranskad.json --ut /tmp/prov.png
+python3 mat_helscen.py --data diagnos/01-meter-ren-ej-faktagranskad.json --bild /tmp/prov.png --json /tmp/prov.mat.json
 python3 mat_helscen.py --trio a.png b.png c.png --json /tmp/trio.mat.json
+python3 jobbmanifest.py --json jobb.json
 ```
 
 Exit 0 när `resultat` är ja, exit 1 när provet har stopp, exit 2 vid fel i underlaget. Rapporten skrivs i båda de första fallen.

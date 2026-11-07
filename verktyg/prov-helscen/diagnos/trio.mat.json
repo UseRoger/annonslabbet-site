@@ -2,18 +2,18 @@
   "verktyg": "prov-helscen",
   "policy": "prov-helscen-2026-11-07",
   "trio": [
-    "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/01-fri-bricka.png",
+    "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/01-meter-ren-ej-faktagranskad.png",
     "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/02-linebox.png",
     "/agent/repos/annonslabbet-site/verktyg/prov-helscen/diagnos/03-ui-krock.png"
   ],
   "par": [
     {
-      "a": "01-fri-bricka.png",
+      "a": "01-meter-ren-ej-faktagranskad.png",
       "b": "02-linebox.png",
       "slag": "olika"
     },
     {
-      "a": "01-fri-bricka.png",
+      "a": "01-meter-ren-ej-faktagranskad.png",
       "b": "03-ui-krock.png",
       "slag": "olika"
     },

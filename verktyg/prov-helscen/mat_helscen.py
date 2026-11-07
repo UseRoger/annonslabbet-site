@@ -41,15 +41,65 @@ from policy import klassificera
 
 HERE = Path(__file__).resolve().parent
 
-FORHAND_KRAV = (
-    "produkt_stammer",
-    "pris_stammer",
-    "pastaenden_stammer",
-    "anatomi_ok",
-    "montering_ok",
-    "ai_person_vid_omdome",
-)
 UPPDRAG_KRAV = ("fakta", "kopskal", "vinkel", "vinnare", "fotoide")
+BG_FALT = ("produkt", "pastaenden", "anatomi", "montering", "ai_person_vid_omdome")
+
+
+def las_bg(data):
+    """Saknad granskning är ej gjord, aldrig ett tyst ja."""
+    raw = data.get("bg") if isinstance(data.get("bg"), dict) else {}
+    if not raw and isinstance(data.get("forhand"), dict):
+        raw = data["forhand"]
+    granskad = raw.get("granskad") is True and not _tom(raw.get("granskare"))
+    falt = {}
+    for nyckel in BG_FALT:
+        if nyckel not in raw:
+            falt[nyckel] = "saknas"
+        else:
+            falt[nyckel] = raw[nyckel]
+    if not granskad:
+        status = "ej_gjord"
+    elif any(varde == "saknas" for varde in falt.values()):
+        status = "ofullstandig"
+    else:
+        status = "gjord"
+    return {
+        "status": status,
+        "granskare": raw.get("granskare"),
+        "falt": falt,
+        "roll": "faktakoll",
+        "jon_martin_ok": False,
+        "kundgodkannande": False,
+    }
+
+
+def _ja(varde):
+    return varde is True or varde == "ja"
+
+
+def las_jobb(data):
+    jobb = data.get("jobb") if isinstance(data.get("jobb"), dict) else {}
+    jobb_id = jobb.get("job_id")
+    if "kostnad" not in jobb:
+        kostnad = "ej tillgänglig"
+    else:
+        kostnad = jobb.get("kostnad")
+    kalla = jobb.get("kostnad_kalla")
+    fel = None
+    if isinstance(kostnad, (int, float)) and _tom(kalla):
+        fel = "Kostnad utan kostnad_kalla räknas inte. Saldoskillnad används inte."
+        kostnad = "ej tillgänglig"
+    elif kostnad not in ("ej tillgänglig", None) and not isinstance(kostnad, (int, float)):
+        fel = "Kostnad ska vara ett tal från jobbets svar, eller ej tillgänglig."
+        kostnad = "ej tillgänglig"
+    return {
+        "ok": bool(jobb_id) and fel is None,
+        "job_id": jobb_id,
+        "kostnad": "ej tillgänglig" if kostnad is None else kostnad,
+        "kostnad_kalla": None if _tom(kalla) else kalla,
+        "credits": jobb.get("credits"),
+        "fel": fel,
+    }
 
 
 def ladda_json(path):
@@ -88,22 +138,30 @@ def traffar_for(data, bas, bild_path=None):
             "text": "Provet ska börja i fakta, köpskäl, vinkel, vinnare och fotoidé. Saknas: " + ", ".join(saknas),
         })
 
-    forhand = data.get("forhand") or {}
-    saknad_bg = [k for k in FORHAND_KRAV if k not in forhand]
-    if saknad_bg:
+    if data.get("vag") != "prov-helscen":
+        traffar.append({
+            "id": "VAG_SAKNAS",
+            "text": "Briefen har inte vag prov-helscen. Leverans ritas inte här. render_format.py är orörd och inte fixad.",
+        })
+    bg = las_bg(data)
+    if bg["status"] != "gjord":
         traffar.append({
             "id": "BG_SAKNAS",
-            "text": "BG-faktakoll saknas (" + ", ".join(saknad_bg) + "). Det är inte ett kundgodkännande.",
+            "text": "Faktagranskning är " + bg["status"] + ". Saknade fält är inte ja. Det här är inte Bildgranskarens ok och inte Jon eller Martins ok.",
         })
     else:
-        if forhand.get("produkt_stammer") is not True:
+        falt = bg["falt"]
+        if not _ja(falt["produkt"]):
             traffar.append({"id": "PRODUKT", "text": "BG: produkten stämmer inte med butikens vara."})
-        if forhand.get("pris_stammer") is not True or forhand.get("pastaenden_stammer") is not True:
+        if not _ja(falt["pastaenden"]):
             traffar.append({"id": "FAKTA", "text": "BG: pris eller påstående stämmer inte."})
-        if forhand.get("anatomi_ok") is not True or forhand.get("montering_ok") is not True:
+        if not _ja(falt["anatomi"]) or not _ja(falt["montering"]):
             traffar.append({"id": "ANATOMI", "text": "BG: anatomi eller montering är fel."})
-        if forhand.get("ai_person_vid_omdome") is True:
+        if falt["ai_person_vid_omdome"] is True or falt["ai_person_vid_omdome"] == "ja":
             traffar.append({"id": "AI_PERSON", "text": "BG: AI-person står bredvid ett omdöme."})
+    jobb = las_jobb(data)
+    if jobb["fel"]:
+        traffar.append({"id": "KOSTNAD", "text": jobb["fel"]})
 
     if data.get("produkt_png"):
         info.append("produkt_png ignoreras. Inget urklipp klistras ovanpå scenens produkt.")
@@ -136,8 +194,9 @@ def traffar_for(data, bas, bild_path=None):
         for b in block:
             black = b["synligt_black"]
             if black is None:
-                traffar.append({"id": "T2", "text": f"{b['roll']} har inget synligt bläck."})
+                traffar.append({"id": "LASBAR", "text": f"{b['roll']} har inget synligt bläck. {zoner['synlig_kalla']}."})
                 continue
+            b["synlig_hojd"] = round(black[3] - black[1], 2)
             for etikett, x0, y0, x1, y1 in zoner["forbjudna"]:
                 ui_pix += ink_pixlar_i(b["mask"], (x0, y0, x1, y1))
                 if korsar_linebox(b["linebox"], (x0, y0, x1, y1)):
@@ -155,25 +214,24 @@ def traffar_for(data, bas, bild_path=None):
                     "id": "Z3",
                     "text": f"{b['roll']} {b['text']!r} ligger utanför mallens fasta brickzon. Synligt bläck {_fmt(black)}.",
                 })
-            if b["px"] + 0.5 < zoner["t2_min"]:
+            if b["synlig_hojd"] + 0.5 < zoner["synlig_min"]:
                 traffar.append({
-                    "id": "T2",
-                    "text": f"{b['roll']} är {b['px']:.0f} px, läsgolv {zoner['t2_min']:.0f} px.",
+                    "id": "LASBAR",
+                    "text": (
+                        f"{b['roll']} har synlig höjd {b['synlig_hojd']:.0f} px, "
+                        f"golv {zoner['synlig_min']:.0f} px vid den här bredden. {zoner['synlig_kalla']}. "
+                        "Specens T2 på 36 px och brickregeln B2 används inte som provstopp."
+                    ),
                 })
             if b["roll"] == "rubrik":
                 lo, hi = zoner["rubrik_px"]
                 if b["px"] < lo - 0.5 or b["px"] > hi + 0.5:
                     traffar.append({
                         "id": "T1",
-                        "text": f"Rubriken är {b['px']:.0f} px, mallfönstret är {lo:.0f}–{hi:.0f}. Läsbarhet under golvet mäts som T2.",
+                        "text": f"Rubriken är {b['px']:.0f} px, mallfönstret är {lo:.0f}–{hi:.0f}. Det stoppar inte provet.",
                     })
                 if ord_antal(b["text"]) > 8:
-                    traffar.append({"id": "K2", "text": f"Rubriken har {ord_antal(b['text'])} ord, max 8."})
-            if b["roll"] in ("pris", "bevis", "bricka") and b["px"] + 0.5 < zoner["b2_min"]:
-                traffar.append({
-                    "id": "B2",
-                    "text": f"Bricktexten är {b['px']:.0f} px, minst {zoner['b2_min']:.0f}.",
-                })
+                    traffar.append({"id": "K2", "text": f"Rubriken har {ord_antal(b['text'])} ord, malltak 8. Anmärkning i prov."})
             bakgrund = luminanser_under(render["scen"], b["mask"])
             if b["bricka_farg"]:
                 bakgrund = [relativ_luminans(b["bricka_farg"])]
@@ -187,7 +245,10 @@ def traffar_for(data, bas, bild_path=None):
         if ui_pix:
             traffar.append({
                 "id": "UI",
-                "text": f"Synligt bläck ({ui_pix} pixlar över alfa {BLACK_TROSKEL}) ligger i Reels-, profil- eller kantzon.",
+                "text": (
+                    f"Synligt bläck ({ui_pix} pixlar över alfa {BLACK_TROSKEL}) ligger i Reels från y 1580 "
+                    "eller i profilraden y 0–269, skalat mot 1080×1920. Em-rutan räknas inte."
+                ),
             })
         if linebox_ui and not ui_pix:
             info.append(
@@ -252,15 +313,20 @@ def traffar_for(data, bas, bild_path=None):
         "ui": block_ui if zoner else None,
         "zon": None if zoner is None else {
             "namn": zoner["namn"],
-            "t2_min_px": round(zoner["t2_min"], 2),
+            "synlig_min_px": round(zoner["synlig_min"], 2),
+            "synlig_kalla": zoner["synlig_kalla"],
+            "reels_fran_y": 1580 * zoner["skala"][1],
             "t1_mall_px": [round(v, 2) for v in zoner["rubrik_px"]],
             "brickzon": [round(v, 2) for v in zoner["bricka"]],
         },
         "black_troskel": BLACK_TROSKEL,
         "kontrast_min": KONTRAST_MIN,
         "bild_px": list(render["scen"].size),
+        "export_9x16": list(render["scen"].size) == [1080, 1920],
         "produkt_urklipp": "hoppades_over" if data.get("produkt_png") else "inget",
         "beskuren": False,
+        "bg": bg,
+        "jobb": jobb,
         "info": info,
     }
     return traffar, matt, render
@@ -279,7 +345,11 @@ def rapport(data, bas, bild_path, workflow):
         "policy": "prov-helscen-2026-11-07",
         "workflow": workflow,
         "detta_ar_inte_en_leveransrendering": True,
+        "vag": data.get("vag"),
+        "render": "prov-helscen, text i kod. render_format.py anropas inte och är inte ändrad.",
+        "gamla_verktyget_andrat": False,
         "andrar_inte": ["render_format.py", "mat_annons.py", "spec_v1.json"],
+        "gamla_mallregler_stoppar_inte": True,
         "resultat_raw": klass["resultat_raw"],
         "resultat_leverans": klass["resultat_leverans"],
         "resultat_prov": klass["resultat_prov"],
@@ -292,10 +362,14 @@ def rapport(data, bas, bild_path, workflow):
         "traffar": klass["traffar"],
         "hur_allvar_harleds": klass["hur_allvar_harleds"],
         "matt": matt,
-        "bg": {
-            "roll": "faktakoll",
-            "kundgodkannande": False,
-            "kalla": (data.get("forhand") or {}).get("kalla"),
+        "bg": matt["bg"],
+        "jobb": matt["jobb"],
+        "jon_martin_ok": False,
+        "till_bildgranskaren": {
+            "stopp_hon_ska_se_som_nej": ["LASBAR", "K3", "UI", "FAKTA", "PRODUKT", "ANATOMI", "AI_PERSON", "INTE_NYA_FOTON"],
+            "anmarkning": ["Z1", "Z2", "Z3", "Z4", "Z5", "Z6", "P1", "P2", "T1", "K2", "K11", "LIKHET"],
+            "maste_hon_gora_sjalv": "Produkt, påståenden mot kallor, anatomi och omdöme. Saknad granskning är ej_gjord, inte ja.",
+            "skick": "Ett meddelande per butik: PNG, den här .mat.json, fotoide, vinkel, kallor. Inte ett kund-ok och inte Jon eller Martins ok.",
         },
     }
     for rad in matt["info"]:

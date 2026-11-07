@@ -53,18 +53,19 @@ LEVERANS_NIVA = {
 PROV_ANMARKNING = {
     "Z1", "Z2", "Z3", "Z4", "Z5", "Z6",
     "P1", "P2", "P3",
-    "K11",
-    "T1",
+    "K2", "K10", "K11",
+    "T1", "T2", "T9", "B2",
     "LIKHET",
 }
 
-# Får inte nedklassas i prov. T2 och K3 är läsbarhet, inte mallfönstret T1.
+# LASBAR är synlig texthöjd under 38 px (v6/v8), inte specens T2 på 36 px
+# och inte brickregeln B2. T2 och B2 nedklassas om de ändå dyker upp.
 ALLTID_STOPP = {
-    "UI", "T2", "K3", "K9", "K10", "K12", "B1", "B2",
-    "S1", "S2", "T3", "T4", "T6", "T7", "T8", "T10", "T11", "K2",
+    "UI", "LASBAR", "K3", "K9", "K12", "B1",
+    "S1", "S2", "T3", "T4", "T6", "T7", "T8", "T10", "T11",
     "FAKTA", "ANATOMI", "AI_PERSON", "PRODUKT",
     "BG_SAKNAS", "INTE_NYA_FOTON", "SCEN_ANDRAD",
-    "UPPDRAG_SAKNAS", "ZONER_SAKNAS",
+    "UPPDRAG_SAKNAS", "ZONER_SAKNAS", "VAG_SAKNAS", "KOSTNAD",
 }
 
 SKAL = {
@@ -74,7 +75,7 @@ SKAL = {
     "Z4": "Produktzonens mittpunkt är en mallregel, anmärkning i prov.",
     "Z5": "Text över produktens urklippsruta är en mallregel. Helscenen har inget urklipp.",
     "Z6": "Annonsen tvingas inte till mallens pixelmått. Ingen beskärning och inga staplar läggs till för att träffa måttet.",
-    "T1": "Mallens rubrikfönster (till exempel 88–120 px) är en anmärkning i prov. Text under läsgolvet är T2 och förblir stopp.",
+    "T1": "Mallens rubrikfönster (88–120 px) är en anmärkning. Oläslig text är LASBAR, synlig höjd under 38 px, och förblir stopp.",
     "P1": "Kravet på ett eget produkturklipp gäller inte helscen.",
     "P2": "Produktens andel av ytan är en mallregel och stoppar inte provet.",
     "K11": "F1–F12 är referenser för prov, inte tre obligatoriska mallar.",

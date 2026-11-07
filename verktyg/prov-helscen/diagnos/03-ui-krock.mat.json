@@ -3,26 +3,38 @@
   "policy": "prov-helscen-2026-11-07",
   "workflow": "prov",
   "detta_ar_inte_en_leveransrendering": true,
+  "vag": "prov-helscen",
+  "render": "prov-helscen, text i kod. render_format.py anropas inte och är inte ändrad.",
+  "gamla_verktyget_andrat": false,
   "andrar_inte": [
     "render_format.py",
     "mat_annons.py",
     "spec_v1.json"
   ],
+  "gamla_mallregler_stoppar_inte": true,
   "resultat_raw": "nej",
   "resultat_leverans": "nej",
   "resultat_prov": "nej",
   "resultat": "nej",
   "raw_ar_inte_omskriven": true,
-  "stopp": 1,
+  "stopp": 2,
   "anmarkningar": 2,
   "brott": [
-    "UI: Synligt bläck (9048 pixlar över alfa 16) ligger i Reels-, profil- eller kantzon."
+    "BG_SAKNAS: Faktagranskning är ej_gjord. Saknade fält är inte ja. Det här är inte Bildgranskarens ok och inte Jon eller Martins ok.",
+    "UI: Synligt bläck (9048 pixlar över alfa 16) ligger i Reels från y 1580 eller i profilraden y 0–269, skalat mot 1080×1920. Em-rutan räknas inte."
   ],
   "anmarkningsrader": [
     "Z1: rubrik em-ruta x 200–573 y 1600–1688 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1685.",
-    "T1: Rubriken är 72 px, mallfönstret är 88–120. Läsbarhet under golvet mäts som T2."
+    "T1: Rubriken är 72 px, mallfönstret är 88–120. Det stoppar inte provet."
   ],
   "traffar": [
+    {
+      "id": "BG_SAKNAS",
+      "text": "Faktagranskning är ej_gjord. Saknade fält är inte ja. Det här är inte Bildgranskarens ok och inte Jon eller Martins ok.",
+      "niva_raw": "stopp",
+      "niva_leverans": "stopp",
+      "niva_prov": "stopp"
+    },
     {
       "id": "Z1",
       "text": "rubrik em-ruta x 200–573 y 1600–1688 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1685.",
@@ -32,22 +44,23 @@
     },
     {
       "id": "T1",
-      "text": "Rubriken är 72 px, mallfönstret är 88–120. Läsbarhet under golvet mäts som T2.",
+      "text": "Rubriken är 72 px, mallfönstret är 88–120. Det stoppar inte provet.",
       "niva_raw": "stopp",
       "niva_leverans": "stopp",
       "niva_prov": "anmarkning"
     },
     {
       "id": "UI",
-      "text": "Synligt bläck (9048 pixlar över alfa 16) ligger i Reels-, profil- eller kantzon.",
+      "text": "Synligt bläck (9048 pixlar över alfa 16) ligger i Reels från y 1580 eller i profilraden y 0–269, skalat mot 1080×1920. Em-rutan räknas inte.",
       "niva_raw": "stopp",
       "niva_leverans": "stopp",
       "niva_prov": "stopp"
     }
   ],
   "hur_allvar_harleds": [
+    "BG_SAKNAS: stopp i både rå mätning och prov. Den nedklassas inte.",
     "Z1: rå nivå stopp står kvar. I prov blir den anmärkning. Rå Z1 är mallens säkra yta (DOM- eller em-ruta). I prov är den en anmärkning. Synligt bläck mot Reels- eller profil-UI är regeln UI och förblir stopp.",
-    "T1: rå nivå stopp står kvar. I prov blir den anmärkning. Mallens rubrikfönster (till exempel 88–120 px) är en anmärkning i prov. Text under läsgolvet är T2 och förblir stopp.",
+    "T1: rå nivå stopp står kvar. I prov blir den anmärkning. Mallens rubrikfönster (88–120 px) är en anmärkning. Oläslig text är LASBAR, synlig höjd under 38 px, och förblir stopp.",
     "UI: stopp i både rå mätning och prov. Den nedklassas inte.",
     "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
     "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja."
@@ -80,6 +93,7 @@
         ],
         "linebox_botten": 1688.0,
         "black_botten": 1685,
+        "synlig_hojd": 68,
         "kontrast": 14.25
       }
     ],
@@ -89,7 +103,9 @@
     },
     "zon": {
       "namn": "9x16",
-      "t2_min_px": 36.0,
+      "synlig_min_px": 38.0,
+      "synlig_kalla": "Bildgranskaren v6 och Samordnaren v8: synliga pixlar under 38 px",
+      "reels_fran_y": 1580.0,
       "t1_mall_px": [
         88.0,
         120.0
@@ -107,16 +123,85 @@
       1080,
       1920
     ],
+    "export_9x16": true,
     "produkt_urklipp": "inget",
     "beskuren": false,
+    "bg": {
+      "status": "ej_gjord",
+      "granskare": null,
+      "falt": {
+        "produkt": "saknas",
+        "pastaenden": "saknas",
+        "anatomi": "saknas",
+        "montering": "saknas",
+        "ai_person_vid_omdome": false
+      },
+      "roll": "faktakoll",
+      "jon_martin_ok": false,
+      "kundgodkannande": false
+    },
+    "jobb": {
+      "ok": false,
+      "job_id": null,
+      "kostnad": "ej tillgänglig",
+      "kostnad_kalla": null,
+      "credits": null,
+      "fel": null
+    },
     "info": [
       "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
       "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja."
     ]
   },
   "bg": {
+    "status": "ej_gjord",
+    "granskare": null,
+    "falt": {
+      "produkt": "saknas",
+      "pastaenden": "saknas",
+      "anatomi": "saknas",
+      "montering": "saknas",
+      "ai_person_vid_omdome": false
+    },
     "roll": "faktakoll",
-    "kundgodkannande": false,
-    "kalla": "BG"
+    "jon_martin_ok": false,
+    "kundgodkannande": false
+  },
+  "jobb": {
+    "ok": false,
+    "job_id": null,
+    "kostnad": "ej tillgänglig",
+    "kostnad_kalla": null,
+    "credits": null,
+    "fel": null
+  },
+  "jon_martin_ok": false,
+  "till_bildgranskaren": {
+    "stopp_hon_ska_se_som_nej": [
+      "LASBAR",
+      "K3",
+      "UI",
+      "FAKTA",
+      "PRODUKT",
+      "ANATOMI",
+      "AI_PERSON",
+      "INTE_NYA_FOTON"
+    ],
+    "anmarkning": [
+      "Z1",
+      "Z2",
+      "Z3",
+      "Z4",
+      "Z5",
+      "Z6",
+      "P1",
+      "P2",
+      "T1",
+      "K2",
+      "K11",
+      "LIKHET"
+    ],
+    "maste_hon_gora_sjalv": "Produkt, påståenden mot kallor, anatomi och omdöme. Saknad granskning är ej_gjord, inte ja.",
+    "skick": "Ett meddelande per butik: PNG, den här .mat.json, fotoide, vinkel, kallor. Inte ett kund-ok och inte Jon eller Martins ok."
   }
 }

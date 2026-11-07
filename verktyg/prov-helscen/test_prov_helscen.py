@@ -40,6 +40,7 @@ def _forhand():
 
 def _data(bild, texter, **extra):
     data = {
+        "vag": "prov-helscen",
         "workflow": "prov",
         "bild": bild,
         "format": "9x16",
@@ -82,15 +83,19 @@ class PolicyTest(unittest.TestCase):
         self.assertEqual(bara_t1["resultat_raw"], "nej")
         self.assertEqual(bara_t1["resultat_prov"], "ja")
         self.assertEqual(bara_t1["resultat_leverans"], "nej")
-        t2 = policy.klassificera([{"id": "T2", "text": "12 px"}], "prov")
-        self.assertEqual(t2["resultat_prov"], "nej")
-        self.assertEqual(policy.klassificera([{"id": "T2", "text": "12 px"}], "leverans")["resultat"], "nej")
+        las = policy.klassificera([{"id": "LASBAR", "text": "synlig höjd 30 px"}], "prov")
+        self.assertEqual(las["resultat_prov"], "nej")
+        self.assertEqual(policy.klassificera([{"id": "LASBAR", "text": "30 px"}], "leverans")["resultat"], "nej")
+        gammal_t2 = policy.klassificera([{"id": "T2", "text": "36 px-regeln"}], "prov")
+        self.assertEqual(gammal_t2["resultat_prov"], "ja")
 
     def test_t1_stangs_inte_av_i_bulk(self):
-        self.assertIn("T2", policy.ALLTID_STOPP)
+        self.assertIn("LASBAR", policy.ALLTID_STOPP)
         self.assertIn("K3", policy.ALLTID_STOPP)
         self.assertNotIn("K3", policy.PROV_ANMARKNING)
         self.assertIn("T1", policy.PROV_ANMARKNING)
+        self.assertIn("T2", policy.PROV_ANMARKNING)
+        self.assertIn("B2", policy.PROV_ANMARKNING)
 
 
 class RenderTest(unittest.TestCase):
@@ -138,7 +143,7 @@ class RenderTest(unittest.TestCase):
     def test_fri_bricka_ar_lasbar_och_rav_stopp_star_kvar(self):
         data = _data("scen.png", [
             {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72},
-            {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 42, "farg": "#ffffff", "bricka_farg": "#1d3a2a"},
+            {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 64, "farg": "#ffffff", "bricka_farg": "#1d3a2a"},
         ])
         rapport, _render = self._mat(data)
         ids = {t["id"] for t in rapport["traffar"]}
@@ -146,13 +151,17 @@ class RenderTest(unittest.TestCase):
         self.assertIn("T1", ids)
         self.assertNotIn("UI", ids)
         self.assertNotIn("K3", ids)
+        self.assertNotIn("LASBAR", ids)
         self.assertNotIn("T2", ids)
+        self.assertNotIn("B2", ids)
+        self.assertIn("BG_SAKNAS", ids)
         self.assertEqual(rapport["resultat_raw"], "nej")
-        self.assertEqual(rapport["resultat_leverans"], "nej")
-        self.assertEqual(rapport["resultat_prov"], "ja")
-        self.assertEqual(rapport["resultat"], "ja")
+        self.assertEqual(rapport["resultat"], "nej")
+        self.assertEqual(rapport["bg"]["status"], "ej_gjord")
+        self.assertFalse(rapport["jon_martin_ok"])
         self.assertFalse(rapport["bg"]["kundgodkannande"])
-        self.assertEqual(rapport["bg"]["roll"], "faktakoll")
+        self.assertTrue(rapport["gamla_mallregler_stoppar_inte"])
+        self.assertFalse(rapport["gamla_verktyget_andrat"])
         bricka = next(b for b in rapport["matt"]["block"] if b["roll"] == "pris")
         self.assertGreater(bricka["kontrast"], 4.5)
         self.assertLess(bricka["synligt_black"][1], 1150)
@@ -162,7 +171,7 @@ class RenderTest(unittest.TestCase):
         ink_botten = matt["black_lokal"][3]
         em_botten = matt["linebox_lokal"][3]
         self.assertLess(ink_botten, em_botten)
-        grans = 1248
+        grans = 1580
         y = grans - (ink_botten + em_botten) / 2
         self.assertLess(y + ink_botten, grans)
         self.assertGreaterEqual(y + em_botten, grans)
@@ -177,12 +186,13 @@ class RenderTest(unittest.TestCase):
         self.assertGreaterEqual(block["linebox_botten"], grans)
         self.assertEqual(rapport["matt"]["ui"]["black_pixlar"], 0)
         self.assertTrue(rapport["matt"]["ui"]["linebox_korsar"])
-        self.assertNotIn("UI", {t["id"] for t in rapport["traffar"]})
-        self.assertIn("Z1", {t["id"] for t in rapport["traffar"]})
-        self.assertEqual(rapport["resultat_raw"], "nej")
-        self.assertEqual(rapport["resultat_prov"], "ja")
+        ids = {t["id"] for t in rapport["traffar"]}
+        self.assertNotIn("UI", ids)
+        self.assertIn("BG_SAKNAS", ids)
+        self.assertEqual(rapport["resultat"], "nej")
+        self.assertFalse(rapport["jon_martin_ok"])
         text = " ".join(rapport["hur_allvar_harleds"])
-        self.assertIn("Synligt bläck", text)
+        self.assertIn("bläck", text.lower())
 
     def test_synligt_black_i_reels_ar_stopp(self):
         data = _data("scen.png", [
@@ -222,8 +232,15 @@ class RenderTest(unittest.TestCase):
         data = _data("scen.png", [
             {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72},
         ])
-        data["forhand"]["anatomi_ok"] = False
-        data["forhand"]["ai_person_vid_omdome"] = True
+        data["bg"] = {
+            "granskad": True,
+            "granskare": "Bildgranskaren",
+            "produkt": "ja",
+            "pastaenden": "ja",
+            "anatomi": "nej",
+            "montering": "ja",
+            "ai_person_vid_omdome": True,
+        }
         rapport, _render = self._mat(data)
         ids = {t["id"] for t in rapport["traffar"]}
         self.assertIn("ANATOMI", ids)
@@ -271,6 +288,51 @@ class RenderTest(unittest.TestCase):
         self.assertTrue(any(rad.startswith("LIKHET") for rad in olika["anmarkningsrader"]))
         self.assertFalse(any(p["slag"] != "olika" for p in olika["par"]))
 
+    def test_gammal_reelsgrans_1248_stoppar_inte(self):
+        data = _data("scen.png", [
+            {"roll": "rubrik", "text": "Eget namn", "x": 200, "y": 1400, "px": 72, "farg": "#ffffff"},
+        ])
+        rapport, _render = self._mat(data)
+        ids = {t["id"] for t in rapport["traffar"]}
+        self.assertNotIn("UI", ids)
+        block = rapport["matt"]["block"][0]
+        self.assertGreater(block["black_botten"], 1248)
+        self.assertLess(block["black_botten"], 1580)
+
+    def test_synlig_hojd_under_38_stoppar_36_px_regeln_gor_det_inte(self):
+        data = _data("scen.png", [
+            {"roll": "rubrik", "text": "Liten", "x": 200, "y": 400, "px": 28, "farg": "#ffffff"},
+        ])
+        rapport, _render = self._mat(data)
+        ids = {t["id"] for t in rapport["traffar"]}
+        self.assertIn("LASBAR", ids)
+        self.assertNotIn("T2", ids)
+        self.assertNotIn("B2", ids)
+        self.assertLess(rapport["matt"]["block"][0]["synlig_hojd"], 38)
+        self.assertIn("38", rapport["matt"]["zon"]["synlig_kalla"])
+
+    def test_bg_ja_ar_inte_jon_ok(self):
+        data = _data("scen.png", [
+            {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72, "farg": "#ffffff"},
+            {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 64, "farg": "#ffffff", "bricka_farg": "#1d3a2a"},
+        ])
+        data["bg"] = {
+            "granskad": True,
+            "granskare": "Bildgranskaren",
+            "produkt": "ja",
+            "pastaenden": "ja",
+            "anatomi": "ja",
+            "montering": "ja",
+            "ai_person_vid_omdome": False,
+        }
+        rapport, _render = self._mat(data)
+        ids = {t["id"] for t in rapport["traffar"]}
+        self.assertNotIn("BG_SAKNAS", ids)
+        self.assertNotIn("UI", ids)
+        self.assertNotIn("LASBAR", ids)
+        self.assertFalse(rapport["jon_martin_ok"])
+        self.assertFalse(rapport["bg"]["kundgodkannande"])
+
 
 class DiagnosTest(unittest.TestCase):
     def test_diagnos_filer(self):
@@ -279,17 +341,21 @@ class DiagnosTest(unittest.TestCase):
         if ut.exists():
             shutil.rmtree(ut)
         skriv_diagnos.skriv(ut)
-        matt = json.loads((ut / "01-fri-bricka.mat.json").read_text(encoding="utf-8"))
-        self.assertEqual(matt["resultat_prov"], "ja")
-        self.assertEqual(matt["resultat_raw"], "nej")
-        self.assertTrue((ut / "01-fri-bricka.png").exists())
+        matt = json.loads((ut / "01-meter-ren-ej-faktagranskad.mat.json").read_text(encoding="utf-8"))
+        self.assertNotIn("UI", {t["id"] for t in matt["traffar"]})
+        self.assertNotIn("LASBAR", {t["id"] for t in matt["traffar"]})
+        self.assertEqual(matt["bg"]["status"], "ej_gjord")
+        self.assertEqual(matt["resultat"], "nej")
+        self.assertFalse(matt["jon_martin_ok"])
+        self.assertTrue(matt["matt"]["export_9x16"])
+        self.assertTrue((ut / "01-meter-ren-ej-faktagranskad.png").exists())
         line = json.loads((ut / "02-linebox.mat.json").read_text(encoding="utf-8"))
         self.assertEqual(line["matt"]["ui"]["black_pixlar"], 0)
         self.assertTrue(line["matt"]["ui"]["linebox_korsar"])
-        self.assertEqual(line["resultat_prov"], "ja")
-        self.assertEqual(line["resultat_raw"], "nej")
+        self.assertNotIn("UI", {t["id"] for t in line["traffar"]})
         krock = json.loads((ut / "03-ui-krock.mat.json").read_text(encoding="utf-8"))
         self.assertEqual(krock["resultat"], "nej")
+        self.assertIn("UI", {t["id"] for t in krock["traffar"]})
         self.assertGreater(krock["matt"]["ui"]["black_pixlar"], 0)
         trio = json.loads((ut / "trio.mat.json").read_text(encoding="utf-8"))
         self.assertTrue(trio["tre_nya_foton"])

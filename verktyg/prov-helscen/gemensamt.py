@@ -8,16 +8,18 @@ import re
 
 from PIL import Image, ImageDraw, ImageFont
 
-# Avskrivet från spec_v1.json format.9x16 / 4x5. Filen själv rörs inte.
+# Mallens säkra yta och brickzon är bara anmärkningar. De stoppar inte prov.
+# UI-stopp är Bildgranskaren v6: Reels från y 1580 i 9:16, och profilraden
+# överst. v6 ger ingen egen pixel för profilraden. Här används spec_v1
+# topp-UI y 0–269 (profilnamn, Sponsrad, stäng), inte den gamla innehållsytan
+# som började vid y 285 och inte den gamla Reels-gränsen vid y 1248.
 ZON_9X16 = {
     "bredd": 1080,
     "hojd": 1920,
     "saker": (108, 285, 972, 1248),
     "forbjudna": [
-        ("profil-ui", 0, 0, 1080, 269),
-        ("reels-ui", 0, 1248, 1080, 1920),
-        ("kant-vanster", 0, 0, 108, 1920),
-        ("kant-hoger", 972, 0, 1080, 1920),
+        ("profilrad", 0, 0, 1080, 269),
+        ("reels", 0, 1580, 1080, 1920),
     ],
     "bricka": (108, 1150, 972, 1248),
     "rubrik_px": (88, 120),
@@ -34,9 +36,12 @@ ZON_4X5 = {
     "rubrik_px": (76, 104),
 }
 
-T2_MIN_PX = 36
-B2_MIN_PX = 38
+# Synlig texthöjd, inte typsnittets px och inte spec_v1 T2 (36 px).
+# Källa: Bildgranskaren v6 och Samordnaren v8, 9:16 vid 1080 px bredd.
+SYNLIG_TEXT_MIN_PX = 38
+SYNLIG_TEXT_KALLA = "Bildgranskaren v6 och Samordnaren v8: synliga pixlar under 38 px"
 KONTRAST_MIN = 4.5
+KONTRAST_KALLA = "Bildgranskaren v6 och Samordnaren v8: kontrast under 4,5:1"
 BLACK_TROSKEL = 16
 
 FONT_FALLBACK = {
@@ -93,8 +98,8 @@ def zoner_for(storlek):
         ],
         "bricka": _skala_rect(mall["bricka"], sx, sy),
         "rubrik_px": (mall["rubrik_px"][0] * sx, mall["rubrik_px"][1] * sx),
-        "t2_min": T2_MIN_PX * sx,
-        "b2_min": B2_MIN_PX * sx,
+        "synlig_min": SYNLIG_TEXT_MIN_PX * sx,
+        "synlig_kalla": SYNLIG_TEXT_KALLA,
     }
 
 
