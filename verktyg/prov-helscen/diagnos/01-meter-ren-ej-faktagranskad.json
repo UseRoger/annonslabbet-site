@@ -22,6 +22,15 @@
     "montering_ok": true,
     "ai_person_vid_omdome": false
   },
+  "syntetisk": true,
+  "font_filer": {
+    "ProvSans": "ProvSans-Bold.ttf"
+  },
+  "font": {
+    "rubrik": "ProvSans",
+    "pris": "ProvSans",
+    "text": "ProvSans"
+  },
   "texter": [
     {
       "roll": "rubrik",
@@ -29,6 +38,7 @@
       "x": 160,
       "y": 340,
       "px": 72,
+      "font": "ProvSans",
       "farg": "#ffffff"
     },
     {
@@ -37,6 +47,7 @@
       "x": 180,
       "y": 780,
       "px": 64,
+      "font": "ProvSans",
       "farg": "#ffffff",
       "bricka_farg": "#1d3a2a"
     }

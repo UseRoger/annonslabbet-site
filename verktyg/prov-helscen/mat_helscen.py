@@ -20,9 +20,13 @@ from pathlib import Path
 
 from gemensamt import (
     BLACK_TROSKEL,
+    KONTRAST_KALLA,
     KONTRAST_MIN,
     KNAPP_FRAS,
     SPARR,
+    SPEC_T2_KALLA,
+    SPEC_T2_PX,
+    UI_ZON_KALLA,
     Fel,
     exact_crop,
     hitta_priser,
@@ -70,6 +74,30 @@ def las_bg(data):
         "roll": "faktakoll",
         "jon_martin_ok": False,
         "kundgodkannande": False,
+    }
+
+
+def las_lasbarhet(data):
+    """Saknat besked är inte ja. En syntetisk fixture är inget påstående om en riktig annons."""
+    raw = data.get("lasbarhet") if isinstance(data.get("lasbarhet"), dict) else {}
+    bedomd = raw.get("bedomd") is True
+    syntetisk = raw.get("syntetisk") is True or data.get("syntetisk") is True
+    if not bedomd:
+        lasbar = None
+    else:
+        lasbar = raw.get("lasbar") is True
+    if syntetisk:
+        notis = "Syntetisk fixture, inget påstående om en riktig annons."
+    else:
+        notis = "Verktyget intygar inte en riktig annons. Beskedet är det som står i JSON."
+    return {
+        "bedomd": bedomd,
+        "lasbar": lasbar,
+        "av": raw.get("av"),
+        "syntetisk": syntetisk,
+        "pa_riktig_annons": False,
+        "kommentar": raw.get("kommentar"),
+        "notis": notis,
     }
 
 
@@ -162,6 +190,17 @@ def traffar_for(data, bas, bild_path=None):
     jobb = las_jobb(data)
     if jobb["fel"]:
         traffar.append({"id": "KOSTNAD", "text": jobb["fel"]})
+    lasbarhet = las_lasbarhet(data)
+    if not lasbarhet["bedomd"]:
+        traffar.append({
+            "id": "LASBARHET_SAKNAS",
+            "text": "Nödvändigt läsbarhetsbesked saknas. Det blir inte ja genom default. " + lasbarhet["notis"],
+        })
+    elif lasbarhet["lasbar"] is not True:
+        traffar.append({
+            "id": "LASBARHET",
+            "text": "Uttryckligt besked: texten är inte läsbar på mobil. " + lasbarhet["notis"],
+        })
 
     if data.get("produkt_png"):
         info.append("produkt_png ignoreras. Inget urklipp klistras ovanpå scenens produkt.")
@@ -194,9 +233,16 @@ def traffar_for(data, bas, bild_path=None):
         for b in block:
             black = b["synligt_black"]
             if black is None:
-                traffar.append({"id": "LASBAR", "text": f"{b['roll']} har inget synligt bläck. {zoner['synlig_kalla']}."})
-                continue
-            b["synlig_hojd"] = round(black[3] - black[1], 2)
+                b["synlig_hojd"] = 0
+                traffar.append({
+                    "id": "INGET_BLACK",
+                    "text": (
+                        f"{b['roll']} har inget synligt bläck (alfa över {BLACK_TROSKEL}). "
+                        "Det är en mätning, inte ett pixelgolv."
+                    ),
+                })
+            else:
+                b["synlig_hojd"] = round(black[3] - black[1], 2)
             for etikett, x0, y0, x1, y1 in zoner["forbjudna"]:
                 ui_pix += ink_pixlar_i(b["mask"], (x0, y0, x1, y1))
                 if korsar_linebox(b["linebox"], (x0, y0, x1, y1)):
@@ -206,21 +252,20 @@ def traffar_for(data, bas, bild_path=None):
                     "id": "Z1",
                     "text": (
                         f"{b['roll']} em-ruta { _fmt(b['linebox']) } ligger utanför mallens säkra yta. "
-                        f"Synligt bläck slutar på y {b['black_botten']}."
+                        f"Synligt bläck slutar på y {b['black_botten']}. Rå Z1 står kvar. I prov är den anmärkning."
                     ),
                 })
-            if b["roll"] in ("pris", "bevis", "bricka") and not inom(black, zoner["bricka"]):
+            if black is not None and b["roll"] in ("pris", "bevis", "bricka") and not inom(black, zoner["bricka"]):
                 traffar.append({
                     "id": "Z3",
                     "text": f"{b['roll']} {b['text']!r} ligger utanför mallens fasta brickzon. Synligt bläck {_fmt(black)}.",
                 })
-            if b["synlig_hojd"] + 0.5 < zoner["synlig_min"]:
+            if b["px"] + 0.5 < SPEC_T2_PX:
                 traffar.append({
-                    "id": "LASBAR",
+                    "id": "T2",
                     "text": (
-                        f"{b['roll']} har synlig höjd {b['synlig_hojd']:.0f} px, "
-                        f"golv {zoner['synlig_min']:.0f} px vid den här bredden. {zoner['synlig_kalla']}. "
-                        "Specens T2 på 36 px och brickregeln B2 används inte som provstopp."
+                        f"{b['roll']} är satt till {b['px']:.0f} px. "
+                        f"Synlig höjd {b['synlig_hojd']:.0f} px är ett mätvärde. {SPEC_T2_KALLA}"
                     ),
                 })
             if b["roll"] == "rubrik":
@@ -240,14 +285,14 @@ def traffar_for(data, bas, bild_path=None):
             if kvot is not None and kvot < KONTRAST_MIN:
                 traffar.append({
                     "id": "K3",
-                    "text": f"{b['roll']} har kontrast {kvot:.2f}:1, minst {KONTRAST_MIN}:1.",
+                    "text": f"{b['roll']} har kontrast {kvot:.2f}:1, minst {KONTRAST_MIN}:1. {KONTRAST_KALLA}",
                 })
         if ui_pix:
             traffar.append({
                 "id": "UI",
                 "text": (
-                    f"Synligt bläck ({ui_pix} pixlar över alfa {BLACK_TROSKEL}) ligger i Reels från y 1580 "
-                    "eller i profilraden y 0–269, skalat mot 1080×1920. Em-rutan räknas inte."
+                    f"Synligt bläck ({ui_pix} pixlar över alfa {BLACK_TROSKEL}) ligger i mätzonen. "
+                    f"{UI_ZON_KALLA} Em-rutan räknas inte."
                 ),
             })
         if linebox_ui and not ui_pix:
@@ -313,12 +358,14 @@ def traffar_for(data, bas, bild_path=None):
         "ui": block_ui if zoner else None,
         "zon": None if zoner is None else {
             "namn": zoner["namn"],
-            "synlig_min_px": round(zoner["synlig_min"], 2),
-            "synlig_kalla": zoner["synlig_kalla"],
+            "t2_spec_px": SPEC_T2_PX,
+            "t2_kalla": SPEC_T2_KALLA,
+            "ui_kalla": UI_ZON_KALLA,
             "reels_fran_y": 1580 * zoner["skala"][1],
             "t1_mall_px": [round(v, 2) for v in zoner["rubrik_px"]],
             "brickzon": [round(v, 2) for v in zoner["bricka"]],
         },
+        "lasbarhet": lasbarhet,
         "black_troskel": BLACK_TROSKEL,
         "kontrast_min": KONTRAST_MIN,
         "bild_px": list(render["scen"].size),
@@ -365,10 +412,15 @@ def rapport(data, bas, bild_path, workflow):
         "bg": matt["bg"],
         "jobb": matt["jobb"],
         "jon_martin_ok": False,
+        "lasbarhet": matt["lasbarhet"],
+        "pa_riktig_annons": False,
         "till_bildgranskaren": {
-            "stopp_hon_ska_se_som_nej": ["LASBAR", "K3", "UI", "FAKTA", "PRODUKT", "ANATOMI", "AI_PERSON", "INTE_NYA_FOTON"],
-            "anmarkning": ["Z1", "Z2", "Z3", "Z4", "Z5", "Z6", "P1", "P2", "T1", "K2", "K11", "LIKHET"],
-            "maste_hon_gora_sjalv": "Produkt, påståenden mot kallor, anatomi och omdöme. Saknad granskning är ej_gjord, inte ja.",
+            "stopp_hon_ska_se_som_nej": [
+                "K3", "UI", "INGET_BLACK", "LASBARHET_SAKNAS", "LASBARHET",
+                "FAKTA", "PRODUKT", "ANATOMI", "AI_PERSON", "BG_SAKNAS", "INTE_NYA_FOTON",
+            ],
+            "anmarkning": ["Z1", "Z2", "Z3", "Z4", "Z5", "Z6", "P1", "P2", "T1", "T2", "B2", "K2", "K11", "LIKHET"],
+            "maste_hon_gora_sjalv": "Produkt, påståenden mot kallor, anatomi, omdöme och om texten faktiskt är läsbar på mobil. Saknad granskning och saknat läsbarhetsbesked är inte ja.",
             "skick": "Ett meddelande per butik: PNG, den här .mat.json, fotoide, vinkel, kallor. Inte ett kund-ok och inte Jon eller Martins ok.",
         },
     }

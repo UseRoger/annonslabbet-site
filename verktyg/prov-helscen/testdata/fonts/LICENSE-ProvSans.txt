@@ -1,0 +1,9 @@
+ProvSans Bold
+Ritad för testpaketet prov-helscen. Inte en butiksfont och inte Inter.
+Täcker A–Z, a–z, 0–9 och mellanslag. Produktionsfonter anges i font_filer.
+
+Den här filen är släppt till public domain enligt CC0 1.0 Universal.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Den får kopieras, ändras och distribueras, även i det här zip-paketet.
+Den ersätter inte en butiks uttryckligen valda font.

@@ -22,14 +22,31 @@
     "montering_ok": true,
     "ai_person_vid_omdome": false
   },
+  "syntetisk": true,
+  "font_filer": {
+    "ProvSans": "ProvSans-Bold.ttf"
+  },
+  "font": {
+    "rubrik": "ProvSans",
+    "pris": "ProvSans",
+    "text": "ProvSans"
+  },
   "texter": [
     {
       "roll": "rubrik",
       "text": "HALLO",
       "x": 200,
-      "y": 1491.5,
+      "y": 1511.0,
       "px": 80,
+      "font": "ProvSans",
       "farg": "#ffffff"
     }
-  ]
+  ],
+  "lasbarhet": {
+    "bedomd": true,
+    "lasbar": true,
+    "av": "syntetisk fixture",
+    "syntetisk": true,
+    "kommentar": "Fixture för att visa bläck mot em-ruta. Inget påstående om en riktig annons."
+  }
 }

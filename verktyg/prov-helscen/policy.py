@@ -6,8 +6,9 @@ spec_v1.json, render_format.py och mat_annons.py i Drive outbox/text-i-kod
 jämförelseläget "leverans" behåller samma stopp som den filen.
 
 Provmallen nedklassar gamla mallregler (zoner, brickplats, produktandel,
-mallens rubrikfönster) till anmärkning. Den stänger inte av kontrast,
-minsta läsbara storlek eller övriga T-regler som faktiskt mäts.
+mallens rubrikfönster, specens T2 på 36 px och B2) till anmärkning.
+Kontrast och synligt UI-bläck förblir stopp. Ett nytt 36- eller 38-pixelgolv
+är inte en provregel. Saknat eller nekande läsbarhetsbesked förblir stopp.
 Rå nivån skrivs alltid kvar. Ett rått stopp blir inte ett tyst ja.
 """
 
@@ -58,13 +59,14 @@ PROV_ANMARKNING = {
     "LIKHET",
 }
 
-# LASBAR är synlig texthöjd under 38 px (v6/v8), inte specens T2 på 36 px
-# och inte brickregeln B2. T2 och B2 nedklassas om de ändå dyker upp.
+# T2 (spec_v1, 36 px) och B2 är råa mallträffar och anmärkningar i prov.
+# Inget pixelgolv på 36 eller 38 px läggs till som provspärr.
 ALLTID_STOPP = {
-    "UI", "LASBAR", "K3", "K9", "K12", "B1",
+    "UI", "K3", "K9", "K12", "B1",
     "S1", "S2", "T3", "T4", "T6", "T7", "T8", "T10", "T11",
     "FAKTA", "ANATOMI", "AI_PERSON", "PRODUKT",
-    "BG_SAKNAS", "INTE_NYA_FOTON", "SCEN_ANDRAD",
+    "BG_SAKNAS", "LASBARHET_SAKNAS", "LASBARHET", "INGET_BLACK",
+    "INTE_NYA_FOTON", "SCEN_ANDRAD",
     "UPPDRAG_SAKNAS", "ZONER_SAKNAS", "VAG_SAKNAS", "KOSTNAD",
 }
 
@@ -75,7 +77,9 @@ SKAL = {
     "Z4": "Produktzonens mittpunkt är en mallregel, anmärkning i prov.",
     "Z5": "Text över produktens urklippsruta är en mallregel. Helscenen har inget urklipp.",
     "Z6": "Annonsen tvingas inte till mallens pixelmått. Ingen beskärning och inga staplar läggs till för att träffa måttet.",
-    "T1": "Mallens rubrikfönster (88–120 px) är en anmärkning. Oläslig text är LASBAR, synlig höjd under 38 px, och förblir stopp.",
+    "T1": "Mallens rubrikfönster (88–120 px) är en anmärkning. Läsbarhet är ett uttryckligt besked, inte ett 36- eller 38-pixelgolv.",
+    "T2": "spec_v1 T2, 36 px, är en rå träff. I prov är den anmärkning. Inget nytt pixelgolv införs.",
+    "B2": "spec_v1 B2, bricka under 38 px, är en rå träff om den mäts. I prov är den anmärkning.",
     "P1": "Kravet på ett eget produkturklipp gäller inte helscen.",
     "P2": "Produktens andel av ytan är en mallregel och stoppar inte provet.",
     "K11": "F1–F12 är referenser för prov, inte tre obligatoriska mallar.",

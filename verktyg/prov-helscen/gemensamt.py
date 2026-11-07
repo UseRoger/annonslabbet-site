@@ -9,10 +9,10 @@ import re
 from PIL import Image, ImageDraw, ImageFont
 
 # Mallens säkra yta och brickzon är bara anmärkningar. De stoppar inte prov.
-# UI-stopp är Bildgranskaren v6: Reels från y 1580 i 9:16, och profilraden
-# överst. v6 ger ingen egen pixel för profilraden. Här används spec_v1
-# topp-UI y 0–269 (profilnamn, Sponsrad, stäng), inte den gamla innehållsytan
-# som började vid y 285 och inte den gamla Reels-gränsen vid y 1248.
+# UI-mätzonen i det här verktyget är profilraden y 0–269 (spec_v1 topp-UI)
+# och Reels från y 1580 på 1080×1920. Det är en mätning här, inte ett
+# aktiverat handboksbeslut. Bara synligt bläck i zonen stoppar.
+# Den gamla innehållsytan började vid y 285 och den gamla Reels-gränsen vid y 1248.
 ZON_9X16 = {
     "bredd": 1080,
     "hojd": 1920,
@@ -36,20 +36,17 @@ ZON_4X5 = {
     "rubrik_px": (76, 104),
 }
 
-# Synlig texthöjd, inte typsnittets px och inte spec_v1 T2 (36 px).
-# Källa: Bildgranskaren v6 och Samordnaren v8, 9:16 vid 1080 px bredd.
-SYNLIG_TEXT_MIN_PX = 38
-SYNLIG_TEXT_KALLA = "Bildgranskaren v6 och Samordnaren v8: synliga pixlar under 38 px"
+# spec_v1 T2 är 36 px. Det är en rå jämförelse av satt px, och i prov en anmärkning.
+# Inget nytt 36- eller 38-pixelgolv används som provspärr.
+SPEC_T2_PX = 36
+SPEC_T2_KALLA = "spec_v1 T2, 36 px. Rå träff. I prov en anmärkning, inte ett nytt golv."
 KONTRAST_MIN = 4.5
-KONTRAST_KALLA = "Bildgranskaren v6 och Samordnaren v8: kontrast under 4,5:1"
+KONTRAST_KALLA = "spec_v1 K3, kontrast under 4,5:1, mätt på pixlar under bläcket."
 BLACK_TROSKEL = 16
-
-FONT_FALLBACK = {
-    700: "/usr/share/fonts/truetype/macos/Inter-Bold.ttf",
-    600: "/usr/share/fonts/truetype/macos/Inter-SemiBold.ttf",
-    500: "/usr/share/fonts/truetype/macos/Inter-Medium.ttf",
-    400: "/usr/share/fonts/truetype/macos/Inter-Regular.ttf",
-}
+UI_ZON_KALLA = (
+    "Mätzon i det här verktyget: profilrad y 0–269 och Reels från y 1580 på 1080×1920. "
+    "Inte ett aktiverat handboksbeslut. Bara synligt bläck stoppar."
+)
 
 PRIS_RE = re.compile(r"\d{1,3}(?:[ \u00a0]\d{3})*(?:,\d+)?\s*kr", re.IGNORECASE)
 SPARR = (
@@ -98,31 +95,45 @@ def zoner_for(storlek):
         ],
         "bricka": _skala_rect(mall["bricka"], sx, sy),
         "rubrik_px": (mall["rubrik_px"][0] * sx, mall["rubrik_px"][1] * sx),
-        "synlig_min": SYNLIG_TEXT_MIN_PX * sx,
-        "synlig_kalla": SYNLIG_TEXT_KALLA,
+        "t2_spec_px": SPEC_T2_PX,
+        "t2_kalla": SPEC_T2_KALLA,
+        "ui_kalla": UI_ZON_KALLA,
     }
 
 
 def _font_sokvag(block, data, bas):
+    """Bara den fil briefen namnger. En saknad fil ersätts inte med en annan."""
     from pathlib import Path
-    fam = block.get("font") or (data.get("font") or {}).get(block.get("roll") or "", "Inter")
-    if not isinstance(fam, str):
-        fam = "Inter"
-    filer = data.get("font_filer") or {}
-    path = filer.get(fam) if isinstance(filer, dict) else None
+    filer = data.get("font_filer") if isinstance(data.get("font_filer"), dict) else {}
+    fam = block.get("font")
+    if not isinstance(fam, str) or not fam.strip():
+        rollkarta = data.get("font") if isinstance(data.get("font"), dict) else {}
+        roll = block.get("roll") or ""
+        fam = rollkarta.get(roll) or rollkarta.get("text") or rollkarta.get("rubrik")
+    if not isinstance(fam, str) or not fam.strip():
+        if len(filer) == 1:
+            fam = next(iter(filer))
+        else:
+            raise Fel(
+                "Ange font_filer med butikens ttf eller otf, och vilket typsnitt blocket ska använda. "
+                "Ingen tyst ersättning görs."
+            )
+    fam = fam.strip()
+    if fam not in filer:
+        raise Fel(
+            f"Typsnittet {fam} är angivet men saknar en fil i font_filer. Ingen ersättning görs."
+        )
+    path = filer[fam]
     if isinstance(path, list) and path:
         path = path[0]["url"] if isinstance(path[0], dict) else path[0]
-    if isinstance(path, str) and path:
-        kandidat = Path(path)
-        if not kandidat.is_absolute():
-            kandidat = Path(bas) / kandidat
-        if kandidat.exists():
-            return str(kandidat), fam
-    vikt = int(block.get("vikt") or 700)
-    for grans in (700, 600, 500, 400):
-        if vikt >= grans and Path(FONT_FALLBACK[grans]).exists():
-            return FONT_FALLBACK[grans], fam
-    raise Fel(f"Hittar inget ttf för {fam}. Ange font_filer med en ttf- eller otf-fil.")
+    if not isinstance(path, str) or not path.strip():
+        raise Fel(f"font_filer för {fam} saknar en filsökväg. Ingen ersättning görs.")
+    kandidat = Path(path)
+    if not kandidat.is_absolute():
+        kandidat = Path(bas) / kandidat
+    if not kandidat.is_file():
+        raise Fel(f"font_filer för {fam} finns inte: {kandidat}. Ingen ersättning görs.")
+    return str(kandidat), fam
 
 
 def ladda_font(block, data, bas):

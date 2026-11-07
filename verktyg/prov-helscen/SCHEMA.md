@@ -14,19 +14,26 @@ Ett prov. Betald leverans använder fortfarande `render_format.py` och `spec_v1.
     "vinnare": "Vilken vinnande vinkel som informerade idén",
     "fotoide": "Hela scenen, med lugn yta där texten ska ligga"
   },
-  "forhand": {
-    "kalla": "BG",
-    "produkt_stammer": true,
-    "pris_stammer": true,
-    "pastaenden_stammer": true,
-    "anatomi_ok": true,
-    "montering_ok": true,
+  "bg": {
+    "granskad": true,
+    "granskare": "Bildgranskaren",
+    "produkt": "ja",
+    "pastaenden": "ja",
+    "anatomi": "ja",
+    "montering": "ja",
     "ai_person_vid_omdome": false
   },
-  "font_filer": {"Inter": "Inter-Bold.ttf"},
+  "lasbarhet": {
+    "bedomd": true,
+    "lasbar": true,
+    "av": "den som läst texten på mobil",
+    "syntetisk": false,
+    "kommentar": "Läst på en telefon. Inte ett pixelgolv."
+  },
+  "font_filer": {"ButikensSans": "ButikensSans-Bold.ttf"},
   "texter": [
-    {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72, "farg": "#ffffff"},
-    {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 42, "farg": "#ffffff", "bricka_farg": "#1d3a2a"}
+    {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72, "font": "ButikensSans", "farg": "#ffffff"},
+    {"roll": "pris", "text": "449 kr", "x": 180, "y": 780, "px": 64, "font": "ButikensSans", "farg": "#ffffff", "bricka_farg": "#1d3a2a"}
   ]
 }
 ```
@@ -35,7 +42,11 @@ Ett prov. Betald leverans använder fortfarande `render_format.py` och `spec_v1.
 
 `x` och `y` är textens eller brickans övre vänstra hörn i scenens egna pixlar. Det finns ingen fast brickplats.
 
-`forhand` är BG:s faktakoll, inte ett kundgodkännande. Saknas den blir resultatet nej.
+`bg` är faktakoll. Den är gjord bara när `granskad` är true, `granskare` är ifylld och alla fem fält finns. Saknas något är status `ej_gjord` eller `ofullstandig`, och resultatet är nej. Äldre nycklar som `produkt_stammer` räknas inte som de fälten. `bg.kundgodkannande` och `jon_martin_ok` är false.
+
+`lasbarhet` är ett mänskligt besked, inte ett pixelgolv. Saknas objektet, eller är `bedomd` inte true, blir träffen `LASBARHET_SAKNAS` och resultatet nej. `bedomd: true` och `lasbar: false` blir `LASBARHET` och resultatet nej. `lasbar: true` lossar inte kontrast eller synligt UI-bläck. `syntetisk: true` märker beskedet som fixture. Rapporten sätter `pa_riktig_annons` till false. En fixture är inget påstående om en riktig annons.
+
+`font_filer` pekar på butikens ttf eller otf, relativt JSON-filen eller med absolut sökväg. Den angivna familjen ritas med just den filen. Saknas filen stannar körningen. En annan font används inte i stället.
 
 ## Rapport
 
@@ -50,9 +61,13 @@ Ett prov. Betald leverans använder fortfarande `render_format.py` och `spec_v1.
 | `traffar[].niva_raw` | Nivån innan provregeln. |
 | `matt.block[].linebox_botten` | Em-rutans underkant. |
 | `matt.block[].black_botten` | Synligt bläck, alfa över 16. |
-| `matt.ui.black_pixlar` | Bläckpixlar i Reels-, profil- eller kantzon. Bara de sätter UI-stopp. |
+| `matt.block[].synlig_hojd` | Synligt bläckets höjd i px. Ett mätvärde, inte ett golv. |
+| `matt.block[].px` | Den px texten sattes med. |
+| `matt.ui.black_pixlar` | Bläckpixlar i verktygets mätzon. Bara de sätter UI-stopp. |
+| `matt.zon.t2_spec_px` | spec_v1 T2, 36. Rå jämförelse. Provnivå anmärkning. |
+| `lasbarhet` | Det besked JSON hade. `pa_riktig_annons` är false. |
 | `bg.kundgodkannande` | Alltid false. |
 
-Kontrast under 4,5:1 (K3) och text under läsgolvet 36 px vid 1080 bredd (T2) är stopp i både prov och leveransjämförelsen. Trösklarna skalas med bildens bredd mot 1080.
+Kontrast under 4,5:1 (K3, spec_v1, mätt på pixlar under bläcket) är stopp i både prov och leveransjämförelsen. spec_v1 T2 på 36 px skrivs som rå träff när satt px ligger under det talet, med rå nivå stopp och provnivå anmärkning. Samma sak gäller B2 om den träffen finns. Inget nytt 36- eller 38-pixelgolv är en provspärr, och tröskeln skalas inte till en ny regel. Synligt bläck i mätzonen stoppar. Em-ruta utan synliga pixlar gör det inte.
 
 `--trio` stoppar bara identiska bilder och exakta crop. Annan likhet är en anmärkning till Jon och Martin.

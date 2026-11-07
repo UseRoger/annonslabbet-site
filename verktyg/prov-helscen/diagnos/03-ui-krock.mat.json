@@ -21,10 +21,10 @@
   "anmarkningar": 2,
   "brott": [
     "BG_SAKNAS: Faktagranskning är ej_gjord. Saknade fält är inte ja. Det här är inte Bildgranskarens ok och inte Jon eller Martins ok.",
-    "UI: Synligt bläck (9048 pixlar över alfa 16) ligger i Reels från y 1580 eller i profilraden y 0–269, skalat mot 1080×1920. Em-rutan räknas inte."
+    "UI: Synligt bläck (16758 pixlar över alfa 16) ligger i mätzonen. Mätzon i det här verktyget: profilrad y 0–269 och Reels från y 1580 på 1080×1920. Inte ett aktiverat handboksbeslut. Bara synligt bläck stoppar. Em-rutan räknas inte."
   ],
   "anmarkningsrader": [
-    "Z1: rubrik em-ruta x 200–573 y 1600–1688 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1685.",
+    "Z1: rubrik em-ruta x 200–589 y 1600–1673 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1652. Rå Z1 står kvar. I prov är den anmärkning.",
     "T1: Rubriken är 72 px, mallfönstret är 88–120. Det stoppar inte provet."
   ],
   "traffar": [
@@ -37,7 +37,7 @@
     },
     {
       "id": "Z1",
-      "text": "rubrik em-ruta x 200–573 y 1600–1688 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1685.",
+      "text": "rubrik em-ruta x 200–589 y 1600–1673 ligger utanför mallens säkra yta. Synligt bläck slutar på y 1652. Rå Z1 står kvar. I prov är den anmärkning.",
       "niva_raw": "stopp",
       "niva_leverans": "stopp",
       "niva_prov": "anmarkning"
@@ -51,7 +51,7 @@
     },
     {
       "id": "UI",
-      "text": "Synligt bläck (9048 pixlar över alfa 16) ligger i Reels från y 1580 eller i profilraden y 0–269, skalat mot 1080×1920. Em-rutan räknas inte.",
+      "text": "Synligt bläck (16758 pixlar över alfa 16) ligger i mätzonen. Mätzon i det här verktyget: profilrad y 0–269 och Reels från y 1580 på 1080×1920. Inte ett aktiverat handboksbeslut. Bara synligt bläck stoppar. Em-rutan räknas inte.",
       "niva_raw": "stopp",
       "niva_leverans": "stopp",
       "niva_prov": "stopp"
@@ -60,7 +60,7 @@
   "hur_allvar_harleds": [
     "BG_SAKNAS: stopp i både rå mätning och prov. Den nedklassas inte.",
     "Z1: rå nivå stopp står kvar. I prov blir den anmärkning. Rå Z1 är mallens säkra yta (DOM- eller em-ruta). I prov är den en anmärkning. Synligt bläck mot Reels- eller profil-UI är regeln UI och förblir stopp.",
-    "T1: rå nivå stopp står kvar. I prov blir den anmärkning. Mallens rubrikfönster (88–120 px) är en anmärkning. Oläslig text är LASBAR, synlig höjd under 38 px, och förblir stopp.",
+    "T1: rå nivå stopp står kvar. I prov blir den anmärkning. Mallens rubrikfönster (88–120 px) är en anmärkning. Läsbarhet är ett uttryckligt besked, inte ett 36- eller 38-pixelgolv.",
     "UI: stopp i både rå mätning och prov. Den nedklassas inte.",
     "P1 och P2 mäts inte som mallandel. Helscenen har inget produkturklipp, och ett urklipp räknas inte som godkänt.",
     "K6, K8 och subjektiv likhet mäts inte i kod. De är inte ett tyst ja."
@@ -71,8 +71,8 @@
         "roll": "rubrik",
         "text": "Eget namn",
         "px": 72.0,
-        "familj": "Inter",
-        "font_fil": "/usr/share/fonts/truetype/macos/Inter-Bold.ttf",
+        "familj": "ProvSans",
+        "font_fil": "ProvSans-Bold.ttf",
         "farg": [
           255,
           255,
@@ -82,29 +82,30 @@
         "linebox": [
           200.0,
           1600.0,
-          572.7,
-          1688.0
+          588.83,
+          1673.0
         ],
         "synligt_black": [
-          204,
-          1617,
-          569,
-          1685
+          200,
+          1603,
+          584,
+          1652
         ],
-        "linebox_botten": 1688.0,
-        "black_botten": 1685,
-        "synlig_hojd": 68,
+        "linebox_botten": 1673.0,
+        "black_botten": 1652,
+        "synlig_hojd": 49,
         "kontrast": 14.25
       }
     ],
     "ui": {
-      "black_pixlar": 9048,
+      "black_pixlar": 16758,
       "linebox_korsar": true
     },
     "zon": {
       "namn": "9x16",
-      "synlig_min_px": 38.0,
-      "synlig_kalla": "Bildgranskaren v6 och Samordnaren v8: synliga pixlar under 38 px",
+      "t2_spec_px": 36,
+      "t2_kalla": "spec_v1 T2, 36 px. Rå träff. I prov en anmärkning, inte ett nytt golv.",
+      "ui_kalla": "Mätzon i det här verktyget: profilrad y 0–269 och Reels från y 1580 på 1080×1920. Inte ett aktiverat handboksbeslut. Bara synligt bläck stoppar.",
       "reels_fran_y": 1580.0,
       "t1_mall_px": [
         88.0,
@@ -116,6 +117,15 @@
         972.0,
         1248.0
       ]
+    },
+    "lasbarhet": {
+      "bedomd": true,
+      "lasbar": true,
+      "av": "syntetisk fixture",
+      "syntetisk": true,
+      "pa_riktig_annons": false,
+      "kommentar": "Fixture för att visa bläck mot em-ruta. Inget påstående om en riktig annons.",
+      "notis": "Syntetisk fixture, inget påstående om en riktig annons."
     },
     "black_troskel": 16,
     "kontrast_min": 4.5,
@@ -176,15 +186,28 @@
     "fel": null
   },
   "jon_martin_ok": false,
+  "lasbarhet": {
+    "bedomd": true,
+    "lasbar": true,
+    "av": "syntetisk fixture",
+    "syntetisk": true,
+    "pa_riktig_annons": false,
+    "kommentar": "Fixture för att visa bläck mot em-ruta. Inget påstående om en riktig annons.",
+    "notis": "Syntetisk fixture, inget påstående om en riktig annons."
+  },
+  "pa_riktig_annons": false,
   "till_bildgranskaren": {
     "stopp_hon_ska_se_som_nej": [
-      "LASBAR",
       "K3",
       "UI",
+      "INGET_BLACK",
+      "LASBARHET_SAKNAS",
+      "LASBARHET",
       "FAKTA",
       "PRODUKT",
       "ANATOMI",
       "AI_PERSON",
+      "BG_SAKNAS",
       "INTE_NYA_FOTON"
     ],
     "anmarkning": [
@@ -197,11 +220,13 @@
       "P1",
       "P2",
       "T1",
+      "T2",
+      "B2",
       "K2",
       "K11",
       "LIKHET"
     ],
-    "maste_hon_gora_sjalv": "Produkt, påståenden mot kallor, anatomi och omdöme. Saknad granskning är ej_gjord, inte ja.",
+    "maste_hon_gora_sjalv": "Produkt, påståenden mot kallor, anatomi, omdöme och om texten faktiskt är läsbar på mobil. Saknad granskning och saknat läsbarhetsbesked är inte ja.",
     "skick": "Ett meddelande per butik: PNG, den här .mat.json, fotoide, vinkel, kallor. Inte ett kund-ok och inte Jon eller Martins ok."
   }
 }

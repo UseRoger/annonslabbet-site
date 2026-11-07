@@ -14,6 +14,24 @@ import policy
 from gemensamt import Fel, exact_crop, rita_block
 
 ROOT = Path(__file__).resolve().parent
+FONT_PATH = ROOT / "testdata" / "fonts" / "ProvSans-Bold.ttf"
+
+
+def _font_data():
+    return {
+        "font_filer": {"ProvSans": str(FONT_PATH)},
+        "font": {"rubrik": "ProvSans", "pris": "ProvSans", "text": "ProvSans"},
+    }
+
+
+def _lasbar(lasbar=True):
+    return {
+        "bedomd": True,
+        "lasbar": lasbar,
+        "av": "syntetisk fixture",
+        "syntetisk": True,
+        "kommentar": "Fixture. Inget påstående om en riktig annons.",
+    }
 
 
 def _uppdrag():
@@ -47,6 +65,7 @@ def _data(bild, texter, **extra):
         "uppdrag": _uppdrag(),
         "forhand": _forhand(),
         "texter": texter,
+        **_font_data(),
     }
     data.update(extra)
     return data
@@ -78,21 +97,30 @@ class PolicyTest(unittest.TestCase):
         self.assertTrue(any(rad.startswith("K3") for rad in prov["brott"]))
         self.assertTrue(prov["raw_ar_inte_omskriven"])
 
-    def test_t1_ar_anmarkning_t2_ar_stopp(self):
+    def test_t1_och_t2_ar_anmarkning_lasbarhet_saknas_stoppar(self):
         bara_t1 = policy.klassificera([{"id": "T1", "text": "72 px"}], "prov")
         self.assertEqual(bara_t1["resultat_raw"], "nej")
         self.assertEqual(bara_t1["resultat_prov"], "ja")
         self.assertEqual(bara_t1["resultat_leverans"], "nej")
-        las = policy.klassificera([{"id": "LASBAR", "text": "synlig höjd 30 px"}], "prov")
-        self.assertEqual(las["resultat_prov"], "nej")
-        self.assertEqual(policy.klassificera([{"id": "LASBAR", "text": "30 px"}], "leverans")["resultat"], "nej")
-        gammal_t2 = policy.klassificera([{"id": "T2", "text": "36 px-regeln"}], "prov")
+        saknas = policy.klassificera([{"id": "LASBARHET_SAKNAS", "text": "saknas"}], "prov")
+        self.assertEqual(saknas["resultat_prov"], "nej")
+        nej = policy.klassificera([{"id": "LASBARHET", "text": "inte läsbar"}], "prov")
+        self.assertEqual(nej["resultat"], "nej")
+        gammal_t2 = policy.klassificera([{"id": "T2", "text": "spec_v1 36 px"}], "prov")
+        self.assertEqual(gammal_t2["resultat_raw"], "nej")
         self.assertEqual(gammal_t2["resultat_prov"], "ja")
+        self.assertEqual(gammal_t2["traffar"][0]["niva_raw"], "stopp")
+        self.assertEqual(gammal_t2["traffar"][0]["niva_prov"], "anmarkning")
+        self.assertEqual(policy.klassificera([{"id": "T2", "text": "36 px"}], "leverans")["resultat"], "nej")
 
     def test_t1_stangs_inte_av_i_bulk(self):
-        self.assertIn("LASBAR", policy.ALLTID_STOPP)
+        self.assertNotIn("LASBAR", policy.ALLTID_STOPP)
+        self.assertIn("LASBARHET_SAKNAS", policy.ALLTID_STOPP)
+        self.assertIn("LASBARHET", policy.ALLTID_STOPP)
         self.assertIn("K3", policy.ALLTID_STOPP)
+        self.assertIn("UI", policy.ALLTID_STOPP)
         self.assertNotIn("K3", policy.PROV_ANMARKNING)
+        self.assertNotIn("T2", policy.ALLTID_STOPP)
         self.assertIn("T1", policy.PROV_ANMARKNING)
         self.assertIn("T2", policy.PROV_ANMARKNING)
         self.assertIn("B2", policy.PROV_ANMARKNING)
@@ -155,6 +183,10 @@ class RenderTest(unittest.TestCase):
         self.assertNotIn("T2", ids)
         self.assertNotIn("B2", ids)
         self.assertIn("BG_SAKNAS", ids)
+        self.assertIn("LASBARHET_SAKNAS", ids)
+        z3 = next(t for t in rapport["traffar"] if t["id"] == "Z3")
+        self.assertEqual(z3["niva_raw"], "stopp")
+        self.assertEqual(z3["niva_prov"], "anmarkning")
         self.assertEqual(rapport["resultat_raw"], "nej")
         self.assertEqual(rapport["resultat"], "nej")
         self.assertEqual(rapport["bg"]["status"], "ej_gjord")
@@ -167,7 +199,11 @@ class RenderTest(unittest.TestCase):
         self.assertLess(bricka["synligt_black"][1], 1150)
 
     def test_linebox_utan_black_ar_inte_ui_stopp(self):
-        matt = rita_block({"text": "HALLO", "px": 80, "roll": "rubrik"}, {}, str(self.dir))
+        matt = rita_block(
+            {"text": "HALLO", "px": 80, "roll": "rubrik", "font": "ProvSans"},
+            _font_data(),
+            str(self.dir),
+        )
         ink_botten = matt["black_lokal"][3]
         em_botten = matt["linebox_lokal"][3]
         self.assertLess(ink_botten, em_botten)
@@ -191,6 +227,9 @@ class RenderTest(unittest.TestCase):
         self.assertIn("BG_SAKNAS", ids)
         self.assertEqual(rapport["resultat"], "nej")
         self.assertFalse(rapport["jon_martin_ok"])
+        z1 = next(t for t in rapport["traffar"] if t["id"] == "Z1")
+        self.assertEqual(z1["niva_raw"], "stopp")
+        self.assertEqual(z1["niva_prov"], "anmarkning")
         text = " ".join(rapport["hur_allvar_harleds"])
         self.assertIn("bläck", text.lower())
 
@@ -299,17 +338,88 @@ class RenderTest(unittest.TestCase):
         self.assertGreater(block["black_botten"], 1248)
         self.assertLess(block["black_botten"], 1580)
 
-    def test_synlig_hojd_under_38_stoppar_36_px_regeln_gor_det_inte(self):
+    def test_lasbarhet_saknas_och_uttryckligt_nej(self):
+        data = _data("scen.png", [
+            {"roll": "rubrik", "text": "Eget namn i jul", "x": 160, "y": 340, "px": 72, "farg": "#ffffff"},
+        ])
+        data["bg"] = {
+            "granskad": True,
+            "granskare": "fixture",
+            "produkt": "ja",
+            "pastaenden": "ja",
+            "anatomi": "ja",
+            "montering": "ja",
+            "ai_person_vid_omdome": False,
+        }
+        saknas, _render = self._mat(data)
+        self.assertIn("LASBARHET_SAKNAS", {t["id"] for t in saknas["traffar"]})
+        self.assertEqual(saknas["resultat"], "nej")
+        self.assertFalse(saknas["lasbarhet"]["pa_riktig_annons"])
+        data["lasbarhet"] = _lasbar(False)
+        nej, _render = self._mat(data)
+        self.assertIn("LASBARHET", {t["id"] for t in nej["traffar"]})
+        self.assertNotIn("LASBARHET_SAKNAS", {t["id"] for t in nej["traffar"]})
+        self.assertEqual(nej["resultat"], "nej")
+        self.assertTrue(nej["lasbarhet"]["syntetisk"])
+        self.assertFalse(nej["pa_riktig_annons"])
+        self.assertIn("fixture", nej["lasbarhet"]["notis"].lower())
+
+    def test_liten_text_har_inget_nytt_pixelgolv(self):
         data = _data("scen.png", [
             {"roll": "rubrik", "text": "Liten", "x": 200, "y": 400, "px": 28, "farg": "#ffffff"},
         ])
+        data["syntetisk"] = True
+        data["bg"] = {
+            "granskad": True,
+            "granskare": "syntetisk fixture",
+            "produkt": "ja",
+            "pastaenden": "ja",
+            "anatomi": "ja",
+            "montering": "ja",
+            "ai_person_vid_omdome": False,
+        }
+        data["lasbarhet"] = _lasbar(True)
         rapport, _render = self._mat(data)
         ids = {t["id"] for t in rapport["traffar"]}
-        self.assertIn("LASBAR", ids)
-        self.assertNotIn("T2", ids)
-        self.assertNotIn("B2", ids)
-        self.assertLess(rapport["matt"]["block"][0]["synlig_hojd"], 38)
-        self.assertIn("38", rapport["matt"]["zon"]["synlig_kalla"])
+        self.assertNotIn("LASBAR", ids)
+        self.assertNotIn("LASBARHET", ids)
+        self.assertNotIn("LASBARHET_SAKNAS", ids)
+        self.assertNotIn("UI", ids)
+        self.assertNotIn("K3", ids)
+        self.assertIn("T2", ids)
+        t2 = next(t for t in rapport["traffar"] if t["id"] == "T2")
+        self.assertEqual(t2["niva_raw"], "stopp")
+        self.assertEqual(t2["niva_prov"], "anmarkning")
+        self.assertLess(rapport["matt"]["block"][0]["synlig_hojd"], 36)
+        self.assertEqual(rapport["matt"]["zon"]["t2_spec_px"], 36)
+        self.assertNotIn("synlig_min_px", rapport["matt"]["zon"])
+        self.assertEqual(rapport["resultat_raw"], "nej")
+        self.assertEqual(rapport["resultat_prov"], "ja")
+        self.assertTrue(rapport["lasbarhet"]["syntetisk"])
+        self.assertFalse(rapport["pa_riktig_annons"])
+
+    def test_uttrycklig_lasbarhet_lossar_inte_kontrast_eller_ui(self):
+        ljus = _scen(self.dir / "ljus2.png", (250, 250, 250, 255))
+        data = _data("ljus2.png", [
+            {"roll": "rubrik", "text": "Eget namn", "x": 200, "y": 1600, "px": 72, "farg": "#ffffff"},
+        ])
+        data["lasbarhet"] = _lasbar(True)
+        rapport, _render = self._mat(data)
+        ids = {t["id"] for t in rapport["traffar"]}
+        self.assertIn("K3", ids)
+        self.assertIn("UI", ids)
+        self.assertEqual(rapport["resultat_prov"], "nej")
+        self.assertTrue(ljus.exists())
+
+    def test_angiven_font_ersatts_inte(self):
+        data = _data("scen.png", [
+            {"roll": "rubrik", "text": "Eget namn", "x": 160, "y": 340, "px": 72, "font": "Inter"},
+        ])
+        data["font_filer"] = {"Inter": "saknas/Inter-Bold.ttf", "ProvSans": str(FONT_PATH)}
+        with self.assertRaises(Fel) as ctx:
+            self._mat(data)
+        self.assertIn("Inter", str(ctx.exception))
+        self.assertIn("Ingen ersättning", str(ctx.exception))
 
     def test_bg_ja_ar_inte_jon_ok(self):
         data = _data("scen.png", [
@@ -325,13 +435,17 @@ class RenderTest(unittest.TestCase):
             "montering": "ja",
             "ai_person_vid_omdome": False,
         }
+        data["lasbarhet"] = _lasbar(True)
         rapport, _render = self._mat(data)
         ids = {t["id"] for t in rapport["traffar"]}
         self.assertNotIn("BG_SAKNAS", ids)
         self.assertNotIn("UI", ids)
         self.assertNotIn("LASBAR", ids)
+        self.assertNotIn("LASBARHET_SAKNAS", ids)
         self.assertFalse(rapport["jon_martin_ok"])
         self.assertFalse(rapport["bg"]["kundgodkannande"])
+        self.assertFalse(rapport["pa_riktig_annons"])
+        self.assertTrue(rapport["lasbarhet"]["syntetisk"])
 
 
 class DiagnosTest(unittest.TestCase):
@@ -341,14 +455,30 @@ class DiagnosTest(unittest.TestCase):
         if ut.exists():
             shutil.rmtree(ut)
         skriv_diagnos.skriv(ut)
+        self.assertTrue((ut / "01-meter-ren-ej-faktagranskad.json").is_file())
+        self.assertTrue((ut / "ProvSans-Bold.ttf").is_file())
+        indata = json.loads((ut / "01-meter-ren-ej-faktagranskad.json").read_text(encoding="utf-8"))
+        self.assertTrue(indata["syntetisk"])
+        self.assertNotIn("lasbarhet", indata)
+        self.assertTrue((ut / indata["font_filer"]["ProvSans"]).is_file())
         matt = json.loads((ut / "01-meter-ren-ej-faktagranskad.mat.json").read_text(encoding="utf-8"))
-        self.assertNotIn("UI", {t["id"] for t in matt["traffar"]})
-        self.assertNotIn("LASBAR", {t["id"] for t in matt["traffar"]})
+        ids = {t["id"] for t in matt["traffar"]}
+        self.assertNotIn("UI", ids)
+        self.assertNotIn("LASBAR", ids)
+        self.assertIn("BG_SAKNAS", ids)
+        self.assertIn("LASBARHET_SAKNAS", ids)
         self.assertEqual(matt["bg"]["status"], "ej_gjord")
         self.assertEqual(matt["resultat"], "nej")
         self.assertFalse(matt["jon_martin_ok"])
+        self.assertFalse(matt["pa_riktig_annons"])
         self.assertTrue(matt["matt"]["export_9x16"])
         self.assertTrue((ut / "01-meter-ren-ej-faktagranskad.png").exists())
+        z3 = next(t for t in matt["traffar"] if t["id"] == "Z3")
+        self.assertEqual(z3["niva_raw"], "stopp")
+        self.assertEqual(z3["niva_prov"], "anmarkning")
+        line_in = json.loads((ut / "02-linebox.json").read_text(encoding="utf-8"))
+        self.assertTrue(line_in["lasbarhet"]["bedomd"])
+        self.assertTrue(line_in["lasbarhet"]["syntetisk"])
         line = json.loads((ut / "02-linebox.mat.json").read_text(encoding="utf-8"))
         self.assertEqual(line["matt"]["ui"]["black_pixlar"], 0)
         self.assertTrue(line["matt"]["ui"]["linebox_korsar"])
