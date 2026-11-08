@@ -1,0 +1,77 @@
+{
+ "vag": "prov-helscen",
+ "workflow": "prov",
+ "bild": "/workspace/adlab/photo-first-20261107/kreatoren-produktion/cozy/produktion-v2-public-originals/scen-1/export-1080x1920.png",
+ "format": "9x16",
+ "uppdrag": {
+  "fakta": [
+   "Ullfilt 140 x 200 cm - Ljusgrå",
+   "140 x 200 cm",
+   "inget pris/rabatt/omdöme i bild (produktionsoverride)"
+  ],
+  "kopskal": "mys under kalla vinterkvällar",
+  "vinkel": "användning/identitet",
+  "vinnare": "se BRIEF_cozy.md §4",
+  "fotoide": "se BRIEF_cozy.md §5 bild 1"
+ },
+ "font_filer": {
+  "Montserrat-600": "/workspace/adlab/photo-first-20261107/butiker/produktion/fonts/cozy/Montserrat-600.ttf",
+  "Montserrat-400": "/workspace/adlab/photo-first-20261107/butiker/produktion/fonts/cozy/Montserrat-400.ttf"
+ },
+ "texter": [
+  {
+   "roll": "rubrik",
+   "text": "Mys under kalla vinterkvällar.",
+   "font": "Montserrat-600",
+   "vikt": 600,
+   "x": 560,
+   "y": 290,
+   "px": 56,
+   "max_bredd": 470,
+   "line_height": 1.0,
+   "farg": "#FFFFFF"
+  },
+  {
+   "roll": "underrad",
+   "text": "Pläd i 100 % ren, ny ull. 140 x 200 cm.",
+   "font": "Montserrat-400",
+   "vikt": 400,
+   "x": 560,
+   "y": 450,
+   "px": 30,
+   "max_bredd": 340,
+   "line_height": 1.05,
+   "farg": "#FFFFFF"
+  }
+ ],
+ "_kalla": {
+  "brief": "/workspace/adlab/photo-first-20261107/butiker/produktion/cozy/BRIEF_cozy.md",
+  "jobs": "/workspace/adlab/photo-first-20261107/butiker/produktion/cozy/jobs_cozy.json",
+  "job_id_brief": "cozy-1-fyra-pa-eftermiddagen",
+  "textbox_brief": [
+   72,
+   300,
+   1008,
+   620
+  ],
+  "px_status": "preliminärt, valt efter faktisk scen; inget golv, ej godkänt",
+  "generering": "Kreatören gpt_image_2_5 (verifierad quote); briefens modellförslag gäller ej",
+  "layout": "textprov 2026-11-07, placering vald efter visuell läsning av exporten"
+ },
+ "bild_sha256": "6f42057ef676b354f40fbfa514df122b8d0a8dec93f10315e5cb7c6cc8dafc26",
+ "bg": {
+  "status": "ej_gjord",
+  "kommentar": "Ingen full BG-dom över textad annons. Endast avgränsad produktförkontroll finns (se produktforkontroll)."
+ },
+ "lasbarhet": {
+  "bedomd": false,
+  "kommentar": "Mobil-läsbarhet ej bedömd av människa. Väntar."
+ },
+ "produktforkontroll": {
+  "typ": "AVGRÄNSAD källkälla, ej slutannonsdom, ej pixelidentitet",
+  "rapport": "/workspace/bg20261107cozy/rapport.md",
+  "facit": "/workspace/bg20261107cozy/facit.json",
+  "tid": "2026-11-07 13:43 Europe/Stockholm",
+  "utfall": "ok med anmärkningar, can_proceed_to_text true för exakt denna export"
+ }
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "ettrumforsmycken text-v1 2026-11-08 (t515u/t469u som uppdragsgrund; Samordnaren v10 och Kreatören v8 är FÖRSLAG-snapshots, ingen påstådd global aktivering)",
+  "font_files": {
+    "Playfair700": "fonts/playfair-display-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Playfair Display 700 rubrik (2 rader), Figtree 500 pris; ingen underrad; ingen butiksfont",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": "2",
+      "vinkel": "användning",
+      "photo": "../produktion-v1/export/scen-2-1080x1920.png",
+      "photo_sha256": "9f046d2f6b7ace774a563dd1468c2db9f5781b5c0ea3236fed1d99db4f5104e1",
+      "protected_polygons": {
+        "hand_mugg_ring": [
+          [
+            90,
+            670
+          ],
+          [
+            1050,
+            670
+          ],
+          [
+            1050,
+            1920
+          ],
+          [
+            90,
+            1920
+          ]
+        ],
+        "arm_tröjärm": [
+          [
+            0,
+            450
+          ],
+          [
+            80,
+            450
+          ],
+          [
+            260,
+            800
+          ],
+          [
+            260,
+            1920
+          ],
+          [
+            0,
+            1920
+          ]
+        ],
+        "ljuspunkter_fonster": [
+          [
+            980,
+            600
+          ],
+          [
+            1080,
+            600
+          ],
+          [
+            1080,
+            920
+          ],
+          [
+            980,
+            920
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "2A",
+          "kind": "slutkandidat",
+          "desc": "Enda kandidat bild 2 efter förkontroll",
+          "text_color": "#ffffff",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Mjuk och bekväm",
+              "font": "Playfair700",
+              "px": 88,
+              "x": 177,
+              "y": 274
+            },
+            {
+              "role": "rubrik",
+              "text": "varje dag",
+              "font": "Playfair700",
+              "px": 88,
+              "x": 181,
+              "y": 381
+            },
+            {
+              "role": "pris",
+              "text": "3 300 kr",
+              "font": "Figtree500",
+              "px": 78,
+              "x": 176,
+              "y": 505
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

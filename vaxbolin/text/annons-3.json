@@ -1,0 +1,206 @@
+{
+  "schema": "vaxbolin text-v1 2026-11-08; Samordnaren v10/Kreatören v8 lokala FÖRSLAG-kopior, ingen global aktivering",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Fraunces 700 rubrik (2 rader), Figtree 500 pris på egen mindre rad; ingen underrad; ingen butiksfont; ingen platta/skugga/stroke/gradient",
+  "z5_margin_px": 8,
+  "pris_bindning": "Från 525 kr = lägsta pris i den exakt matchade röda offerfamiljen 32-12-23x{100,150,240,290} (525/725/1075/1275 SEK, alla InStock) i sparad JSON-LD p_vaxbo.r.html; INTE bildbestämd SKU/längd",
+  "scenes": [
+    {
+      "scene": "3",
+      "vinkel": "nyfikenhet",
+      "photo": "../produktion-v1/export/scen-3-1080x1920.png",
+      "photo_sha256": "06d7d9d211ca8e28ff7676bfe54574c5bac06d7caaa239e35d154d07a24dbcc9",
+      "protected_polygons": {
+        "lopare": [
+          [
+            405,
+            655
+          ],
+          [
+            765,
+            655
+          ],
+          [
+            965,
+            1180
+          ],
+          [
+            965,
+            1745
+          ],
+          [
+            110,
+            1745
+          ],
+          [
+            110,
+            1180
+          ]
+        ],
+        "ljus_v_lampa": [
+          [
+            79,
+            353
+          ],
+          [
+            157,
+            353
+          ],
+          [
+            157,
+            486
+          ],
+          [
+            79,
+            486
+          ]
+        ],
+        "ljus_v2": [
+          [
+            192,
+            383
+          ],
+          [
+            225,
+            383
+          ],
+          [
+            225,
+            423
+          ],
+          [
+            192,
+            423
+          ]
+        ],
+        "ljus_v3": [
+          [
+            199,
+            460
+          ],
+          [
+            268,
+            460
+          ],
+          [
+            268,
+            490
+          ],
+          [
+            199,
+            490
+          ]
+        ],
+        "ljus_v4": [
+          [
+            101,
+            507
+          ],
+          [
+            115,
+            507
+          ],
+          [
+            115,
+            520
+          ],
+          [
+            101,
+            520
+          ]
+        ],
+        "ljus_v5": [
+          [
+            3,
+            364
+          ],
+          [
+            14,
+            364
+          ],
+          [
+            14,
+            374
+          ],
+          [
+            3,
+            374
+          ]
+        ],
+        "lampa_hoger": [
+          [
+            1032,
+            424
+          ],
+          [
+            1080,
+            424
+          ],
+          [
+            1080,
+            507
+          ],
+          [
+            1032,
+            507
+          ]
+        ],
+        "ljus_bord_v": [
+          [
+            122,
+            674
+          ],
+          [
+            147,
+            674
+          ],
+          [
+            147,
+            690
+          ],
+          [
+            122,
+            690
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "3A",
+          "kind": "slutkandidat",
+          "desc": "Enda kandidat efter förkontroll enligt låst valregel",
+          "text_color": "#ffffff",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Mönstrad med",
+              "font": "Fraunces700",
+              "px": 96,
+              "x": 270,
+              "y": 254
+            },
+            {
+              "role": "rubrik",
+              "text": "enkel elegans",
+              "font": "Fraunces700",
+              "px": 96,
+              "x": 269,
+              "y": 348
+            },
+            {
+              "role": "pris",
+              "text": "Från 525 kr",
+              "font": "Figtree500",
+              "px": 80,
+              "x": 265,
+              "y": 477
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

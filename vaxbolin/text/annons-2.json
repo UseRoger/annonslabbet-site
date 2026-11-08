@@ -1,0 +1,144 @@
+{
+  "schema": "vaxbolin text-v1 2026-11-08; Samordnaren v10/Kreatören v8 lokala FÖRSLAG-kopior, ingen global aktivering",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Fraunces 700 rubrik (2 rader), Figtree 500 pris på egen mindre rad; ingen underrad; ingen butiksfont; ingen platta/skugga/stroke/gradient",
+  "z5_margin_px": 8,
+  "pris_bindning": "Från 525 kr = lägsta pris i den exakt matchade röda offerfamiljen 32-12-23x{100,150,240,290} (525/725/1075/1275 SEK, alla InStock) i sparad JSON-LD p_vaxbo.r.html; INTE bildbestämd SKU/längd",
+  "scenes": [
+    {
+      "scene": "2",
+      "vinkel": "gåva",
+      "photo": "../produktion-v1/export/scen-2-1080x1920.png",
+      "photo_sha256": "c96707601034c21515c86c5ee3b98178deb2b6d0a9e3ceccb91f271035748fc5",
+      "protected_polygons": {
+        "lopare_paket_snore_gran": [
+          [
+            370,
+            770
+          ],
+          [
+            995,
+            875
+          ],
+          [
+            830,
+            1620
+          ],
+          [
+            50,
+            1510
+          ]
+        ],
+        "skal_kottar_skugga": [
+          [
+            0,
+            370
+          ],
+          [
+            150,
+            370
+          ],
+          [
+            150,
+            615
+          ],
+          [
+            0,
+            615
+          ]
+        ],
+        "vas": [
+          [
+            0,
+            0
+          ],
+          [
+            195,
+            0
+          ],
+          [
+            195,
+            425
+          ],
+          [
+            0,
+            425
+          ]
+        ],
+        "granruska_topp": [
+          [
+            0,
+            0
+          ],
+          [
+            560,
+            0
+          ],
+          [
+            560,
+            225
+          ],
+          [
+            0,
+            225
+          ]
+        ],
+        "stol": [
+          [
+            795,
+            0
+          ],
+          [
+            1080,
+            0
+          ],
+          [
+            1080,
+            385
+          ],
+          [
+            795,
+            385
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "2A",
+          "kind": "slutkandidat",
+          "desc": "Enda kandidat efter förkontroll enligt låst valregel",
+          "text_color": "#1a1a1a",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Ge bort",
+              "font": "Fraunces700",
+              "px": 96,
+              "x": 551,
+              "y": 358
+            },
+            {
+              "role": "rubrik",
+              "text": "linne",
+              "font": "Fraunces700",
+              "px": 96,
+              "x": 552,
+              "y": 452
+            },
+            {
+              "role": "pris",
+              "text": "Från 525 kr",
+              "font": "Figtree500",
+              "px": 80,
+              "x": 547,
+              "y": 559
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
