@@ -1,0 +1,107 @@
+{
+  "schema": "ettrumforsmycken text-v1 2026-11-08 (t515u/t469u som uppdragsgrund; Samordnaren v10 och Kreatören v8 är FÖRSLAG-snapshots, ingen påstådd global aktivering)",
+  "font_files": {
+    "Playfair700": "fonts/playfair-display-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Playfair Display 700 rubrik (2 rader), Figtree 500 pris; ingen underrad; ingen butiksfont",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": "1",
+      "vinkel": "gåva",
+      "photo": "../produktion-v1/export/scen-1-1080x1920.png",
+      "photo_sha256": "5a3f018b608614104bbef0b43cdc00eefee082313217f316b6c92e35f05a2de5",
+      "protected_polygons": {
+        "ring": [
+          [
+            330,
+            725
+          ],
+          [
+            730,
+            725
+          ],
+          [
+            730,
+            1185
+          ],
+          [
+            330,
+            1185
+          ]
+        ],
+        "julpapper_hoger": [
+          [
+            990,
+            1060
+          ],
+          [
+            1080,
+            1060
+          ],
+          [
+            1080,
+            1920
+          ],
+          [
+            990,
+            1920
+          ]
+        ],
+        "snore_gran_julpapper_nedre": [
+          [
+            0,
+            1250
+          ],
+          [
+            1080,
+            1250
+          ],
+          [
+            1080,
+            1920
+          ],
+          [
+            0,
+            1920
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "1A",
+          "kind": "slutkandidat",
+          "desc": "Enda kandidat bild 1 efter förkontroll",
+          "text_color": "#1a1a1a",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Ge bort en",
+              "font": "Playfair700",
+              "px": 88,
+              "x": 96,
+              "y": 274
+            },
+            {
+              "role": "rubrik",
+              "text": "kundfavorit",
+              "font": "Playfair700",
+              "px": 88,
+              "x": 98,
+              "y": 366
+            },
+            {
+              "role": "pris",
+              "text": "3 300 kr",
+              "font": "Figtree500",
+              "px": 78,
+              "x": 96,
+              "y": 474
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

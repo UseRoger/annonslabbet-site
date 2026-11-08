@@ -1,0 +1,257 @@
+{
+  "schema": "Stievens text-v1 textspec, ur plan-v2 + sok-resultat-v2 (låst före render)",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "tracking": 0,
+  "anchor": "la",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": "3",
+      "vinkel": "användning",
+      "photo": "../produktion-v1/export/scen-3-1080x1920.png",
+      "photo_sha256": "66fa209e32d7747968835b4e017528c8e1b04731b5a56f4e7a3f5e737e1e25f7",
+      "text_color": "#ffffff",
+      "storlekssteg": "B",
+      "copy_alternativ": 2,
+      "lines": [
+        {
+          "role": "rubrik",
+          "text": "Julbordet",
+          "font": "Fraunces700",
+          "px": 88,
+          "x": 385,
+          "y": 311
+        },
+        {
+          "role": "pris",
+          "text": "2 800 kr",
+          "font": "Figtree500",
+          "px": 80,
+          "x": 387,
+          "y": 409
+        }
+      ],
+      "protected_polygons": {
+        "tomtefar_inkl_hatt_sack_platta_trad": [
+          [
+            610,
+            570
+          ],
+          [
+            960,
+            570
+          ],
+          [
+            960,
+            1355
+          ],
+          [
+            610,
+            1355
+          ]
+        ],
+        "mellan_inkl_arm_platta": [
+          [
+            280,
+            690
+          ],
+          [
+            660,
+            690
+          ],
+          [
+            660,
+            1265
+          ],
+          [
+            280,
+            1265
+          ]
+        ],
+        "liten_vanster_inkl_platta": [
+          [
+            85,
+            910
+          ],
+          [
+            400,
+            910
+          ],
+          [
+            400,
+            1440
+          ],
+          [
+            85,
+            1440
+          ]
+        ],
+        "liten_fram_inkl_platta": [
+          [
+            380,
+            1070
+          ],
+          [
+            710,
+            1070
+          ],
+          [
+            710,
+            1570
+          ],
+          [
+            380,
+            1570
+          ]
+        ],
+        "laga_v": [
+          [
+            45,
+            395
+          ],
+          [
+            120,
+            395
+          ],
+          [
+            120,
+            515
+          ],
+          [
+            45,
+            515
+          ]
+        ],
+        "laga_h": [
+          [
+            995,
+            405
+          ],
+          [
+            1075,
+            405
+          ],
+          [
+            1075,
+            520
+          ],
+          [
+            995,
+            520
+          ]
+        ],
+        "ljus_stake_v": [
+          [
+            30,
+            490
+          ],
+          [
+            135,
+            490
+          ],
+          [
+            135,
+            1020
+          ],
+          [
+            30,
+            1020
+          ]
+        ],
+        "ljus_stake_h": [
+          [
+            980,
+            495
+          ],
+          [
+            1080,
+            495
+          ],
+          [
+            1080,
+            1030
+          ],
+          [
+            980,
+            1030
+          ]
+        ],
+        "bakgrundsljus_laga": [
+          [
+            290,
+            240
+          ],
+          [
+            390,
+            240
+          ],
+          [
+            390,
+            340
+          ],
+          [
+            290,
+            340
+          ]
+        ],
+        "bakgrundsljus_stjarna_hoger": [
+          [
+            820,
+            0
+          ],
+          [
+            1080,
+            0
+          ],
+          [
+            1080,
+            345
+          ],
+          [
+            820,
+            345
+          ]
+        ],
+        "vinglas_v": [
+          [
+            360,
+            500
+          ],
+          [
+            560,
+            500
+          ],
+          [
+            560,
+            810
+          ],
+          [
+            360,
+            810
+          ]
+        ],
+        "vinglas_h": [
+          [
+            855,
+            425
+          ],
+          [
+            1000,
+            425
+          ],
+          [
+            1000,
+            605
+          ],
+          [
+            855,
+            605
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema": "ettrumforsmycken text-v1 2026-11-08 (t515u/t469u som uppdragsgrund; Samordnaren v10 och Kreatören v8 är FÖRSLAG-snapshots, ingen påstådd global aktivering)",
+  "font_files": {
+    "Playfair700": "fonts/playfair-display-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Playfair Display 700 rubrik (2 rader), Figtree 500 pris; ingen underrad; ingen butiksfont",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": "3",
+      "vinkel": "kort utfall",
+      "photo": "../produktion-v1/export/scen-3-1080x1920.png",
+      "photo_sha256": "16bc7c52e56dbdb6d483d7dcd05dd39307b30e12fd95f8f4d37dcf66411690b1",
+      "protected_polygons": {
+        "ring": [
+          [
+            310,
+            880
+          ],
+          [
+            755,
+            880
+          ],
+          [
+            755,
+            1400
+          ],
+          [
+            310,
+            1400
+          ]
+        ],
+        "lampa": [
+          [
+            890,
+            280
+          ],
+          [
+            1080,
+            280
+          ],
+          [
+            1080,
+            720
+          ],
+          [
+            890,
+            720
+          ]
+        ],
+        "skal": [
+          [
+            920,
+            890
+          ],
+          [
+            1080,
+            890
+          ],
+          [
+            1080,
+            1130
+          ],
+          [
+            920,
+            1130
+          ]
+        ],
+        "skiffer_bord": [
+          [
+            0,
+            1080
+          ],
+          [
+            1080,
+            1080
+          ],
+          [
+            1080,
+            1920
+          ],
+          [
+            0,
+            1920
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "3A",
+          "kind": "slutkandidat",
+          "desc": "Enda kandidat bild 3 efter förkontroll",
+          "text_color": "#ffffff",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Silver, 18k guld",
+              "font": "Playfair700",
+              "px": 88,
+              "x": 96,
+              "y": 274
+            },
+            {
+              "role": "rubrik",
+              "text": "och diamant",
+              "font": "Playfair700",
+              "px": 88,
+              "x": 97,
+              "y": 381
+            },
+            {
+              "role": "pris",
+              "text": "3 300 kr",
+              "font": "Figtree500",
+              "px": 78,
+              "x": 96,
+              "y": 489
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+ "vag": "prov-helscen",
+ "workflow": "prov",
+ "bild": "/workspace/adlab/photo-first-20261107/kreatoren-produktion/danielssons/produktion-v2-public-original/scen-3/export-1080x1920.png",
+ "format": "9x16",
+ "uppdrag": {
+  "fakta": [
+   "Nori Green, Keramikfat",
+   "240 kr (FAKTA.json, produktsidans HTML 2026-11-07 ca 13:25)",
+   "handgjort stengods, unikt (Om oss + annonskort, hela sortimentet)"
+  ],
+  "kopskal": "vardag",
+  "vinkel": "vardag",
+  "vinnare": "se BRIEF.md",
+  "fotoide": "jobs_danielssons.json dan-3"
+ },
+ "font_filer": {
+  "CrimsonPro700": "/workspace/adlab/photo-first-20261107/butiker/produktion/danielssons/fonts/crimsonpro_n7.3f6def36c6cd2e6095f8b9560fce03a4b80105cd.ttf",
+  "ProzaLibre400": "/workspace/adlab/photo-first-20261107/butiker/produktion/danielssons/fonts/prozalibre_n4.f0507b32b728d57643b7359f19cd41165a2ba3ad.ttf"
+ },
+ "font": {
+  "rubrik": "CrimsonPro700",
+  "text": "ProzaLibre400"
+ },
+ "texter": [
+  {
+   "roll": "rubrik",
+   "text": "Lite guldkant på vardagen.",
+   "x": 120,
+   "y": 1340,
+   "px": 56,
+   "font": "CrimsonPro700",
+   "farg": "#F7F4EE"
+  },
+  {
+   "roll": "text",
+   "text": "Nori Green, handgjort stengods. 240 kr",
+   "x": 120,
+   "y": 1422,
+   "px": 30,
+   "font": "ProzaLibre400",
+   "farg": "#F7F4EE"
+  }
+ ],
+ "_kalla": {
+  "rubrik": "BRIEF.md dan-3; Om oss (butikens ord)",
+  "underrad": "FAKTA.json produkt/pris/material; ingen underrad-copy finns i BRIEF.md, raden är sammanställd ur belagda fält",
+  "farg": "BRIEF.md scheme-1 ljus rgb(247,244,238) på mörk yta",
+  "bg_produktforkontroll": "/workspace/bg20261107nori/rapport.md + facit.json: native/export 'ok med anmärkningar' (reflexbågar = integreringsanmärkning). Gäller textfri fil, INTE textad export.",
+  "forhand": "utelämnad avsiktligt: slutlig BG på textad export väntar",
+  "lasbarhet": "utelämnad avsiktligt: läsbarhetsgranskning väntar"
+ }
+}

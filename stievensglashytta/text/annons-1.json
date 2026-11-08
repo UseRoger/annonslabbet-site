@@ -1,0 +1,131 @@
+{
+  "schema": "Stievens text-v1 textspec, ur plan-v2 + sok-resultat-v2 (låst före render)",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "tracking": 0,
+  "anchor": "la",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": "1",
+      "vinkel": "gåva",
+      "photo": "../produktion-v1/export/scen-1-1080x1920.png",
+      "photo_sha256": "b768c1f8ba88dce68ec09c6baeb5a4479d69bbc570328c38b9343a966766af87",
+      "text_color": "#ffffff",
+      "storlekssteg": "A",
+      "copy_alternativ": 2,
+      "lines": [
+        {
+          "role": "rubrik",
+          "text": "Ge bort",
+          "font": "Fraunces700",
+          "px": 96,
+          "x": 395,
+          "y": 308
+        },
+        {
+          "role": "pris",
+          "text": "2 800 kr",
+          "font": "Figtree500",
+          "px": 80,
+          "x": 397,
+          "y": 413
+        }
+      ],
+      "protected_polygons": {
+        "tomtefar_inkl_hatt_sack_platta_trad": [
+          [
+            640,
+            540
+          ],
+          [
+            995,
+            540
+          ],
+          [
+            995,
+            1380
+          ],
+          [
+            640,
+            1380
+          ]
+        ],
+        "mellan_inkl_arm_platta_trad": [
+          [
+            275,
+            700
+          ],
+          [
+            665,
+            700
+          ],
+          [
+            665,
+            1350
+          ],
+          [
+            275,
+            1350
+          ]
+        ],
+        "liten_vanster_inkl_platta": [
+          [
+            85,
+            955
+          ],
+          [
+            395,
+            955
+          ],
+          [
+            395,
+            1505
+          ],
+          [
+            85,
+            1505
+          ]
+        ],
+        "liten_fram_inkl_platta": [
+          [
+            380,
+            1090
+          ],
+          [
+            715,
+            1090
+          ],
+          [
+            715,
+            1605
+          ],
+          [
+            380,
+            1605
+          ]
+        ],
+        "granris_vanster": [
+          [
+            0,
+            470
+          ],
+          [
+            255,
+            470
+          ],
+          [
+            255,
+            1090
+          ],
+          [
+            0,
+            1090
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "schema": "Stievens text-v1 textspec, ur plan-v2 + sok-resultat-v2 (låst före render)",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "tracking": 0,
+  "anchor": "la",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": "2",
+      "vinkel": "nyfikenhet",
+      "photo": "../produktion-v1/export/scen-2-1080x1920.png",
+      "photo_sha256": "bc26418f2c1c57a52f03d81f2dafb9809f5db0a737065a681d83bc5cc9ab998a",
+      "text_color": "#ffffff",
+      "storlekssteg": "A",
+      "copy_alternativ": 0,
+      "lines": [
+        {
+          "role": "rubrik",
+          "text": "Titta",
+          "font": "Fraunces700",
+          "px": 96,
+          "x": 66,
+          "y": 245
+        },
+        {
+          "role": "rubrik",
+          "text": "närmare",
+          "font": "Fraunces700",
+          "px": 96,
+          "x": 66,
+          "y": 332
+        },
+        {
+          "role": "pris",
+          "text": "2 800 kr",
+          "font": "Figtree500",
+          "px": 80,
+          "x": 67,
+          "y": 436
+        }
+      ],
+      "protected_polygons": {
+        "tomtefar_inkl_hatt_platta_trad_ljuspunkter": [
+          [
+            490,
+            325
+          ],
+          [
+            1020,
+            325
+          ],
+          [
+            1020,
+            1675
+          ],
+          [
+            490,
+            1675
+          ]
+        ],
+        "mellan_inkl_arm_platta": [
+          [
+            260,
+            585
+          ],
+          [
+            670,
+            585
+          ],
+          [
+            670,
+            1260
+          ],
+          [
+            260,
+            1260
+          ]
+        ],
+        "liten_vanster_inkl_platta": [
+          [
+            10,
+            780
+          ],
+          [
+            295,
+            780
+          ],
+          [
+            295,
+            1360
+          ],
+          [
+            10,
+            1360
+          ]
+        ],
+        "liten_fram_inkl_platta": [
+          [
+            165,
+            1000
+          ],
+          [
+            520,
+            1000
+          ],
+          [
+            520,
+            1515
+          ],
+          [
+            165,
+            1515
+          ]
+        ],
+        "ljus_laga": [
+          [
+            975,
+            195
+          ],
+          [
+            1055,
+            195
+          ],
+          [
+            1055,
+            355
+          ],
+          [
+            975,
+            355
+          ]
+        ],
+        "ljus_stearin": [
+          [
+            955,
+            330
+          ],
+          [
+            1080,
+            330
+          ],
+          [
+            1080,
+            910
+          ],
+          [
+            955,
+            910
+          ]
+        ],
+        "ljusstake": [
+          [
+            955,
+            880
+          ],
+          [
+            1080,
+            880
+          ],
+          [
+            1080,
+            1010
+          ],
+          [
+            955,
+            1010
+          ]
+        ],
+        "tavla_hoger": [
+          [
+            700,
+            0
+          ],
+          [
+            1080,
+            0
+          ],
+          [
+            1080,
+            235
+          ],
+          [
+            700,
+            235
+          ]
+        ]
+      }
+    }
+  ]
+}
