@@ -1,0 +1,104 @@
+{
+ "schema": "docksta bild 1 avgränsat v10-prov 2026-11-08 (t515u, five-unresolved): text direkt på orört foto, ingen platta",
+ "font_files": {
+  "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+  "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+ },
+ "font_choice": "Fraunces 700 (enligt beställning och tidigare Docksta-val). Pris Figtree 500 76 px < rubrik 80 px. Färg #fcfbf9 ur BRIEF rad 11.",
+ "copy": {
+  "rubrik": "Ge bort – gåvovinkel ur BRIEF.md rad 7 (\"julklappsöppning\", \"Köpskäl: tygdesign av Nadja Wedin, en personlig julklapp\"); ny kort rubrik, inte designertext; inget nytt sakpåstående",
+  "pris": "1 895 kr = products.json Gunilla Ångermanland variant 56701458678109 (storlek 38) price \"1895.00\", compare_at_price null, available true; BRIEF rad 3"
+ },
+ "contract": "Per hel bokstav/siffra in situ (prefixdiff) och ensamraster, alpha>0 och >16, minst 38 px. WCAG nominell textfärg mot ORÖRT foto, minimum över alla pixlar med textalpha>0, minst 4,5 (antialias separat). Säker yta 65<=x<1015, 270<=y<1250; aldrig x>=850 && y>=770. Ingen textpixel på eller inom 8 px från OFÖRÄNDRADE skydd. Rubrik max 2 rader, pris egen mindre rad under. 0 ändrade pixlar utanför textmask.",
+ "protected_polygons_status": "Oförändrade: ../text-v10-20261108/textspec.json scen 1 (oförändrade)",
+ "z5_margin_px": 8,
+ "scenes": [
+  {
+   "scene": "1",
+   "photo": "../produktion-v1/export/docksta-scen-1-1080x1920.png",
+   "photo_sha256": "141b7a82e4721507cc6bcf0069e026f605cb35d0c47c83c614183f50dc723175",
+   "protected_polygons": {
+    "skor": [
+     [
+      240,
+      605
+     ],
+     [
+      900,
+      605
+     ],
+     [
+      900,
+      1400
+     ],
+     [
+      240,
+      1400
+     ]
+    ],
+    "vanster_hand": [
+     [
+      0,
+      700
+     ],
+     [
+      215,
+      700
+     ],
+     [
+      215,
+      1020
+     ],
+     [
+      0,
+      1020
+     ]
+    ],
+    "hoger_hand": [
+     [
+      895,
+      1110
+     ],
+     [
+      1080,
+      1110
+     ],
+     [
+      1080,
+      1400
+     ],
+     [
+      895,
+      1400
+     ]
+    ]
+   },
+   "candidates": [
+    {
+     "id": "1G",
+     "kind": "slutkandidat",
+     "desc": "Enda renderade kandidat i detta avgränsade prov; läge = search-result.json chosen",
+     "text_color": "#fcfbf9",
+     "lines": [
+      {
+       "role": "rubrik",
+       "text": "Ge bort",
+       "font": "Fraunces700",
+       "px": 80,
+       "x": 305,
+       "y": 256
+      },
+      {
+       "role": "pris",
+       "text": "1 895 kr",
+       "font": "Figtree500",
+       "px": 76,
+       "x": 355,
+       "y": 328
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

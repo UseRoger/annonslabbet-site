@@ -1,0 +1,140 @@
+{
+  "schema": "Docksta text-v10-20261108: text direkt på orört textfritt foto, ingen platta (Samordnaren v10 rad 15, 17-22, 58)",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Rubrik Fraunces 700 (v10 rad 17: hantverk, textil; Docksta = handgjorda tofflor med tygdesign). Butikens DM Sans används inte (v10 rad 16). Pris Figtree 500 80px, mindre än rubrik 84/88px.",
+  "copy": {
+    "1": "Design: / Nadja Wedin (BRIEF rad 13 \"Design: Nadja Wedin\"; products.json \"Design tyg: Nadja Wedin\") – endast diagnostik",
+    "2": "Inne / och ute (BRIEF rad 4 \"kan användas inne och ute\"; products.json \"bekväma att användas både inom- och utomhus\")",
+    "3": "Från / Höga Kusten (BRIEF rad 13 \"Tillverkade i Höga Kusten\"; products.json \"Docksta slippers tillverkas i Höga Kusten\")",
+    "pris": "1 895 kr = products.json Gunilla Ångermanland variant 56701458678109 (storlek 38) price \"1895.00\", compare_at_price null; BRIEF rad 3/13",
+    "underrad": "ingen (rubriken säger allt, v10 rad 22)"
+  },
+  "contract": "Som Almas v10: per glyf in situ+ensamraster alpha>0 och >16 >=38px; WCAG nominell textfärg mot ORÖRT foto exakt min över all textalpha>0 >=4,5; ingen stödyta; säker yta och knappkolumn; 8px från manuella skyddspolygoner; 0 ändrade pixlar utanför textmask. Textfärger ur BRIEF rad 11: #000000 och #fcfbf9.",
+  "protected_polygons_status": "Manuella konservativa rektanglar (skor, händer, fötter/strumpor) ritade på exportfotot i denna körning; text-v1 hade inga skyddsmasker. Inte segmentering. Kontrollerade i review/*-masks-overlay.png.",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": 3,
+      "photo": "../produktion-v1/export/docksta-scen-3-1080x1920.png",
+      "photo_sha256": "e7396fbb6d9935455bd2e687be7bfeb0e0cc0443f3c7c469936774ac996c4dec",
+      "handoff_row": {
+        "image": 3,
+        "rebuild_key": "3",
+        "explicit_human_text_rebuild": true,
+        "per_image_decision": {
+          "decision": "nej",
+          "comment": "Bilden är bra, behåll den. Bygg om bara texten enligt v10: ingen platta, låst typsnitt, pris på egen rad. på första bilden, samma, texten"
+        },
+        "previous_url": "https://annonslabbet.se/docksta/annons-3.png",
+        "previous_sha256": "ad2cef7b4af7c81fb146ed11d087aa74a2f2cec7a0c440c47043233e716ff4b0",
+        "live_evidence": {
+          "card_id": "al-docksta",
+          "image": 3,
+          "url": "https://annonslabbet.se/docksta/annons-3.png",
+          "HTTP": "200",
+          "curl_exit": 0,
+          "path": "/workspace/adlab/text-v10-inventering-20261108/live/al-docksta-3.png",
+          "sha256": "ad2cef7b4af7c81fb146ed11d087aa74a2f2cec7a0c440c47043233e716ff4b0",
+          "dimensions": [
+            1080,
+            1920
+          ]
+        },
+        "old_final": "/workspace/adlab/daily-ten-20261107/briefs/docksta/text-v1/annons-3.png",
+        "old_mat": "/workspace/adlab/daily-ten-20261107/briefs/docksta/text-v1/annons-3.mat.json",
+        "old_mat_sha256": "0d1bdf722e3113676deb6837986dd34381814222e1edb3a3b104fb18e5b70b7c",
+        "unchanged_photo": "/workspace/adlab/daily-ten-20261107/briefs/docksta/produktion-v1/export/docksta-scen-3-1080x1920.png",
+        "photo_sha256": "e7396fbb6d9935455bd2e687be7bfeb0e0cc0443f3c7c469936774ac996c4dec",
+        "source_photo_preservation_required": true,
+        "old_support": [
+          {
+            "support_alpha_255": 107,
+            "support_color": [
+              252,
+              251,
+              249
+            ],
+            "support_reason": "Natural pale entry wall tested first; support only where local worst-pixel contrast needs it."
+          },
+          {
+            "support_alpha_255": 13,
+            "support_color": [
+              252,
+              251,
+              249
+            ],
+            "support_reason": "Natural pale entry wall tested first; support only where local worst-pixel contrast needs it."
+          },
+          {
+            "support_alpha_255": 42,
+            "support_color": [
+              252,
+              251,
+              249
+            ],
+            "support_reason": "Natural pale entry wall tested first; support only where local worst-pixel contrast needs it."
+          }
+        ],
+        "had_support": true,
+        "scope_reason": "explicit rawstate rebuild overrides narrower plate-only detection, including Cecilia3 with no support"
+      },
+      "protected_polygons": {
+        "skor": [
+          [
+            67,
+            845
+          ],
+          [
+            890,
+            845
+          ],
+          [
+            890,
+            1200
+          ],
+          [
+            67,
+            1200
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "3A",
+          "kind": "slutkandidat",
+          "text_color": "#000000",
+          "desc": "Från/Höga Kusten + pris, svart text på ljus farstuvägg övre vänster",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Från",
+              "font": "Fraunces700",
+              "px": 84,
+              "x": 79,
+              "y": 311
+            },
+            {
+              "role": "rubrik",
+              "text": "Höga Kusten",
+              "font": "Fraunces700",
+              "px": 84,
+              "x": 79,
+              "y": 395
+            },
+            {
+              "role": "pris",
+              "text": "1 895 kr",
+              "font": "Figtree500",
+              "px": 80,
+              "x": 79,
+              "y": 483
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

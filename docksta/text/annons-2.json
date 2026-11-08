@@ -1,0 +1,140 @@
+{
+  "schema": "Docksta text-v10-20261108: text direkt på orört textfritt foto, ingen platta (Samordnaren v10 rad 15, 17-22, 58)",
+  "font_files": {
+    "Fraunces700": "fonts/fraunces-latin-700-normal.ttf",
+    "Figtree500": "fonts/figtree-latin-500-normal.ttf"
+  },
+  "font_choice": "Rubrik Fraunces 700 (v10 rad 17: hantverk, textil; Docksta = handgjorda tofflor med tygdesign). Butikens DM Sans används inte (v10 rad 16). Pris Figtree 500 80px, mindre än rubrik 84/88px.",
+  "copy": {
+    "1": "Design: / Nadja Wedin (BRIEF rad 13 \"Design: Nadja Wedin\"; products.json \"Design tyg: Nadja Wedin\") – endast diagnostik",
+    "2": "Inne / och ute (BRIEF rad 4 \"kan användas inne och ute\"; products.json \"bekväma att användas både inom- och utomhus\")",
+    "3": "Från / Höga Kusten (BRIEF rad 13 \"Tillverkade i Höga Kusten\"; products.json \"Docksta slippers tillverkas i Höga Kusten\")",
+    "pris": "1 895 kr = products.json Gunilla Ångermanland variant 56701458678109 (storlek 38) price \"1895.00\", compare_at_price null; BRIEF rad 3/13",
+    "underrad": "ingen (rubriken säger allt, v10 rad 22)"
+  },
+  "contract": "Som Almas v10: per glyf in situ+ensamraster alpha>0 och >16 >=38px; WCAG nominell textfärg mot ORÖRT foto exakt min över all textalpha>0 >=4,5; ingen stödyta; säker yta och knappkolumn; 8px från manuella skyddspolygoner; 0 ändrade pixlar utanför textmask. Textfärger ur BRIEF rad 11: #000000 och #fcfbf9.",
+  "protected_polygons_status": "Manuella konservativa rektanglar (skor, händer, fötter/strumpor) ritade på exportfotot i denna körning; text-v1 hade inga skyddsmasker. Inte segmentering. Kontrollerade i review/*-masks-overlay.png.",
+  "z5_margin_px": 8,
+  "scenes": [
+    {
+      "scene": 2,
+      "photo": "../produktion-v1/export/docksta-scen-2-1080x1920.png",
+      "photo_sha256": "9eb75c3086b50c72049d0f96bed33ecd6edb6b0bef3e4896121ebc0aed312c84",
+      "handoff_row": {
+        "image": 2,
+        "rebuild_key": "2",
+        "explicit_human_text_rebuild": true,
+        "per_image_decision": {
+          "decision": "nej",
+          "comment": "Bilden är bra, behåll den. Bygg om bara texten enligt v10: ingen platta, låst typsnitt, pris på egen rad. på första bilden, samma, texten"
+        },
+        "previous_url": "https://annonslabbet.se/docksta/annons-2.png",
+        "previous_sha256": "0ded07d76be9737aa4417db7e2a0a5e78893a736d916a13c280203b05de11110",
+        "live_evidence": {
+          "card_id": "al-docksta",
+          "image": 2,
+          "url": "https://annonslabbet.se/docksta/annons-2.png",
+          "HTTP": "200",
+          "curl_exit": 0,
+          "path": "/workspace/adlab/text-v10-inventering-20261108/live/al-docksta-2.png",
+          "sha256": "0ded07d76be9737aa4417db7e2a0a5e78893a736d916a13c280203b05de11110",
+          "dimensions": [
+            1080,
+            1920
+          ]
+        },
+        "old_final": "/workspace/adlab/daily-ten-20261107/briefs/docksta/text-v1/annons-2.png",
+        "old_mat": "/workspace/adlab/daily-ten-20261107/briefs/docksta/text-v1/annons-2.mat.json",
+        "old_mat_sha256": "afbf49012a43c71999b088103bc6711f136df5d64a7c51fd2a7ad12fa0166b71",
+        "unchanged_photo": "/workspace/adlab/daily-ten-20261107/briefs/docksta/produktion-v1/export/docksta-scen-2-1080x1920.png",
+        "photo_sha256": "9eb75c3086b50c72049d0f96bed33ecd6edb6b0bef3e4896121ebc0aed312c84",
+        "source_photo_preservation_required": true,
+        "old_support": [
+          {
+            "support_alpha_255": 77,
+            "support_color": [
+              0,
+              0,
+              0
+            ],
+            "support_reason": "Natural dark trouser fabric tested first; only add a minimal local support if worst-pixel contrast needs it."
+          },
+          {
+            "support_alpha_255": 76,
+            "support_color": [
+              0,
+              0,
+              0
+            ],
+            "support_reason": "Natural dark trouser fabric tested first; only add a minimal local support if worst-pixel contrast needs it."
+          },
+          {
+            "support_alpha_255": 108,
+            "support_color": [
+              0,
+              0,
+              0
+            ],
+            "support_reason": "Natural dark trouser fabric tested first; only add a minimal local support if worst-pixel contrast needs it."
+          }
+        ],
+        "had_support": true,
+        "scope_reason": "explicit rawstate rebuild overrides narrower plate-only detection, including Cecilia3 with no support"
+      },
+      "protected_polygons": {
+        "fotter_strumpor_skor": [
+          [
+            195,
+            665
+          ],
+          [
+            1005,
+            665
+          ],
+          [
+            1005,
+            1400
+          ],
+          [
+            195,
+            1400
+          ]
+        ]
+      },
+      "candidates": [
+        {
+          "id": "2A",
+          "kind": "slutkandidat",
+          "text_color": "#fcfbf9",
+          "desc": "Inne/och ute + pris, ljus text på mörka byxor/kamin i övre tredjedelen",
+          "lines": [
+            {
+              "role": "rubrik",
+              "text": "Inne",
+              "font": "Fraunces700",
+              "px": 88,
+              "x": 372,
+              "y": 325
+            },
+            {
+              "role": "rubrik",
+              "text": "och ute",
+              "font": "Fraunces700",
+              "px": 88,
+              "x": 372,
+              "y": 413
+            },
+            {
+              "role": "pris",
+              "text": "1 895 kr",
+              "font": "Figtree500",
+              "px": 80,
+              "x": 372,
+              "y": 505
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
