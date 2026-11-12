@@ -1,0 +1,166 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:19:39+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "989a63c8b03f9bf0e0b09da40f84c2cb0c14804ef006fb64a6700e5a8d05376a",
+  "source_photo": "/workspace/adlab/labb/namnsmycken/bild3.png",
+  "source_photo_sha256": "7e4c256c6dfa00f1c0cf51ade28912f2c59502f5626d6ef55dae147ab6d2fc5a",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Extrem närbild på brickan i en handflata, bokstäverna lite ojämnt stansade.",
+  "vinkel": "nyfikenhet",
+  "rubrik_ruta": [
+    98,
+    278,
+    837,
+    614
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Ett slag per bokstav.",
+      "x": 120,
+      "y": 280,
+      "px": 72,
+      "font": "Playfair Display",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "100 % återvunnet 925 silver.",
+      "x": 120,
+      "y": 395,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Livstids service på namnbrickan.",
+      "x": 120,
+      "y": 450,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "1 090 kr",
+      "x": 120,
+      "y": 528,
+      "px": 64,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/namnsmycken, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/namnsmycken/KORT.md 12/11.",
+      "text": "Ett slag per bokstav."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/namnsmycken, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/namnsmycken/KORT.md 12/11.",
+      "text": "100 % återvunnet 925 silver. Livstids service på namnbrickan."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "1 090 kr",
+      "url": "https://www.namnsmycken.com/products/coin-namnhalsband-med-gravyr-stansat-for-hand"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 1.808,
+    "K_p10": 3.197,
+    "K_median": 3.342,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      122,
+      302,
+      813,
+      590
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 24,
+  "brief_lugn_yta": [
+    140,
+    290,
+    820,
+    560
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Mörk oskarp bakgrund ovanför handflatan.",
+  "osakerheter": [
+    "Mörk text i stället för vit: den övre ytan är ljust taupe, inte mörk. Texten hålls ovanför handflatan.",
+    "Kontrast K_min (solid)=1.81 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 24 px, under 38."
+  ],
+  "fontfiler": {
+    "Playfair Display": {
+      "path": "/workspace/adlab/labb-20261113/fonts/playfair-display-latin-700-normal.ttf",
+      "sha256": "762941fe1ef57706c5a7970dc8c4059dcfee75e5a19f4d26a96aba15ec547750"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Ett slag per bokstav.",
+      "ink": [
+        122,
+        302,
+        777,
+        372
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "100 % återvunnet 925 silver.",
+      "ink": [
+        122,
+        404,
+        726,
+        442
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Livstids service på namnbrickan.",
+      "ink": [
+        124,
+        459,
+        813,
+        506
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "1 090 kr",
+      "ink": [
+        124,
+        543,
+        351,
+        590
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

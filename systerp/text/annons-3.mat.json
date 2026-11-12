@@ -1,0 +1,183 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:12:51+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "2883ee8618f9a4af12ee01c1a986f0d9b212623f89ee7485b8d073d8175c503a",
+  "source_photo": "/workspace/adlab/labb/systerp/bild3.png",
+  "source_photo_sha256": "7ce1a6c4e0b336a4ebee0262ec9fc561dce2c4201f4640f9f3d62fb748aa4338",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Kalendern öppen med alla smycken synliga ovanifrån på mörk sammet.",
+  "vinkel": "nyfikenhet",
+  "rubrik_ruta": [
+    139,
+    298,
+    997,
+    790
+  ],
+  "textfarg": "#ffffff",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Tolv luckor.",
+      "x": 162,
+      "y": 296,
+      "px": 88,
+      "font": "Playfair Display",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "rubrik",
+      "text": "Tolv smycken.",
+      "x": 162,
+      "y": 404,
+      "px": 88,
+      "font": "Playfair Display",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "925 sterlingsilver, 100 % återvunnet.",
+      "x": 162,
+      "y": 542,
+      "px": 50,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Begränsat lager.",
+      "x": 162,
+      "y": 609,
+      "px": 50,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "pris",
+      "text": "3 499 kr",
+      "x": 162,
+      "y": 692,
+      "px": 76,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/systerp, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/systerp/KORT.md 12/11.",
+      "text": "Tolv luckor. Tolv smycken."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/systerp, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/systerp/KORT.md 12/11.",
+      "text": "925 sterlingsilver, 100 % återvunnet. Begränsat lager."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, verifierat i KREATOR-LOGG.md. BRIEF.md och meta.json.",
+      "text": "3 499 kr",
+      "url": "https://systerp.com/products/advent-calendar-silver"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 18.841,
+    "K_p10": 19.413,
+    "K_median": 19.65,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      163,
+      322,
+      973,
+      766
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 25,
+  "brief_lugn_yta": [
+    140,
+    290,
+    820,
+    560
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Övre ytan är jämn mörk sammet. Tygöglan sitter lägre, texten ovanför.",
+  "osakerheter": [
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 25 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Playfair Display": {
+      "path": "/workspace/adlab/labb-20261113/fonts/playfair-display-latin-700-normal.ttf",
+      "sha256": "762941fe1ef57706c5a7970dc8c4059dcfee75e5a19f4d26a96aba15ec547750"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Tolv luckor.",
+      "ink": [
+        164,
+        322,
+        635,
+        393
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "Tolv smycken.",
+      "ink": [
+        164,
+        430,
+        730,
+        517
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "925 sterlingsilver, 100 % återvunnet.",
+      "ink": [
+        163,
+        552,
+        973,
+        601
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Begränsat lager.",
+      "ink": [
+        166,
+        620,
+        521,
+        668
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "3 499 kr",
+      "ink": [
+        166,
+        711,
+        439,
+        766
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}
