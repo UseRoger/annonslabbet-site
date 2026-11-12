@@ -1,0 +1,223 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:19:40+01:00",
+  "scene": 1,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-1.scen.png",
+  "scen_sha256": "0d0488e99ebb008a642f7d86c9a44354714f5a07950d74868d7f46fb31563bf2",
+  "source_photo": "/workspace/adlab/labb/hundstaff/bild1.png",
+  "source_photo_sha256": "7082ec15bcbaa4e734c3b7abbe860bcdf6f44dcc54c2376548dc6aa5a9ece4c5",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "En stor hund (amstaff) i profil i snöig park, halsbandet tydligt, ägarens hand håller kopplet i kanten.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    258,
+    290,
+    875,
+    795
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Hans namn.",
+      "x": 280,
+      "y": 290,
+      "px": 80,
+      "font": "Nunito",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "Hans halsband.",
+      "x": 280,
+      "y": 383,
+      "px": 68,
+      "font": "Nunito",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Hundhalsband med",
+      "x": 280,
+      "y": 475,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "broderat namn, 3-5 cm brett.",
+      "x": 280,
+      "y": 530,
+      "px": 44,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "För mellanstora",
+      "x": 280,
+      "y": 585,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "och stora hundar.",
+      "x": 280,
+      "y": 640,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "649 kr",
+      "x": 280,
+      "y": 709,
+      "px": 64,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/hundstaff, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/hundstaff/KORT.md 12/11.",
+      "text": "Hans namn. Hans halsband."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/hundstaff, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/hundstaff/KORT.md 12/11.",
+      "text": "Hundhalsband med broderat namn, 3-5 cm brett. För mellanstora och stora hundar."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "649 kr",
+      "url": "https://hundstaff.se/products/hundhalsband-med-namn"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 2.383,
+    "K_p10": 7.444,
+    "K_median": 12.551,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      282,
+      314,
+      851,
+      771
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 22,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Briefen antog vit text mot himmel. Himmeln är ljust blårosa, därför mörk text. Ytan mellan personen till vänster och träden till höger, ovanför hunden.",
+  "osakerheter": [
+    "Auto-söket hittade ingen giltig yta. Manuell placering: mörk text i den ljusa himmeln mellan personen och träden, ovanför hunden.",
+    "Kontrast K_min (solid)=2.38 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 22 px, under 38."
+  ],
+  "fontfiler": {
+    "Nunito": {
+      "path": "/workspace/adlab/labb-20261113/fonts/nunito-latin-800-normal.ttf",
+      "sha256": "2fdd3c23d5307fef6a90a72959c8d145756a44e7de432f7c2be80e3871e3a6fa"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Hans namn.",
+      "ink": [
+        286,
+        314,
+        725,
+        373
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "Hans halsband.",
+      "ink": [
+        285,
+        403,
+        774,
+        453
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Hundhalsband med",
+      "ink": [
+        284,
+        487,
+        695,
+        522
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "broderat namn, 3-5 cm brett.",
+      "ink": [
+        283,
+        540,
+        851,
+        577
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "För mellanstora",
+      "ink": [
+        284,
+        596,
+        611,
+        632
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "och stora hundar.",
+      "ink": [
+        282,
+        652,
+        653,
+        687
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "649 kr",
+      "ink": [
+        283,
+        724,
+        462,
+        771
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

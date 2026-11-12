@@ -1,0 +1,185 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:20:25+01:00",
+  "scene": 2,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-2.scen.png",
+  "scen_sha256": "edd5e0c8a49b9bd3f4f02231df18ad9ec2467ce04abdfd89b4bc6950693d71cb",
+  "source_photo": "/workspace/adlab/labb/hundstaff/bild2.png",
+  "source_photo_sha256": "7f79c0bd0199ac704114fde022c792240a43198583efd4ba7394417eb369abc3",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Halsbandet hoprullat i ett paket under granen, en hundnos nosar på paketet.",
+  "vinkel": "gåva",
+  "rubrik_ruta": [
+    226,
+    768,
+    821,
+    1136
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Till den som pratar",
+      "x": 250,
+      "y": 775,
+      "px": 60,
+      "font": "Nunito",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "mest om sin hund.",
+      "x": 250,
+      "y": 855,
+      "px": 60,
+      "font": "Nunito",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Välj namn, färg och typsnitt.",
+      "x": 250,
+      "y": 935,
+      "px": 42,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Tillverkas på beställning.",
+      "x": 250,
+      "y": 993,
+      "px": 42,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "649 kr",
+      "x": 250,
+      "y": 1061,
+      "px": 52,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/hundstaff, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/hundstaff/KORT.md 12/11.",
+      "text": "Till den som pratar mest om sin hund."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/hundstaff, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/hundstaff/KORT.md 12/11.",
+      "text": "Välj namn, färg och typsnitt. Tillverkas på beställning."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "649 kr",
+      "url": "https://hundstaff.se/products/hundhalsband-med-namn"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 1.879,
+    "K_p10": 2.858,
+    "K_median": 4.005,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      250,
+      792,
+      797,
+      1112
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 21,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Granen är upptagen av ljus. Sök ljus vägg på sidorna om granen (mörk text) eller mörkare fickor. Undvik kartongen längst ner.",
+  "osakerheter": [
+    "Texten ligger på den jämna ljusa kartongfliken i paketet, ovanför halsbandet, inte på produkten. Granen ovanför är för upptagen av ljus. Inom säker yta, vänster om knappkolumnen.",
+    "Kontrast K_min (solid)=1.88 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 21 px, under 38."
+  ],
+  "fontfiler": {
+    "Nunito": {
+      "path": "/workspace/adlab/labb-20261113/fonts/nunito-latin-800-normal.ttf",
+      "sha256": "2fdd3c23d5307fef6a90a72959c8d145756a44e7de432f7c2be80e3871e3a6fa"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Till den som pratar",
+      "ink": [
+        250,
+        792,
+        797,
+        847
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "mest om sin hund.",
+      "ink": [
+        254,
+        872,
+        766,
+        917
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Välj namn, färg och typsnitt.",
+      "ink": [
+        250,
+        944,
+        782,
+        985
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Tillverkas på beställning.",
+      "ink": [
+        251,
+        1001,
+        704,
+        1043
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "649 kr",
+      "ink": [
+        252,
+        1073,
+        397,
+        1112
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

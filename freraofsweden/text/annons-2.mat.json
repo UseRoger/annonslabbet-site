@@ -1,0 +1,165 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:14:43+01:00",
+  "scene": 2,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-2.scen.png",
+  "scen_sha256": "29408a9737f4cdcf726111a7bb565746de1ceed008d7556f6823e089ad6e59c5",
+  "source_photo": "/workspace/adlab/labb/freraofsweden/bild2.png",
+  "source_photo_sha256": "89479083098af338b871cdd4744be152c3c8009f9f51304179873d754c2598ef",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Ljuset med en snörad tag (utan text) och en kvist på en hallbyrå, vantar bredvid.",
+  "vinkel": "gåva",
+  "rubrik_ruta": [
+    96,
+    414,
+    849,
+    764
+  ],
+  "textfarg": "#ffffff",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Värdinnegåvan, klar.",
+      "x": 119,
+      "y": 421,
+      "px": 68,
+      "font": "Fraunces",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Klart glas med trälock.",
+      "x": 119,
+      "y": 526,
+      "px": 52,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "100 % sojavax, veganskt.",
+      "x": 119,
+      "y": 596,
+      "px": 52,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "pris",
+      "text": "från 249 kr",
+      "x": 119,
+      "y": 682,
+      "px": 60,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/freraofsweden, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/freraofsweden/KORT.md 12/11.",
+      "text": "Värdinnegåvan, klar."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/freraofsweden, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/freraofsweden/KORT.md 12/11.",
+      "text": "Klart glas med trälock. 100 % sojavax, veganskt."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, från 249 kr, i lager. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "från 249 kr",
+      "url": "https://freraofsweden.se/products/doftljus-julmys"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 2.924,
+    "K_p10": 3.495,
+    "K_median": 6.288,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      120,
+      438,
+      825,
+      740
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 26,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Briefen antog ljus vägg och mörk text till höger. Den lugna ytan är den mörka träväggen till vänster och i mitten, ovanför ljuset. Vit text.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=2.92 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 26 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Värdinnegåvan, klar.",
+      "ink": [
+        120,
+        438,
+        825,
+        504
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Klart glas med trälock.",
+      "ink": [
+        124,
+        538,
+        634,
+        588
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "100 % sojavax, veganskt.",
+      "ink": [
+        122,
+        608,
+        695,
+        658
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "från 249 kr",
+      "ink": [
+        121,
+        693,
+        413,
+        740
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

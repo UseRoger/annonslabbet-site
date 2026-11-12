@@ -1,0 +1,165 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:15:06+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "814f41325376e600c2dee1ab8eb9650b8ad99e437a0e27830d6011b38b5e2e00",
+  "source_photo": "/workspace/adlab/labb/nordrsoap/bild3.png",
+  "source_photo_sha256": "044b42b975f7eee9f0d01d4a161e7cb293b1c7d82894ddfa5933e91af9bb1523",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "En tvål på ett trätvålfat i ett badrum i sten och trä, ånga, en hand som sträcker sig efter den.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    139,
+    497,
+    1015,
+    827
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Duscha som i skogen.",
+      "x": 162,
+      "y": 507,
+      "px": 64,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Gryn & Urskog: ceder, honung och havre.",
+      "x": 162,
+      "y": 608,
+      "px": 46,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Ingår i Signaturpaketet.",
+      "x": 162,
+      "y": 670,
+      "px": 46,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "279 kr",
+      "x": 162,
+      "y": 748,
+      "px": 56,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/nordrsoap, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/nordrsoap/KORT.md 12/11.",
+      "text": "Duscha som i skogen."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/nordrsoap, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/nordrsoap/KORT.md 12/11.",
+      "text": "Gryn & Urskog: ceder, honung och havre. Ingår i Signaturpaketet."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 279 kr (inte 480). KREATOR-LOGG.md, BRIEF.md.",
+      "text": "279 kr",
+      "url": "https://nordrsoap.se/products/bastsaljande-bundling"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 2.104,
+    "K_p10": 2.66,
+    "K_median": 3.246,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      163,
+      521,
+      1005,
+      803
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 23,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Jämn stenmur, ånga till vänster. Mörk text enligt briefen, mäts mot väggen.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=2.10 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 23 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Duscha som i skogen.",
+      "ink": [
+        165,
+        521,
+        842,
+        586
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Gryn & Urskog: ceder, honung och havre.",
+      "ink": [
+        164,
+        618,
+        1005,
+        662
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Ingår i Signaturpaketet.",
+      "ink": [
+        166,
+        679,
+        643,
+        724
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "279 kr",
+      "ink": [
+        163,
+        761,
+        316,
+        803
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

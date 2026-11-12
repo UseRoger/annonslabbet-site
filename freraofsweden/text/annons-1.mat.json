@@ -1,0 +1,165 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:14:37+01:00",
+  "scene": 1,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-1.scen.png",
+  "scen_sha256": "6978650074289a41ebcb05d58c419bcf894877fb9ea9e034ca9cdb5ae4986814",
+  "source_photo": "/workspace/adlab/labb/freraofsweden/bild1.png",
+  "source_photo_sha256": "08b76f7a6482d067411b1f1efd162059967974f281a72db4732dceacfa3b8aaf",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Ljuset tänt på ett adventsdukat bord, lussebullar på ett fat, ljusstake ur fokus.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    65,
+    329,
+    826,
+    630
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Doftar som första advent.",
+      "x": 86,
+      "y": 341,
+      "px": 56,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Doftljus Julmys i sojavax,",
+      "x": 86,
+      "y": 419,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "tillverkat i Örebro län.",
+      "x": 86,
+      "y": 484,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "från 249 kr",
+      "x": 86,
+      "y": 555,
+      "px": 52,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/freraofsweden, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/freraofsweden/KORT.md 12/11.",
+      "text": "Doftar som första advent."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/freraofsweden, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/freraofsweden/KORT.md 12/11.",
+      "text": "Doftljus Julmys i sojavax, tillverkat i Örebro län."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, från 249 kr, i lager. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "från 249 kr",
+      "url": "https://freraofsweden.se/products/doftljus-julmys"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 4.181,
+    "K_p10": 4.68,
+    "K_median": 4.936,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      87,
+      353,
+      802,
+      606
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 24,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Briefen antog mörk vägg och vit text. Bilden har ljusbeige vägg. Mörk text, ovanför och till vänster om adventsljusen.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=4.18 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 24 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Doftar som första advent.",
+      "ink": [
+        89,
+        353,
+        802,
+        397
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Doftljus Julmys i sojavax,",
+      "ink": [
+        90,
+        430,
+        627,
+        476
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "tillverkat i Örebro län.",
+      "ink": [
+        87,
+        486,
+        543,
+        531
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "från 249 kr",
+      "ink": [
+        87,
+        566,
+        339,
+        606
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

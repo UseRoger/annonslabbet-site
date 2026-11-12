@@ -1,0 +1,204 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:19:44+01:00",
+  "scene": 2,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-2.scen.png",
+  "scen_sha256": "c42c690e716466f9869487456000dd4e711415fe3785ec88950b110705b8980b",
+  "source_photo": "/workspace/adlab/labb/hundlands/bild2.png",
+  "source_photo_sha256": "5e5da6651bf7b0a8f8174537573f3359d9c353c758c02f5ccfa335f014965fef",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "En border collie i täcket springer i nysnö i en granskog, snö yr från tassarna.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    197,
+    277,
+    805,
+    730
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Varm även när",
+      "x": 220,
+      "y": 280,
+      "px": 72,
+      "font": "Nunito",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "snön smälter.",
+      "x": 220,
+      "y": 364,
+      "px": 72,
+      "font": "Nunito",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Merinoull isolerar i",
+      "x": 220,
+      "y": 462,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "regn, snö och blöt terräng.",
+      "x": 220,
+      "y": 517,
+      "px": 44,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Med eller utan sele-öppning.",
+      "x": 220,
+      "y": 577,
+      "px": 44,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "från 990 kr",
+      "x": 220,
+      "y": 651,
+      "px": 56,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/hundlands, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/hundlands/KORT.md 12/11.",
+      "text": "Varm även när snön smälter."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/hundlands, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/hundlands/KORT.md 12/11.",
+      "text": "Merinoull isolerar i regn, snö och blöt terräng. Med eller utan sele-öppning."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, från 990 kr. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "från 990 kr",
+      "url": "https://www.hundlands.com/products/ulltacke-hybrido-dove-grey-23"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 1.0,
+    "K_p10": 1.525,
+    "K_median": 4.883,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      221,
+      301,
+      781,
+      706
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 22,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Träden är fläckiga. Lugnare ljus himmelsöppning i övre mitten, mörk text.",
+  "osakerheter": [
+    "Omplacerad högre mot himmelsöppningen. Bakgrunden är fortfarande fläckig av gran och snö.",
+    "Kontrast K_min (solid)=1.00 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 22 px, under 38."
+  ],
+  "fontfiler": {
+    "Nunito": {
+      "path": "/workspace/adlab/labb-20261113/fonts/nunito-latin-800-normal.ttf",
+      "sha256": "2fdd3c23d5307fef6a90a72959c8d145756a44e7de432f7c2be80e3871e3a6fa"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Varm även när",
+      "ink": [
+        221,
+        301,
+        714,
+        355
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "snön smälter.",
+      "ink": [
+        222,
+        385,
+        677,
+        439
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Merinoull isolerar i",
+      "ink": [
+        224,
+        473,
+        607,
+        509
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "regn, snö och blöt terräng.",
+      "ink": [
+        223,
+        527,
+        739,
+        569
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Med eller utan sele-öppning.",
+      "ink": [
+        224,
+        587,
+        781,
+        629
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "från 990 kr",
+      "ink": [
+        222,
+        663,
+        495,
+        706
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}
