@@ -1,0 +1,164 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:15:02+01:00",
+  "scene": 2,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-2.scen.png",
+  "scen_sha256": "84211005ef4b69a6185bc48383916ad886ac3e8deeec4b1ba48d86258075c025",
+  "source_photo": "/workspace/adlab/labb/nordrsoap/bild2.png",
+  "source_photo_sha256": "510680e18ebb4c9344d9aaf117fb5db425b79439b0fa3981478aa799db66ba90",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Makro på en avskuren tvålbit med synliga vallmofrön, havssaltkorn och havre runt.",
+  "vinkel": "nyfikenhet",
+  "rubrik_ruta": [
+    122,
+    444,
+    993,
+    801
+  ],
+  "textfarg": "#ffffff",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Härdad i sex veckor.",
+      "x": 146,
+      "y": 448,
+      "px": 82,
+      "font": "Fraunces",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Havssalt, vallmofrö, havre och lera.",
+      "x": 146,
+      "y": 555,
+      "px": 52,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Varje tvål härdas sex veckor.",
+      "x": 146,
+      "y": 619,
+      "px": 52,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "pris",
+      "text": "279 kr",
+      "x": 146,
+      "y": 705,
+      "px": 74,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/nordrsoap, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/nordrsoap/KORT.md 12/11.",
+      "text": "Härdad i sex veckor."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/nordrsoap, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/nordrsoap/KORT.md 12/11.",
+      "text": "Havssalt, vallmofrö, havre och lera. Varje tvål härdas sex veckor."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 279 kr (inte 480). KREATOR-LOGG.md, BRIEF.md.",
+      "text": "279 kr",
+      "url": "https://nordrsoap.se/products/bastsaljande-bundling"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 9.074,
+    "K_p10": 10.484,
+    "K_median": 11.726,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      146,
+      468,
+      969,
+      777
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 26,
+  "brief_lugn_yta": [
+    140,
+    290,
+    820,
+    560
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Mörk sten ovanför tvålen.",
+  "osakerheter": [
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 26 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Härdad i sex veckor.",
+      "ink": [
+        150,
+        468,
+        969,
+        531
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Havssalt, vallmofrö, havre och lera.",
+      "ink": [
+        151,
+        567,
+        953,
+        611
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Varje tvål härdas sex veckor.",
+      "ink": [
+        146,
+        630,
+        804,
+        681
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "279 kr",
+      "ink": [
+        148,
+        723,
+        350,
+        777
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

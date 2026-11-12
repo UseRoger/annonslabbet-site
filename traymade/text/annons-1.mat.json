@@ -1,0 +1,165 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:13:10+01:00",
+  "scene": 1,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-1.scen.png",
+  "scen_sha256": "9cea9d9084f3b1864aff14dff6a60e77fbc58327bec8f307439294e89944a7d8",
+  "source_photo": "/workspace/adlab/labb/traymade/bild1.png",
+  "source_photo_sha256": "45bd2d9d4bfb855b71cd7d83be4b83d0da5452d3c64fa5450a3973f7ec16ee92",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Brickan med ett foto av en hund bakifrån på en strand, kaffe och lussebullar ovanpå, i en soffa.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    65,
+    270,
+    953,
+    617
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Hunden bär fikat nu.",
+      "x": 81,
+      "y": 268,
+      "px": 82,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Personlig bricka 43 x 33 cm i björkfanér",
+      "x": 81,
+      "y": 375,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "med eget foto. Tillverkad i Nybro.",
+      "x": 81,
+      "y": 440,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "489 kr",
+      "x": 81,
+      "y": 521,
+      "px": 74,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/traymade, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/traymade/KORT.md 12/11.",
+      "text": "Hunden bär fikat nu."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/traymade, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/traymade/KORT.md 12/11.",
+      "text": "Personlig bricka 43 x 33 cm i björkfanér med eget foto. Tillverkad i Nybro."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 489 kr (inte Black November-pris 366). KREATOR-LOGG.md, BRIEF.md.",
+      "text": "489 kr",
+      "url": "https://traymade.se/products/bricka-43x33cm"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 3.438,
+    "K_p10": 3.706,
+    "K_median": 4.149,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      84,
+      288,
+      929,
+      593
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 24,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Stor lugn ljus vägg.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=3.44 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 24 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Hunden bär fikat nu.",
+      "ink": [
+        85,
+        288,
+        929,
+        351
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Personlig bricka 43 x 33 cm i björkfanér",
+      "ink": [
+        85,
+        386,
+        925,
+        432
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "med eget foto. Tillverkad i Nybro.",
+      "ink": [
+        84,
+        451,
+        797,
+        497
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "489 kr",
+      "ink": [
+        84,
+        539,
+        295,
+        593
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

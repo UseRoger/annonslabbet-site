@@ -1,0 +1,183 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:12:45+01:00",
+  "scene": 2,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-2.scen.png",
+  "scen_sha256": "d3fbf82c372eb243c9091c920bf0f39448de36356f26a46fe7ad6e97668e2fda",
+  "source_photo": "/workspace/adlab/labb/systerp/bild2.png",
+  "source_photo_sha256": "af8030b39d7ffebf2d84ecfb809f68c776701a9ea92dfc82368016565c80a5e1",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Kalendern inslagen med ett band på en soffa med fårskinn.",
+  "vinkel": "gåva",
+  "rubrik_ruta": [
+    202,
+    270,
+    982,
+    648
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Till henne som har allt",
+      "x": 226,
+      "y": 252,
+      "px": 68,
+      "font": "Playfair Display",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "utom december.",
+      "x": 226,
+      "y": 336,
+      "px": 68,
+      "font": "Playfair Display",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Tolv smycken i 925 silver,",
+      "x": 226,
+      "y": 434,
+      "px": 42,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "kalendern blir sedan ett smyckesfodral.",
+      "x": 226,
+      "y": 492,
+      "px": 42,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "3 499 kr",
+      "x": 226,
+      "y": 566,
+      "px": 60,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/systerp, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/systerp/KORT.md 12/11.",
+      "text": "Till henne som har allt utom december."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/systerp, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/systerp/KORT.md 12/11.",
+      "text": "Tolv smycken i 925 silver, kalendern blir sedan ett smyckesfodral."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, verifierat i KREATOR-LOGG.md. BRIEF.md och meta.json.",
+      "text": "3 499 kr",
+      "url": "https://systerp.com/products/advent-calendar-silver"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 7.664,
+    "K_p10": 8.373,
+    "K_median": 8.904,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      226,
+      273,
+      958,
+      624
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 21,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Hela den övre ytan är lugn beige vägg. Håller vänster om knappkolumnen.",
+  "osakerheter": [
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 21 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Playfair Display": {
+      "path": "/workspace/adlab/labb-20261113/fonts/playfair-display-latin-700-normal.ttf",
+      "sha256": "762941fe1ef57706c5a7970dc8c4059dcfee75e5a19f4d26a96aba15ec547750"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Till henne som har allt",
+      "ink": [
+        227,
+        273,
+        931,
+        328
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "utom december.",
+      "ink": [
+        226,
+        357,
+        729,
+        412
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Tolv smycken i 925 silver,",
+      "ink": [
+        227,
+        443,
+        701,
+        484
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "kalendern blir sedan ett smyckesfodral.",
+      "ink": [
+        229,
+        501,
+        958,
+        542
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "3 499 kr",
+      "ink": [
+        229,
+        580,
+        445,
+        624
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

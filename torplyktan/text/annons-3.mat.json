@@ -1,0 +1,185 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:20:24+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "88eb94463dbbb290c51107c75a9ffa35dd1778e5af3c10900ce94667c889240f",
+  "source_photo": "/workspace/adlab/labb/torplyktan/bild3.png",
+  "source_photo_sha256": "7ab9aef2b948987c237d682fe6319ea8fe9072a2171d55b1003d03ca7ca21196",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Ljuset tänt i ett spröjsat fönster, snöig trädgård och blå skymning ute.",
+  "vinkel": "kort utfall",
+  "rubrik_ruta": [
+    517,
+    270,
+    942,
+    565
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Ute -10.",
+      "x": 540,
+      "y": 275,
+      "px": 52,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "Inne midvinter.",
+      "x": 540,
+      "y": 335,
+      "px": 48,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Midvinter från Torplyktan.",
+      "x": 540,
+      "y": 401,
+      "px": 32,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Doftljus i glas med trälock.",
+      "x": 540,
+      "y": 447,
+      "px": 32,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "269 kr",
+      "x": 540,
+      "y": 503,
+      "px": 40,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/torplyktan, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/torplyktan/KORT.md 12/11.",
+      "text": "Ute -10. Inne midvinter."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/torplyktan, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/torplyktan/KORT.md 12/11.",
+      "text": "Midvinter från Torplyktan. Doftljus i glas med trälock."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 269 kr. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "269 kr",
+      "url": "https://torplyktan.com/produkt/midvinter/"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 3.772,
+    "K_p10": 5.485,
+    "K_median": 5.708,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      541,
+      287,
+      918,
+      541
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 17,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Övre högra fönsterrutan är jämn blå himmel. Mörk text inne i rutan, inte över spröjsen. Briefen antog vit text, kontrasten kräver mörk.",
+  "osakerheter": [
+    "Manuell placering helt inne i den övre högra fönsterrutan, inte över spröjsen. Rutan begränsar storleken.",
+    "Kontrast K_min (solid)=3.77 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 17 px, under 38."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Ute -10.",
+      "ink": [
+        542,
+        287,
+        736,
+        327
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "Inne midvinter.",
+      "ink": [
+        542,
+        345,
+        910,
+        383
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Midvinter från Torplyktan.",
+      "ink": [
+        543,
+        407,
+        907,
+        439
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Doftljus i glas med trälock.",
+      "ink": [
+        543,
+        454,
+        918,
+        485
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "269 kr",
+      "ink": [
+        541,
+        512,
+        652,
+        541
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

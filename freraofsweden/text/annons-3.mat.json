@@ -1,0 +1,184 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:14:51+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "0a1c3c482f398f8c06a82a86e8834c220ba7eec6e5b2a5321cdf4b9d383ce6a2",
+  "source_photo": "/workspace/adlab/labb/freraofsweden/bild3.png",
+  "source_photo_sha256": "6864333a2d9bfa29a7b4513ade981735fb8b892e11969cb4525b41572f0d2db6",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Ljuset i ett fönster med snöflingor utanför i mörker, ljusslinga i trädet ute.",
+  "vinkel": "kort utfall",
+  "rubrik_ruta": [
+    65,
+    279,
+    792,
+    765
+  ],
+  "textfarg": "#ffffff",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Mörkt ute.",
+      "x": 85,
+      "y": 282,
+      "px": 88,
+      "font": "Fraunces",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "rubrik",
+      "text": "Julmys inne.",
+      "x": 85,
+      "y": 381,
+      "px": 88,
+      "font": "Fraunces",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Frera of Sweden,",
+      "x": 85,
+      "y": 513,
+      "px": 54,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "doftljus tillverkade i Sverige.",
+      "x": 85,
+      "y": 579,
+      "px": 54,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "pris",
+      "text": "från 249 kr",
+      "x": 85,
+      "y": 667,
+      "px": 76,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/freraofsweden, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/freraofsweden/KORT.md 12/11.",
+      "text": "Mörkt ute. Julmys inne."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/freraofsweden, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/freraofsweden/KORT.md 12/11.",
+      "text": "Frera of Sweden, doftljus tillverkade i Sverige."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, från 249 kr, i lager. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "från 249 kr",
+      "url": "https://freraofsweden.se/products/doftljus-julmys"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 1.422,
+    "K_p10": 15.279,
+    "K_median": 17.427,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      87,
+      303,
+      768,
+      741
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 27,
+  "brief_lugn_yta": [
+    140,
+    290,
+    820,
+    560
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Mörkblå natthimmel. Vit text, undvik trädet med ljusslinga till höger.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=1.42 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 27 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Mörkt ute.",
+      "ink": [
+        87,
+        303,
+        542,
+        370
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "Julmys inne.",
+      "ink": [
+        88,
+        402,
+        638,
+        488
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Frera of Sweden,",
+      "ink": [
+        90,
+        526,
+        495,
+        571
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "doftljus tillverkade i Sverige.",
+      "ink": [
+        87,
+        591,
+        768,
+        643
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "från 249 kr",
+      "ink": [
+        87,
+        683,
+        456,
+        741
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

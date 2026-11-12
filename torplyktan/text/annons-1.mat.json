@@ -1,0 +1,164 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:14:18+01:00",
+  "scene": 1,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-1.scen.png",
+  "scen_sha256": "7ead9c7be1957dc067fff46a14f4e41f5bd9f1af9d167faf654d4ae063c1616f",
+  "source_photo": "/workspace/adlab/labb/torplyktan/bild1.png",
+  "source_photo_sha256": "906debb91af3f6a06529b9df5a0713f0fc73608292a79c273ab2497438d361ba",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Ljuset tänt på en sidobordskant bredvid en uppslagen bok och en stickad filt, kväll.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    223,
+    528,
+    1015,
+    842
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Femtio timmar midvinter.",
+      "x": 246,
+      "y": 539,
+      "px": 58,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Midvinter doftljus, 150 g sojavax.",
+      "x": 246,
+      "y": 619,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Handgjort i Västergötland.",
+      "x": 246,
+      "y": 684,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "269 kr",
+      "x": 246,
+      "y": 765,
+      "px": 54,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/torplyktan, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/torplyktan/KORT.md 12/11.",
+      "text": "Femtio timmar midvinter."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/torplyktan, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/torplyktan/KORT.md 12/11.",
+      "text": "Midvinter doftljus, 150 g sojavax. Handgjort i Västergötland."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 269 kr. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "269 kr",
+      "url": "https://torplyktan.com/produkt/midvinter/"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 6.999,
+    "K_p10": 8.132,
+    "K_median": 9.873,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      247,
+      552,
+      995,
+      818
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 24,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Briefen antog mörk vägg och vit text. Bilden har ljus vägg. Mörk text, undvik lampskärmen längst till vänster.",
+  "osakerheter": [
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 24 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Femtio timmar midvinter.",
+      "ink": [
+        249,
+        552,
+        995,
+        597
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Midvinter doftljus, 150 g sojavax.",
+      "ink": [
+        250,
+        630,
+        952,
+        676
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Handgjort i Västergötland.",
+      "ink": [
+        250,
+        695,
+        817,
+        741
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "269 kr",
+      "ink": [
+        247,
+        778,
+        397,
+        818
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

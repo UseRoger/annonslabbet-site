@@ -1,0 +1,183 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:13:35+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "ebe65d25c34b08b5b21b0326d2dd1719a2dc973d8112db1bafe7fd78ecb0c27b",
+  "source_photo": "/workspace/adlab/labb/alti/bild3.png",
+  "source_photo_sha256": "6c94cd9bae25bc7b4b95b031b1a239150214f58834fb324a74b568014128e6d9",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Ett öppnat paket i naturpapper med sidenband på ett träbord, halsbandet ligger på silkespappret.",
+  "vinkel": "gåva",
+  "rubrik_ruta": [
+    163,
+    270,
+    944,
+    731
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Till den som aldrig",
+      "x": 187,
+      "y": 246,
+      "px": 84,
+      "font": "Playfair Display",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "tar paus.",
+      "x": 187,
+      "y": 363,
+      "px": 84,
+      "font": "Playfair Display",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "ANDAS-halsband i massivt silver",
+      "x": 187,
+      "y": 493,
+      "px": 50,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "från ALTI i Hälsingland.",
+      "x": 187,
+      "y": 550,
+      "px": 50,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "1 695 kr",
+      "x": 187,
+      "y": 633,
+      "px": 76,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/alti, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/alti/KORT.md 12/11.",
+      "text": "Till den som aldrig tar paus."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/alti, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/alti/KORT.md 12/11.",
+      "text": "ANDAS-halsband i massivt silver från ALTI i Hälsingland."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 1695 kr. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "1 695 kr",
+      "url": "https://alti.se/produkt/andas-halsband/"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 4.89,
+    "K_p10": 8.215,
+    "K_median": 8.792,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      187,
+      270,
+      920,
+      707
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 25,
+  "brief_lugn_yta": [
+    380,
+    290,
+    830,
+    600
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Ljus beige yta. Asken i nedre höger, texten ovanför och till vänster om den.",
+  "osakerheter": [
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 25 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Playfair Display": {
+      "path": "/workspace/adlab/labb-20261113/fonts/playfair-display-latin-700-normal.ttf",
+      "sha256": "762941fe1ef57706c5a7970dc8c4059dcfee75e5a19f4d26a96aba15ec547750"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Till den som aldrig",
+      "ink": [
+        189,
+        270,
+        919,
+        353
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "tar paus.",
+      "ink": [
+        187,
+        396,
+        519,
+        469
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "ANDAS-halsband i massivt silver",
+      "ink": [
+        187,
+        504,
+        920,
+        542
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "från ALTI i Hälsingland.",
+      "ink": [
+        188,
+        560,
+        694,
+        609
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "1 695 kr",
+      "ink": [
+        191,
+        652,
+        450,
+        707
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

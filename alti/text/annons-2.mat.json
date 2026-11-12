@@ -1,0 +1,184 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:13:29+01:00",
+  "scene": 2,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-2.scen.png",
+  "scen_sha256": "c2c7dbef2a4f29b55508c7abeaa36e47cc2b7fcce699d88ea49098875f9a63d3",
+  "source_photo": "/workspace/adlab/labb/alti/bild2.png",
+  "source_photo_sha256": "eb5c767b6506ed7d07a904120e2826f63d563df1926dd536c18bb67b2dfc2753",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Halsbandet ensamt på mörk skiffer, makro på knoppen, kedjan i en mjuk båge.",
+  "vinkel": "nyfikenhet",
+  "rubrik_ruta": [
+    95,
+    307,
+    951,
+    780
+  ],
+  "textfarg": "#ffffff",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Varför har halsbandet",
+      "x": 120,
+      "y": 307,
+      "px": 80,
+      "font": "Playfair Display",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "rubrik",
+      "text": "en knopp?",
+      "x": 120,
+      "y": 406,
+      "px": 80,
+      "font": "Playfair Display",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Massivt silver, blank eller borstad.",
+      "x": 120,
+      "y": 532,
+      "px": 54,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Kedja 40, 45 eller 50 cm.",
+      "x": 120,
+      "y": 598,
+      "px": 54,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "pris",
+      "text": "1 695 kr",
+      "x": 120,
+      "y": 686,
+      "px": 72,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/alti, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/alti/KORT.md 12/11.",
+      "text": "Varför har halsbandet en knopp?"
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/alti, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/alti/KORT.md 12/11.",
+      "text": "Massivt silver, blank eller borstad. Kedja 40, 45 eller 50 cm."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 1695 kr. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "1 695 kr",
+      "url": "https://alti.se/produkt/andas-halsband/"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 1.373,
+    "K_p10": 2.757,
+    "K_median": 5.255,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      119,
+      331,
+      927,
+      756
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 27,
+  "brief_lugn_yta": [
+    140,
+    290,
+    820,
+    560
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Övre skiffern är lugn. Kedjan sitter lägre.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=1.37 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 27 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Playfair Display": {
+      "path": "/workspace/adlab/labb-20261113/fonts/playfair-display-latin-700-normal.ttf",
+      "sha256": "762941fe1ef57706c5a7970dc8c4059dcfee75e5a19f4d26a96aba15ec547750"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Varför har halsbandet",
+      "ink": [
+        119,
+        331,
+        921,
+        396
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "en knopp?",
+      "ink": [
+        123,
+        430,
+        500,
+        508
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Massivt silver, blank eller borstad.",
+      "ink": [
+        125,
+        545,
+        927,
+        590
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Kedja 40, 45 eller 50 cm.",
+      "ink": [
+        125,
+        610,
+        723,
+        662
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "1 695 kr",
+      "ink": [
+        124,
+        703,
+        369,
+        756
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

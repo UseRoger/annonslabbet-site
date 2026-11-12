@@ -1,0 +1,184 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:13:06+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "b1ae7e12a9d32cb702a78b224cf2d0afae25cb877b6a928e99d7b5a5d761a650",
+  "source_photo": "/workspace/adlab/labb/honungsriket/bild3.png",
+  "source_photo_sha256": "75adc70ff469267421b3705c52d871bc57eb4f8f4a2f09a286b4be138ac0ed22",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "En sked honung som rinner över havregrynsgröt, kalendern med en öppen lucka i bakgrunden, mörk decembermorgon.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    66,
+    270,
+    796,
+    763
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "En ny honung",
+      "x": 89,
+      "y": 249,
+      "px": 88,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "rubrik",
+      "text": "varje morgon.",
+      "x": 89,
+      "y": 368,
+      "px": 88,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Honungskalendern från",
+      "x": 89,
+      "y": 501,
+      "px": 56,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Honungsriket och Bibruket.",
+      "x": 89,
+      "y": 575,
+      "px": 56,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "1 499 kr",
+      "x": 89,
+      "y": 665,
+      "px": 76,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/honungsriket, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/honungsriket/KORT.md 12/11.",
+      "text": "En ny honung varje morgon."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/honungsriket, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/honungsriket/KORT.md 12/11.",
+      "text": "Honungskalendern från Honungsriket och Bibruket."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, verifierat i KREATOR-LOGG.md. BRIEF.md och meta.json.",
+      "text": "1 499 kr",
+      "url": "https://honungsriket.se/products/honungskalendern-2026"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 1.08,
+    "K_p10": 2.902,
+    "K_median": 9.285,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      90,
+      270,
+      772,
+      739
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 28,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Briefen antog mörkt fönster och vit text. Den lugna ytan är den ljusa gardinen till vänster, ovanför kalender och burkar. Mörk text.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=1.08 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 28 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "En ny honung",
+      "ink": [
+        93,
+        270,
+        693,
+        357
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "varje morgon.",
+      "ink": [
+        90,
+        391,
+        701,
+        476
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Honungskalendern från",
+      "ink": [
+        94,
+        513,
+        675,
+        567
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Honungsriket och Bibruket.",
+      "ink": [
+        94,
+        588,
+        772,
+        641
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "1 499 kr",
+      "ink": [
+        93,
+        684,
+        356,
+        739
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

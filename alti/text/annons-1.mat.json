@@ -1,0 +1,222 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:19:38+01:00",
+  "scene": 1,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-1.scen.png",
+  "scen_sha256": "3285e54b9b1c66e0b59f1d3f539379ad464492df48446a96feb7a285cb828ded",
+  "source_photo": "/workspace/adlab/labb/alti/bild1.png",
+  "source_photo_sha256": "6c6410d25c7827af474de690b29d4eebe9f94247d5d2c4b6de2fe48aff1d88e8",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "En hand med tumme och pekfinger runt silverknoppen på halsbandet, mot en mjuk grå ylletröja, kvällsljus.",
+  "vinkel": "användning",
+  "rubrik_ruta": [
+    695,
+    289,
+    1015,
+    722
+  ],
+  "textfarg": "#ffffff",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Ta på knoppen.",
+      "x": 720,
+      "y": 300,
+      "px": 42,
+      "font": "Playfair Display",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "rubrik",
+      "text": "Andas.",
+      "x": 720,
+      "y": 361,
+      "px": 64,
+      "font": "Playfair Display",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "ANDAS-halsband i",
+      "x": 720,
+      "y": 455,
+      "px": 34,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "massivt silver,",
+      "x": 720,
+      "y": 496,
+      "px": 34,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "handgjort i Stocka,",
+      "x": 720,
+      "y": 541,
+      "px": 34,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "underrad",
+      "text": "Hälsingland.",
+      "x": 720,
+      "y": 589,
+      "px": 34,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    },
+    {
+      "roll": "pris",
+      "text": "1 695 kr",
+      "x": 720,
+      "y": 651,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#ffffff"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/alti, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/alti/KORT.md 12/11.",
+      "text": "Ta på knoppen. Andas."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/alti, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/alti/KORT.md 12/11.",
+      "text": "ANDAS-halsband i massivt silver, handgjort i Stocka, Hälsingland."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 1695 kr. KREATOR-LOGG.md, BRIEF.md.",
+      "text": "1 695 kr",
+      "url": "https://alti.se/produkt/andas-halsband/"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 10.003,
+    "K_p10": 13.17,
+    "K_median": 13.551,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      719,
+      313,
+      1015,
+      698
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 18,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "vit",
+  "placeringsnotis": "Briefens övre vänster är tröja, haka och kedja. Lugn yta är den mörka bakgrunden till höger, vit text, vänster om knappkolumnen under y 770.",
+  "osakerheter": [
+    "Manuell placering i den mörka ytan till höger, eftersom kedja och tröja täcker vänster och mitt. Smal spalt tvingar mindre kroppsstorlek. Andas. är större eftersom ordet är kort.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 18 px, under 38."
+  ],
+  "fontfiler": {
+    "Playfair Display": {
+      "path": "/workspace/adlab/labb-20261113/fonts/playfair-display-latin-700-normal.ttf",
+      "sha256": "762941fe1ef57706c5a7970dc8c4059dcfee75e5a19f4d26a96aba15ec547750"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Ta på knoppen.",
+      "ink": [
+        721,
+        313,
+        1015,
+        353
+      ]
+    },
+    {
+      "roll": "rubrik",
+      "text": "Andas.",
+      "ink": [
+        719,
+        381,
+        917,
+        433
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "ANDAS-halsband i",
+      "ink": [
+        720,
+        462,
+        1003,
+        488
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "massivt silver,",
+      "ink": [
+        722,
+        503,
+        933,
+        533
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "handgjort i Stocka,",
+      "ink": [
+        722,
+        548,
+        1007,
+        581
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Hälsingland.",
+      "ink": [
+        723,
+        596,
+        904,
+        629
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "1 695 kr",
+      "ink": [
+        722,
+        662,
+        886,
+        698
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

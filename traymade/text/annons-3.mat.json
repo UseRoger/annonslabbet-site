@@ -1,0 +1,164 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:13:18+01:00",
+  "scene": 3,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-3.scen.png",
+  "scen_sha256": "d72796fe061ab2fc453628892015fe5a5bd5a6213710ad16f7892425b2df43f4",
+  "source_photo": "/workspace/adlab/labb/traymade/bild3.png",
+  "source_photo_sha256": "c490d78f5863545d0aedd4a2d39531f8b02bddad58392d3b7a0a506be28ead1a",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Brickan ovanifrån på ett köksbord med ett tomt motivfält-liknande ljust landskap, en mobil bredvid med svart skärm.",
+  "vinkel": "nyfikenhet",
+  "rubrik_ruta": [
+    110,
+    270,
+    969,
+    598
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Vilket foto skulle du välja?",
+      "x": 133,
+      "y": 274,
+      "px": 62,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Ladda upp foto, motiv eller text.",
+      "x": 133,
+      "y": 372,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Tillverkas på 14 dagar.",
+      "x": 133,
+      "y": 436,
+      "px": 48,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "489 kr",
+      "x": 133,
+      "y": 517,
+      "px": 58,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/traymade, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/traymade/KORT.md 12/11.",
+      "text": "Vilket foto skulle du välja?"
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/traymade, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/traymade/KORT.md 12/11.",
+      "text": "Ladda upp foto, motiv eller text. Tillverkas på 14 dagar."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, 489 kr (inte Black November-pris 366). KREATOR-LOGG.md, BRIEF.md.",
+      "text": "489 kr",
+      "url": "https://traymade.se/products/bricka-43x33cm"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 8.894,
+    "K_p10": 10.0,
+    "K_median": 10.662,
+    "krav": 4.5,
+    "ok": true
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      134,
+      288,
+      945,
+      574
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 24,
+  "brief_lugn_yta": [
+    140,
+    290,
+    820,
+    560
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Hela övre ytan är lugnt ljust trä.",
+  "osakerheter": [
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 24 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Vilket foto skulle du välja?",
+      "ink": [
+        134,
+        288,
+        945,
+        350
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Ladda upp foto, motiv eller text.",
+      "ink": [
+        137,
+        383,
+        819,
+        428
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Tillverkas på 14 dagar.",
+      "ink": [
+        134,
+        445,
+        601,
+        493
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "489 kr",
+      "ink": [
+        135,
+        531,
+        301,
+        574
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}

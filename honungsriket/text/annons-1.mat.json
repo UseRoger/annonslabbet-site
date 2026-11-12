@@ -1,0 +1,165 @@
+{
+  "schema": "text-v10 mat, kontrakt 1435: texter (roll, text, x, y, px, font, farg) och rubrik_ruta. Ingen platta.",
+  "created_stockholm": "2026-11-12T21:12:55+01:00",
+  "scene": 1,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "scen": "annons-1.scen.png",
+  "scen_sha256": "4b3e8fa22d24cdb51e5f0a89a289bc6ede8cd31a7bf28c4447280bf3fedf16a5",
+  "source_photo": "/workspace/adlab/labb/honungsriket/bild1.png",
+  "source_photo_sha256": "53c827b712fe8aaec590e2fbdfdf9a944096ab6916197f8c339fdfefbc0862ad",
+  "skala": "LANCZOS till 1080x1935, beskär 7 px topp och 8 px botten. Inga andra ändringar av fotot.",
+  "fotoide": "Kalendern med ett brett band runt på ett köksbord i trä, en honungsslev bredvid.",
+  "vinkel": "gåva",
+  "rubrik_ruta": [
+    140,
+    321,
+    1015,
+    719
+  ],
+  "textfarg": "#1a1a1a",
+  "ingen_platta": true,
+  "texter": [
+    {
+      "roll": "rubrik",
+      "text": "Sverige i 25 burkar.",
+      "x": 163,
+      "y": 324,
+      "px": 88,
+      "font": "Fraunces",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "Honungskalendern 2026:",
+      "x": 163,
+      "y": 457,
+      "px": 56,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "underrad",
+      "text": "25 svenska honungssorter, 720 g.",
+      "x": 163,
+      "y": 531,
+      "px": 56,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    },
+    {
+      "roll": "pris",
+      "text": "1 499 kr",
+      "x": 163,
+      "y": 621,
+      "px": 76,
+      "font": "Figtree",
+      "farg": "#1a1a1a"
+    }
+  ],
+  "kallor": {
+    "rubrik": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/honungsriket, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/honungsriket/KORT.md 12/11.",
+      "text": "Sverige i 25 burkar."
+    },
+    "underrad": {
+      "kalla": "BRIEF.md i Drive outbox/kandidater/2026-11-13/honungsriket, citerad ordagrant i /workspace/adlab/drift1900-labbkort-20261112/honungsriket/KORT.md 12/11.",
+      "text": "Honungskalendern 2026: 25 svenska honungssorter, 720 g."
+    },
+    "pris": {
+      "kalla": "Produktsidan 12/11 18:46–18:48 Europe/Stockholm, verifierat i KREATOR-LOGG.md. BRIEF.md och meta.json.",
+      "text": "1 499 kr",
+      "url": "https://honungsriket.se/products/honungskalendern-2026"
+    }
+  },
+  "kontrast": {
+    "K_min_solid_alpha128": 3.546,
+    "K_p10": 4.399,
+    "K_median": 6.153,
+    "krav": 4.5,
+    "ok": false
+  },
+  "zon": {
+    "saker_yta": [
+      65,
+      270,
+      1015,
+      1250
+    ],
+    "knappkolumn_undviken": true,
+    "ink_box": [
+      164,
+      345,
+      1013,
+      695
+    ]
+  },
+  "min_glyfhojd_px_ensam_alpha16": 28,
+  "brief_lugn_yta": [
+    108,
+    290,
+    700,
+    600
+  ],
+  "brief_fargforslag": "mörk",
+  "placeringsnotis": "Ljus vägg ovanför asken. Asken ligger lägre, texten ovanför.",
+  "osakerheter": [
+    "Kontrast K_min (solid)=3.55 under 4,5. Ingen platta lagd.",
+    "Kortaste ensamma bokstavs-/siffrerhöjden (alpha>16) är 28 px, under 38. Oftast underradens storlek mot lång text."
+  ],
+  "fontfiler": {
+    "Fraunces": {
+      "path": "/workspace/adlab/labb-20261113/fonts/fraunces-latin-700-normal.ttf",
+      "sha256": "06b682f4f7aeee1d4c3f64d72b79fe701dfa9c1535bb47ae14b61b95fd94bde9"
+    },
+    "Figtree": {
+      "path": "/workspace/adlab/labb-20261113/fonts/figtree-latin-500-normal.ttf",
+      "sha256": "ecb8c25d8a28514183a3b13c5da2755d3e9d7950365b6f70af2320fddd5eac79"
+    }
+  },
+  "rader_ink": [
+    {
+      "roll": "rubrik",
+      "text": "Sverige i 25 burkar.",
+      "ink": [
+        167,
+        345,
+        1013,
+        432
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "Honungskalendern 2026:",
+      "ink": [
+        168,
+        470,
+        792,
+        523
+      ]
+    },
+    {
+      "roll": "underrad",
+      "text": "25 svenska honungssorter, 720 g.",
+      "ink": [
+        164,
+        544,
+        1002,
+        597
+      ]
+    },
+    {
+      "roll": "pris",
+      "text": "1 499 kr",
+      "ink": [
+        167,
+        640,
+        430,
+        695
+      ]
+    }
+  ],
+  "ankare": "PIL ImageDraw.text standard (samma som labbets v10 render.py)"
+}
