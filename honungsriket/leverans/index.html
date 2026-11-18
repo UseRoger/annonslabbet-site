@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
-<!-- Leveransmall v2-familjen, v3.0 (2026-11-18, byggare Ä: provsidans ljusa look, alltid ljus, proven först i provsidans solfjäder. Samma variabler, block, kund.json och feedback-anrop som v2.13). Leveransmall v2 (2026-10-25, rev D 2026-10-26: gratisproven + recensionen, rev H 2026-10-27: Vårt fel + omgång 1-20, tidigare versioner, extrabilder). Kontrakt: Projects/Annonslabbet/Leveranssidan 2.0 (2026-10-25)/Kontrakt. Fyll med fyll_leverans.py, se LÄS MIG - mall v2.md. -->
+<!-- Leveransmall v2-familjen, v3.1 (2026-11-18 kväll, Claude: provetiketterna längre ner, klick förstorar bilden). v3.0 (2026-11-18, byggare Ä: provsidans ljusa look, alltid ljus, proven först i provsidans solfjäder. Samma variabler, block, kund.json och feedback-anrop som v2.13). Leveransmall v2 (2026-10-25, rev D 2026-10-26: gratisproven + recensionen, rev H 2026-10-27: Vårt fel + omgång 1-20, tidigare versioner, extrabilder). Kontrakt: Projects/Annonslabbet/Leveranssidan 2.0 (2026-10-25)/Kontrakt. Fyll med fyll_leverans.py, se LÄS MIG - mall v2.md. -->
 <style>
 /* v3.0 (byggare Ä 2026-11-18): provsidans tokens (annonslabbet.se/<slug>/, Erbjudandet 3.0), alltid ljus. Inget mörkt läge:
    v2 bytte till mörkt när datorn stod i mörkt läge, provsidan gör det aldrig. Kort = vita med hårlinje som provsidans erbjudande. */
@@ -109,7 +109,7 @@ html[data-f2="1x1"] .print.missing{aspect-ratio:1/1}
 .round.prov{padding-top:30px}
 .provgrid+.round,.provtable+.round{border-top:1px solid var(--rule);margin-top:6px}
 /* v3.0: proven i provsidans solfjäder (samma .print-kort, lutning och lapp som på kundens provsida), så kunden känner igen sina tre */
-.provtable{position:relative;margin:8px 0 14px;padding:30px 0 22px}
+.provtable{position:relative;margin:8px 0 14px;padding:30px 0 26px}
 .provtable .sticker{position:absolute;top:0;left:50%;transform:translateX(-50%) rotate(-4deg);background:var(--ink);color:var(--paper);font-weight:800;font-size:15px;padding:8px 14px;border-radius:4px;box-shadow:2px 3px 0 rgba(23,24,28,.9);z-index:3;white-space:nowrap}
 .provfan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:end;max-width:760px;margin:0 auto}
 .provfan .print{transition:transform .2s ease}
@@ -118,7 +118,7 @@ html[data-f2="1x1"] .print.missing{aspect-ratio:1/1}
 .provfan .cell:nth-child(2) .print{transform:rotate(.6deg) translateY(-6px);z-index:1}
 .provfan .cell:nth-child(3) .print{transform:rotate(2.6deg) translateY(12px)}
 .provfan .print:hover{transform:rotate(0) translateY(-6px) scale(1.02);z-index:2}
-.provfan .cap{display:block;margin-top:30px;text-align:center;font-size:14px;font-weight:600;color:var(--ink-2)}
+.provgrid.provfan .cap{display:block;margin-top:30px;text-align:center;font-size:14px;font-weight:600;color:var(--ink-2)}
 .provgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-left:142px;padding:22px 0;align-items:start}
 .provgrid .cap{display:block;margin-top:8px;font-size:14px;font-weight:600;color:var(--ink-2)}
 /* Rev H2 (2026-10-27): tidigare version under ändrade rader, "Ny" på den nya. Rev H3: sektionen Extra (extrabilder). */
@@ -203,7 +203,7 @@ html:not([data-kundandring="1"]) .tidigare,html[data-round="1"] .tidigare{displa
   .provfan .cell:nth-child(2) .print{transform:rotate(-1.2deg)}
   .provfan .print img{border-radius:2px}
   .provfan .print a.dl{left:5px;right:5px;bottom:5px;font-size:11px;padding:6px 6px}
-  .provfan .cap{margin-top:8px;font-size:13px}
+  .provgrid.provfan .cap{margin-top:14px;font-size:13px}
   .tidigare{grid-column:1}
   .rev{left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));width:auto}
   .bar{display:block;transform:translateY(110%);transition:transform .25s ease}
@@ -214,6 +214,25 @@ html:not([data-kundandring="1"]) .tidigare,html[data-round="1"] .tidigare{displa
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
   .cta:hover,.cta:active{transform:none}
+}
+/* v3.1 (2026-11-18): klick på en bild förstorar den. Samma förhandsbild (med vattenstämpel), aldrig de rena filerna. */
+.print img{cursor:zoom-in}
+.zoom{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(23,24,28,.94);cursor:zoom-out;-webkit-tap-highlight-color:transparent}
+.zoom[hidden]{display:none}
+.zoom img{display:block;width:auto;height:auto;max-width:min(94vw,1100px);max-height:86vh;max-height:86dvh;border-radius:4px;background:#fff;box-shadow:0 30px 80px -20px rgba(0,0,0,.7)}
+.zoom img.up{height:86vh;height:86dvh;object-fit:contain;background:transparent;box-shadow:none}
+.zoom-cap{position:absolute;left:0;right:0;bottom:calc(10px + env(safe-area-inset-bottom));text-align:center;color:#fff;font-size:14px;font-weight:600;opacity:.85;pointer-events:none}
+.zoom button{position:absolute;display:grid;place-items:center;width:48px;height:48px;border:0;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font:inherit;font-size:28px;line-height:1;cursor:pointer}
+.zoom button svg{pointer-events:none}
+.zoom-cap span{margin-left:14px;opacity:.7}
+.zoom button:hover{background:rgba(255,255,255,.26)}
+.zoom button:focus-visible{outline:3px solid var(--mark)}
+.zoom-x{top:calc(12px + env(safe-area-inset-top));right:12px}
+.zoom-prev{left:12px;top:50%;margin-top:-24px}
+.zoom-next{right:12px;top:50%;margin-top:-24px}
+@media (max-width:760px){
+  .zoom img.up{height:auto;max-height:82vh;max-height:82dvh;width:94vw;object-fit:contain}
+  .zoom-prev,.zoom-next{top:auto;bottom:calc(40px + env(safe-area-inset-bottom));margin-top:0}
 }
 </style>
 </head>
@@ -755,6 +774,73 @@ var CFG={
     }catch(e){}
   }
   window.__alState=function(){return JSON.parse(JSON.stringify(st));};
+})();
+</script>
+<script>
+/* v3.1 (2026-11-18): klick på en bild förstorar den. Fristående, läser inte CFG och anropar ingen server.
+   Visar samma förhandsbild som sidan (med vattenstämpel). Stäng: klick, krysset eller Esc. Bläddra: pilarna, piltangenterna eller svep. */
+(function(){
+  if(!document.querySelector||!document.addEventListener)return;
+  var box=null,pic,cap,list=[],at=0,back=null,x0=null;
+  function imgs(){return Array.prototype.slice.call(document.querySelectorAll("figure.print > img"));}
+  function label(im){return String(im.getAttribute("alt")||"").replace(/ för .*, /," \u00b7 ");}
+  function build(){
+    box=document.createElement("div");box.className="zoom";box.hidden=true;
+    box.setAttribute("role","dialog");box.setAttribute("aria-modal","true");box.setAttribute("aria-label","Förstorad bild");
+    box.innerHTML='<img class="up" alt=""><p class="zoom-cap"></p>'
+      +'<button type="button" class="zoom-x" aria-label="Stäng">\u00d7</button>'
+      +'<button type="button" class="zoom-prev" aria-label="Föregående bild"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+      +'<button type="button" class="zoom-next" aria-label="Nästa bild"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
+    document.body.appendChild(box);
+    pic=box.querySelector("img");cap=box.querySelector(".zoom-cap");
+    box.addEventListener("click",function(e){
+      var t=e.target;
+      if(t.className==="zoom-prev"){step(-1);return;}
+      if(t.className==="zoom-next"){step(1);return;}
+      close();
+    });
+    box.addEventListener("touchstart",function(e){x0=e.touches&&e.touches.length===1?e.touches[0].clientX:null;},{passive:true});
+    box.addEventListener("touchend",function(e){
+      if(x0===null||!e.changedTouches||!e.changedTouches.length)return;
+      var dx=e.changedTouches[0].clientX-x0;x0=null;
+      if(Math.abs(dx)>50){e.preventDefault();step(dx<0?1:-1);}
+    });
+  }
+  function show(){
+    var im=list[at];if(!im)return;
+    pic.src=im.currentSrc||im.src;pic.alt=im.getAttribute("alt")||"";
+    cap.textContent=label(im);
+    if(list.length>1){var n=document.createElement("span");n.textContent=(at+1)+" / "+list.length;cap.appendChild(n);}
+    var many=list.length>1;
+    box.querySelector(".zoom-prev").hidden=!many;box.querySelector(".zoom-next").hidden=!many;
+  }
+  function open(im){
+    if(!box)build();
+    list=imgs();at=list.indexOf(im);if(at<0)return;
+    back=document.activeElement;show();box.hidden=false;
+    document.documentElement.style.overflow="hidden";
+    try{box.querySelector(".zoom-x").focus();}catch(e){}
+  }
+  function close(){
+    if(!box||box.hidden)return;
+    box.hidden=true;pic.removeAttribute("src");
+    document.documentElement.style.overflow="";
+    try{if(back&&back.focus)back.focus();}catch(e){}
+  }
+  function step(d){if(!list.length)return;at=(at+d+list.length)%list.length;show();}
+  document.addEventListener("click",function(e){
+    var t=e.target;
+    if(!t||t.tagName!=="IMG"||!t.parentNode||t.parentNode.tagName!=="FIGURE")return;
+    if(String(t.parentNode.className).split(" ").indexOf("print")<0)return;
+    open(t);
+  });
+  document.addEventListener("keydown",function(e){
+    if(!box||box.hidden)return;
+    if(e.key==="Escape"||e.key==="Esc"){e.stopPropagation();close();}
+    else if(e.key==="ArrowLeft"){step(-1);}
+    else if(e.key==="ArrowRight"){step(1);}
+    else if(e.key==="Tab"){e.preventDefault();}
+  },true);
 })();
 </script>
 </body>
